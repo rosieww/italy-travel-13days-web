@@ -20,15 +20,13 @@ export const OverviewImage: React.FC = () => {
         </div>
       </div>
 
-      {/* Image Box */}
-      <div className="bg-white border border-amber-900/10 rounded-2xl overflow-hidden flex items-center justify-center min-h-[260px]">
-        <div className="relative w-full flex justify-center">
-          <img
-            src={imageSrc}
-            alt="義大利行程概括"
-            className="max-h-[580px] w-full object-contain rounded-2xl shadow-xs"
-          />
-        </div>
+      {/* Image Box — the frame hugs the image, so no letterboxing shows through */}
+      <div className="flex justify-center">
+        <img
+          src={imageSrc}
+          alt="義大利行程概括"
+          className="block w-auto h-auto max-w-full max-h-[580px] rounded-2xl border border-amber-900/10 shadow-xs"
+        />
       </div>
     </div>
   );
