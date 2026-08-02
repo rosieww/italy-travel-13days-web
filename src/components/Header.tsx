@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mountain, Calendar, Compass, ExternalLink, Utensils, Instagram } from 'lucide-react';
+import { assetUrl } from '../assetUrl';
 
 export type MainTabType = 'itinerary' | 'spots' | 'links' | 'food';
 
@@ -14,7 +15,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
       {/* Cover Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80 pointer-events-none"
-        style={{ backgroundImage: `url('/image/DSCF6854.webp')` }}
+        style={{ backgroundImage: `url('${assetUrl('/image/DSCF6854.webp')}')` }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#3b2014]/50 via-[#4a2c1d]/30 to-[#3b2014]/15 pointer-events-none" />
 

@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { ITALY_12_DAYS } from '../data/italyData';
 import { Master14DayTable } from './Master14DayTable';
+import { assetUrl } from '../assetUrl';
 import { MapPin, ShieldAlert, Sparkles, Clock, Utensils, Hotel, Navigation, Mountain, ArrowUpRight, ExternalLink } from 'lucide-react';
 
 export const ItineraryView: React.FC = () => {
@@ -98,7 +99,7 @@ export const ItineraryView: React.FC = () => {
                 {/* Hero Banner Header */}
                 <div className="relative min-h-[200px] sm:min-h-[240px] flex flex-col justify-end p-6 sm:p-8 overflow-hidden group">
                   <img
-                    src={day.heroImage}
+                    src={assetUrl(day.heroImage)}
                     alt={day.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />

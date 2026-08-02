@@ -5,6 +5,9 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    // Static hosts serve this from a sub-path (e.g. GitHub Pages project sites);
+    // BASE_PATH lets the deploy set it without affecting local dev.
+    base: process.env.BASE_PATH || '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

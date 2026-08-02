@@ -1,8 +1,9 @@
 import React from 'react';
 import { Sparkles } from 'lucide-react';
+import { assetUrl } from '../assetUrl';
 
 export const OverviewImage: React.FC = () => {
-  const imageSrc = encodeURI('/image/義大利行程概括.webp');
+  const imageSrc = assetUrl('/image/義大利行程概括.webp');
 
   return (
     <div className="bg-[#FAF7F2] border border-amber-900/15 rounded-3xl p-5 sm:p-7 shadow-xs space-y-4 relative overflow-hidden">
