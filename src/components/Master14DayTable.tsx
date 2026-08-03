@@ -20,35 +20,6 @@ export const Master14DayTable: React.FC = () => {
 
   return (
     <div className="space-y-6 animate-fadeIn">
-      {/* Banner */}
-      <div className="bg-white p-6 sm:p-8 rounded-3xl border border-stone-200/90 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <div className="inline-flex items-center gap-2 text-amber-900 text-xs font-bold px-3 py-1 bg-amber-50 border border-amber-200/80 rounded-full mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-amber-700" />
-            <span>義大利 13 日跨區壯遊全景日程表</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl font-black text-stone-900 tracking-tight">
-            13 日義大利總覽表 (米蘭 ➔ 多洛米蒂 ➔ 威尼斯 ➔ 佛羅倫斯 ➔ 比薩 ➔ 科莫湖)
-          </h2>
-          <p className="text-stone-500 text-xs sm:text-sm mt-1">
-            表列全行程每日區域、動線、預約重點與住宿飯店
-          </p>
-        </div>
-
-        {/* Search Bar */}
-        <div className="relative min-w-[240px] sm:w-72">
-          <Search className="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-          <input
-            id="search-14day-input"
-            type="text"
-            placeholder="搜尋城市、飯店、景點 (如: 烏菲茲)..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 bg-stone-50 border border-stone-200 rounded-2xl text-xs sm:text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-700"
-          />
-        </div>
-      </div>
-
       {/* Overview Image */}
       <OverviewImage />
 

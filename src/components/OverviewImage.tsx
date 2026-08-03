@@ -20,6 +20,15 @@ export const OverviewImage: React.FC = () => {
         </div>
       </div>
 
+      <p className="text-stone-500 text-sm sm:text-base">
+        表列全行程每日區域、動線、預約重點與住宿飯店
+      </p>
+
+      {/* Route summary */}
+      <p className="text-amber-900 text-sm sm:text-base font-bold tracking-tight leading-relaxed">
+        米蘭 ➔ 多洛米蒂 ➔ 威尼斯 ➔ 佛羅倫斯 ➔ 比薩 ➔ 科莫湖
+      </p>
+
       {/* Image Box — the frame hugs the image, so no letterboxing shows through */}
       <div className="flex justify-center">
         <img
