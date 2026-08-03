@@ -36,7 +36,7 @@ export const ItineraryView: React.FC = () => {
             }`}
           >
             <Sparkles className="w-4 h-4 text-amber-300" />
-            <span>📋 全景行程總表</span>
+            <span>📋 13 日行程總表</span>
           </button>
 
           <button
