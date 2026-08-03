@@ -51,7 +51,7 @@ export interface SpotInfo {
 export interface PracticalLinkItem {
   id: string;
   title: string;
-  category: 'Parking' | 'CableCar' | 'Webcam' | 'Pass' | 'Museum' | 'Transport';
+  category: 'Parking' | 'CableCar' | 'Webcam' | 'Pass' | 'Museum' | 'Transport' | 'Reference';
   url: string;
   description: string;
   importantRule?: string;

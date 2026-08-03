@@ -1437,5 +1437,53 @@ export const PRACTICAL_LINKS: PracticalLinkItem[] = [
     url: "https://www.auronzomisurina.it/",
     description: "通往三尖峰與魔戒線路起點 Auronzo 山屋的高山停車場資訊。",
     importantRule: "Day 4 根據預約的時間，約 06:30 過後通過閘門進入 Auronzo 山屋停車場 (可以晚到，但需要在預約時間起算的12小時內離開)。"
+  },
+  {
+    id: "valgardena-webcams",
+    title: "Val Gardena 官方即時影像總覽",
+    category: "Webcam",
+    url: "https://www.valgardena.it/en/webcams/",
+    description: "Val Gardena 官方彙整的即時影像頁面，涵蓋 Ortisei、Selva 與 Seceda 等區域鏡頭。",
+    importantRule: "出發前一晚可先確認雲層與能見度，再決定隔日纜車上山的順序。"
+  },
+  {
+    id: "seiser-alm-panomax",
+    title: "休斯高原 Seiser Alm 全景即時影像",
+    category: "Webcam",
+    url: "https://seiseralm.panomax.com/?cu=en-GB",
+    description: "Panomax 高解析全景鏡頭，可拉近檢視休斯高原草甸與遠景 Sassolungo 的即時狀況。",
+    importantRule: "Day 2 上山前先看，確認下午順光時段 Sassolungo 是否清晰無雲遮。"
+  },
+  {
+    id: "sassolevante-panomax",
+    title: "Sassolevante 長石山即時影像",
+    category: "Webcam",
+    url: "https://valgardena.panomax.com/sassolevante",
+    description: "面向 Sassolungo（長石山）山群的 Panomax 全景鏡頭，可即時判斷山頭雲況。",
+    importantRule: "Day 3 前往長石山前先確認，雲霧過厚時可調整為其他景點優先。"
+  },
+  {
+    id: "ref-backpackers-tre-cime",
+    title: "背包客棧：三尖峰健行紀錄",
+    category: "Reference",
+    url: "https://www.backpackers.com.tw/forum/showthread.php?t=10536421",
+    description: "中文背包客實地健行紀錄，詳述拉瓦雷多三尖峰(Tre Cime di Lavaredo)環線的路況、時間分配與沿途景觀。",
+    importantRule: "可搭配 Day 4 的魔戒線路行程對照，預先掌握體力與時間需求。"
+  },
+  {
+    id: "ref-moonhoney-hikes",
+    title: "Moon & Honey Travel：多洛米蒂 15 條最佳健行路線",
+    category: "Reference",
+    url: "https://www.moonhoneytravel.com/best-day-hikes-dolomites-italy/",
+    description: "英文深度健行指南，涵蓋各路線難度、里程、起登點與停車資訊，是多洛米蒂健行最完整的參考來源之一。",
+    importantRule: "行前可用來評估備案路線，遇天候不佳時替換原訂行程。"
+  },
+  {
+    id: "ref-travelwithmiya-roadtrip",
+    title: "Travel with Miya：多洛米蒂 11 城鎮自駕路線",
+    category: "Reference",
+    url: "https://travelwithmiya.com/dolomites-road-trip/#%E2%9D%99_%E7%B1%B3%E8%98%AD%E6%A9%9F%E5%A0%B4_MXP_%E2%AD%A2_%E5%A4%9A%E6%B4%9B%E7%B1%B3%E8%92%82%E5%A5%A7%E8%92%82%E5%A1%9E%E4%BC%8A%EF%BC%9A%E8%87%AA%E9%A7%95%E7%B4%84_4_%E5%B0%8F%E6%99%82",
+    description: "中文自駕攻略，連結直接定位到「米蘭機場 MXP ⭢ 多洛米蒂奧蒂塞伊：自駕約 4 小時」段落，含詳細路線地圖。",
+    importantRule: "對應 Day 1 米蘭取車後前往 Selva 的長途拉車，可先預覽路線與休息點。"
   }
 ];
