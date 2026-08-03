@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { ALL_RESTAURANTS } from '../data/italyData';
-import { Utensils, MapPin, ExternalLink, Search, Sparkles, AlertCircle, IceCream, Pizza, ShoppingBag, Coffee } from 'lucide-react';
+import { Utensils, MapPin, ExternalLink, Search, AlertCircle, IceCream, Pizza, ShoppingBag, Coffee } from 'lucide-react';
 
 export const RestaurantGuideView: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');

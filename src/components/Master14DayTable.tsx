@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MASTER_14_DAYS } from '../data/italyData';
-import { Search, MapPin, Hotel, Plane, Sparkles } from 'lucide-react';
+import { Search, MapPin, Hotel, Plane } from 'lucide-react';
 import { OverviewImage } from './OverviewImage';
 
 export const Master14DayTable: React.FC = () => {
@@ -22,6 +22,26 @@ export const Master14DayTable: React.FC = () => {
     <div className="space-y-6 animate-fadeIn">
       {/* Overview Image */}
       <OverviewImage />
+
+      {/* Search */}
+      <div className="bg-white p-4 sm:p-5 rounded-3xl border border-stone-200/90 shadow-xs flex flex-col sm:flex-row sm:items-center gap-3">
+        <div className="relative flex-1">
+          <Search className="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <input
+            id="search-14day-input"
+            type="text"
+            placeholder="搜尋城市、飯店、景點 (如: 烏菲茲)..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-10 pr-4 py-2 bg-stone-50 border border-stone-200 rounded-2xl text-xs sm:text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-700"
+          />
+        </div>
+        {searchQuery.trim() && (
+          <span className="text-xs font-bold text-stone-500 shrink-0 sm:pr-1">
+            找到 {filteredMasterDays.length} / {MASTER_14_DAYS.length} 天
+          </span>
+        )}
+      </div>
 
       {/* Table */}
       <div className="bg-white rounded-3xl border border-stone-200/90 overflow-hidden shadow-xs">
@@ -104,6 +124,13 @@ export const Master14DayTable: React.FC = () => {
                   </tr>
                 );
               })}
+              {filteredMasterDays.length === 0 && (
+                <tr>
+                  <td colSpan={6} className="p-10 text-center text-stone-500 text-xs sm:text-sm">
+                    找不到符合「{searchQuery.trim()}」的行程，試試其他城市、飯店或景點名稱。
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
