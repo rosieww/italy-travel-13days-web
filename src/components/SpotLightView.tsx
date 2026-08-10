@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { SPOTS_INFO } from '../data/italyData';
-import { Search, Sparkles, ExternalLink, Camera, Video, AlertCircle } from 'lucide-react';
+import { Search, Sparkles, ExternalLink, Camera, Video, AlertCircle, MapPin } from 'lucide-react';
 
 export const SpotLightView: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
@@ -137,7 +137,19 @@ export const SpotLightView: React.FC = () => {
 
             {/* Card Footer Actions */}
             <div className="p-4 px-6 bg-stone-50 border-t border-stone-100 flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
+                {spot.mapPoints?.map((point) => (
+                  <a
+                    key={point.url}
+                    href={point.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white text-amber-900 border border-amber-200 text-xs font-bold hover:bg-amber-50 transition-colors"
+                  >
+                    <MapPin className="w-3.5 h-3.5 text-amber-700" />
+                    <span>{point.label}</span>
+                  </a>
+                ))}
                 {spot.webcamUrl && (
                   <a
                     href={spot.webcamUrl}

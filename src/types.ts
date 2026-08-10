@@ -46,6 +46,8 @@ export interface SpotInfo {
   practicalTips?: string;
   webcamUrl?: string;
   reservationUrl?: string;
+  /** 景點內值得單獨定位的地標，例如觀景長椅、纜車站。 */
+  mapPoints?: { label: string; url: string }[];
 }
 
 export interface PracticalLinkItem {

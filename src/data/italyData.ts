@@ -1313,7 +1313,13 @@ export const SPOTS_INFO: SpotInfo[] = [
       "ADLER Lodge ALPE：位置視野相當棒，可飽覽多洛米蒂山脈的壯麗景色。",
       "Sporthotel Sonne 交通：抵達 Sporthotel Sonne 之後，可選擇搭乘 Al sole Chairlift 滑雪吊椅直接回到上方的纜車站。"
     ],
-    practicalTips: "【滑雪吊椅間隔提醒】如果你是購買 Super Summer Card 或 Val Gardena Card，雖然時間內可以無限次免費搭乘，但是 Al sole Chairlift 滑雪吊椅不能立刻連續上下搭乘，系統會要求間隔 45 分鐘之後才能再次搭乘！"
+    practicalTips: "【滑雪吊椅間隔提醒】如果你是購買 Super Summer Card 或 Val Gardena Card，雖然時間內可以無限次免費搭乘，但是 Al sole Chairlift 滑雪吊椅不能立刻連續上下搭乘，系統會要求間隔 45 分鐘之後才能再次搭乘！",
+    mapPoints: [
+      {
+        label: "巨型木椅 Panchina Gigante",
+        url: "https://maps.app.goo.gl/5YCdt8NfRnu89E3C6"
+      }
+    ]
   },
   {
     id: "seceda",
