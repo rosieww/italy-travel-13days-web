@@ -773,7 +773,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     title: "Day 9｜佛羅倫斯 Florence 藝術與奢華 (⚠️ 服裝規定)",
     subtitle: "中央市場、百花大教堂、Panini Toscani、老橋、La Strega Nocciola、SMN 修道院與學院美術館",
     heroImage: "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=1200&q=80",
-    overview: "⚠️ 服裝警訊：進入大教堂與美術館不能穿短褲或露肩！上午造訪中央市場與聖母百花大教堂。午餐品嚐 Panini Toscani 客製化三明治。下午至老橋散步、品嚐 La Strega Nocciola 榛果冰淇淋、逛 SMN 百年修道院香水坊與參觀學院美術館 (看大衛像, 預約)。晚上於中央市場美食廣場享用多樣化晚餐。",
+    overview: "⚠️ 服裝警訊：進入聖母百花大教堂不能穿短褲、露肩！上午造訪中央市場與聖母百花大教堂。午餐品嚐 Panini Toscani 客製化三明治。下午至老橋散步、品嚐 La Strega Nocciola 榛果冰淇淋、逛 SMN 百年修道院香水坊與參觀學院美術館 (看大衛像, 預約)。晚上於中央市場美食廣場享用多樣化晚餐。",
     timeline: [
       {
         time: "上午",
@@ -785,7 +785,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       {
         time: "上午",
         title: "聖母百花大教堂 (⚠️ 服裝規定)",
-        detail: "仰望布魯內萊斯基宏偉圓頂與哥德式大理石外牆。注意：不可穿無袖上衣或短褲！",
+        detail: "仰望布魯內萊斯基宏偉圓頂與哥德式大理石外牆。注意：不能穿短褲、露肩！",
         location: "Duomo di Firenze",
         tag: "地標建築",
         isKeyMilestone: true
@@ -832,8 +832,8 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       },
       {
         time: "下午",
-        title: "學院美術館（預約）(⚠️ 服裝規定)",
-        detail: "按預約時間入場親眼目睹米開朗基羅雕刻傑作《大衛像》。注意：不可穿無袖短褲！",
+        title: "學院美術館（預約）",
+        detail: "按預約時間入場親眼目睹米開朗基羅雕刻傑作《大衛像》。",
         location: "Accademia Gallery",
         tag: "大衛巨作",
         isKeyMilestone: true
@@ -856,7 +856,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       }
     ],
     keyRules: [
-      "⚠️ 服裝嚴格規定：進入大教堂與學院美術館切勿穿無袖露肩上衣或膝上短褲/短裙。",
+      "⚠️ 服裝嚴格規定：進入聖母百花大教堂不能穿短褲、露肩。",
       "學院美術館大衛像入場時間固定，請按預約時段排隊。"
     ],
     restaurantsAndShops: [
@@ -1005,7 +1005,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     title: "Day 11｜佛羅倫斯 ➔ 米蘭 Milan (⚠️ 服裝規定)",
     subtitle: "最後的晚餐、Bentoteca Milano 午餐、米蘭大教堂、Chocolat 冰淇淋與 Sorbillo 炸披薩",
     heroImage: "https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=1200&q=80",
-    overview: "⚠️ 服裝警訊：進入米蘭大教堂不能穿短褲或露肩！上午搭乘火車前往米蘭 Check-in，參觀達文西名作《最後的晚餐》(預約須提前完成取票)。午餐於預約名店 Bentoteca Milano 享用日義結合創意料理。下午登頂米蘭大教堂並逛埃馬努埃萊二世拱廊。傍晚品嚐 Chocolat Milano 巧克力冰淇淋，晚餐享用 Zia Esterina Sorbillo 包餡炸披薩。",
+    overview: "⚠️ 服裝警訊：進入米蘭大教堂不能穿短褲、露肩！上午搭乘火車前往米蘭 Check-in，參觀達文西名作《最後的晚餐》(預約須提前完成取票)。午餐於預約名店 Bentoteca Milano 享用日義結合創意料理。下午登頂米蘭大教堂並逛埃馬努埃萊二世拱廊。傍晚品嚐 Chocolat Milano 巧克力冰淇淋，晚餐享用 Zia Esterina Sorbillo 包餡炸披薩。",
     timeline: [
       {
         time: "上午",
@@ -1044,7 +1044,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       {
         time: "下午",
         title: "米蘭大教堂（預約登頂）(⚠️ 服裝規定)",
-        detail: "搭乘電梯登上米蘭大教堂屋頂哥德式尖塔群。注意：不可穿無袖上衣或短褲！",
+        detail: "搭乘電梯登上米蘭大教堂屋頂哥德式尖塔群。注意：不能穿短褲、露肩！",
         location: "Duomo di Milano",
         tag: "哥德地標",
         isKeyMilestone: true
@@ -1091,7 +1091,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     ],
     keyRules: [
       "《最後的晚餐》必須提前 20 分鐘抵達專屬窗口核對預約資料換票。",
-      "米蘭大教堂嚴格執行服裝管制：禁止露肩、禁止膝上短褲/短裙。"
+      "⚠️ 服裝嚴格規定：進入米蘭大教堂不能穿短褲、露肩。"
     ],
     restaurantsAndShops: [
       "Bentoteca Milano",
@@ -1394,7 +1394,7 @@ export const SPOTS_INFO: SpotInfo[] = [
     highlights: [
       "All’Antico Vinaio & Panini Toscani 經典帕尼尼",
       "Trattoria Zà Zà 托斯卡尼大牛排",
-      "⚠️ 服裝規定：進入大教堂與美術館不能穿短褲、露肩"
+      "⚠️ 服裝規定：進入聖母百花大教堂不能穿短褲、露肩"
     ]
   },
   {
@@ -1407,7 +1407,7 @@ export const SPOTS_INFO: SpotInfo[] = [
     highlights: [
       "達文西 《最後的晚餐》(預約須提前取票)",
       "Bentoteca Milano 預約創意料理",
-      "⚠️ 服裝規定：米蘭大教堂不能穿短褲、露肩"
+      "⚠️ 服裝規定：進入米蘭大教堂不能穿短褲、露肩"
     ]
   }
 ];
