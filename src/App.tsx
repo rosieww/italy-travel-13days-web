@@ -20,6 +20,20 @@ export default function App() {
 
         {/* Main Content Viewport */}
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+          {/* Usage Notice — shown above every tab */}
+          <div className="mb-8 bg-amber-100/70 border-2 border-amber-500/50 rounded-2xl p-4 sm:p-5 shadow-xs">
+            <div className="font-black text-amber-900 text-sm sm:text-base mb-1.5">
+              💡 溫馨提醒
+            </div>
+            <p className="text-amber-950/90 text-xs sm:text-sm leading-relaxed font-medium">
+              本站內容均為個人整理的分享記錄。僅供私人瀏覽，請勿擅自轉載至其他公開平台或作任何商業用途。
+            </p>
+            <p className="mt-2 pt-2 border-t border-amber-600/25 text-amber-900/75 text-[11px] sm:text-xs leading-relaxed" lang="en">
+              This website and its contents are for personal sharing only. Unauthorized reproduction,
+              redistribution, or commercial use is strictly prohibited.
+            </p>
+          </div>
+
           {activeTab === 'itinerary' && <ItineraryView />}
 
           {activeTab === 'spots' && <SpotLightView />}
