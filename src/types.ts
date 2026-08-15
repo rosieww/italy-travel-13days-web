@@ -1,3 +1,10 @@
+export interface RestaurantRating {
+  /** 推薦指數，滿分 5 顆星 */
+  stars: number;
+  /** 評分的補充說明，例如同行者意見不同 */
+  note?: string;
+}
+
 export interface RestaurantItem {
   id: string;
   dayNum: number;

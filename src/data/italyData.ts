@@ -1,4 +1,4 @@
-import { DayItineraryDetail, SpotInfo, PracticalLinkItem, Master14DayCell, RestaurantItem, ExpenseCategory } from '../types';
+import { DayItineraryDetail, SpotInfo, PracticalLinkItem, Master14DayCell, RestaurantItem, RestaurantRating, ExpenseCategory } from '../types';
 
 export const ITALY_12_DAYS: DayItineraryDetail[] = [
   {
@@ -1271,6 +1271,40 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     googleMapsUrl: "https://maps.google.com/?q=Milan+Malpensa+Airport"
   }
 ];
+
+/**
+ * 實際造訪後的推薦指數（滿分 5 顆星），以店名為鍵。
+ * 每間店在時間軸與當日餐廳清單中各出現一次，因此評分集中放在這裡，
+ * 由顯示端查表取用，避免同一個數字散落在多處而失準。
+ * 未列入者（超市、中央市場、麥當勞等補給點）不評分。
+ */
+export const RESTAURANT_RATINGS: Record<string, RestaurantRating> = {
+  "Pizzeria Restaurant L Ciamin": { stars: 3.8 },
+  "Hotel Menardi Restaurant": { stars: 4.2 },
+  "La Tavernetta di Cortina": { stars: 3.8 },
+  "TRATTORIA AL POGGIO": { stars: 4 },
+  "Da Mamo": { stars: 4 },
+  "Suso Gelatoteca": { stars: 4.5 },
+  "Gelateria Gallonetto": { stars: 4.5 },
+  "I Tre Mercanti (Tiramisù)": { stars: 3.5 },
+  "Trattoria Bar Pontini": { stars: 4 },
+  "Acqua e Mais": { stars: 3.9 },
+  "All’Antico Vinaio": { stars: 3, note: "旅伴覺得有 4 星" },
+  "Trattoria Zà Zà": { stars: 4.2 },
+  "GROM": { stars: 4.5 },
+  "Panini Toscani": { stars: 4 },
+  "La Strega Nocciola": { stars: 4.5 },
+  "Trattoria Sergio Gozzi": { stars: 3.9 },
+  "Hosteria del Bricco": { stars: 3.9 },
+  "Bentoteca Milano": { stars: 3.5 },
+  "Chocolat Milano": { stars: 4.5 },
+  "Zia Esterina Sorbillo": { stars: 4 },
+  "Osteria Quatro Pass": { stars: 4.2 }
+};
+
+/** 依店名取得推薦指數；查無評分（例如超市補給點）時回傳 undefined。 */
+export const getRestaurantRating = (name: string): RestaurantRating | undefined =>
+  RESTAURANT_RATINGS[name];
 
 // Aggregate all restaurants with Google Maps links across the 12 days
 export const ALL_RESTAURANTS: RestaurantItem[] = ITALY_12_DAYS.flatMap(
