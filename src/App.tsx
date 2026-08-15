@@ -4,7 +4,8 @@ import { ItineraryView } from './components/ItineraryView';
 import { SpotLightView } from './components/SpotLightView';
 import { PracticalLinksView } from './components/PracticalLinksView';
 import { RestaurantGuideView } from './components/RestaurantGuideView';
-import { Mountain, Compass, ExternalLink, Calendar, Utensils, Sparkles } from 'lucide-react';
+import { ExpenseView } from './components/ExpenseView';
+import { Mountain, Compass, ExternalLink, Calendar, Utensils, Sparkles, Wallet } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<MainTabType>('itinerary');
@@ -41,6 +42,8 @@ export default function App() {
           {activeTab === 'links' && <PracticalLinksView />}
 
           {activeTab === 'food' && <RestaurantGuideView />}
+
+          {activeTab === 'expense' && <ExpenseView />}
         </main>
       </div>
 
@@ -92,6 +95,14 @@ export default function App() {
             >
               <Utensils className="w-3.5 h-3.5 text-amber-400" />
               <span>美饌地圖</span>
+            </button>
+            <span className="text-amber-900/80">•</span>
+            <button
+              onClick={() => setActiveTab('expense')}
+              className="hover:text-amber-300 transition-colors cursor-pointer flex items-center gap-1.5"
+            >
+              <Wallet className="w-3.5 h-3.5" />
+              <span>花費明細</span>
             </button>
           </div>
         </div>

@@ -59,6 +59,24 @@ export interface PracticalLinkItem {
   importantRule?: string;
 }
 
+export interface ExpenseItem {
+  /** 項目名稱 */
+  label: string;
+  /** 新台幣金額，為 2 人合計實付 */
+  twd: number;
+  /** 現場刷卡／付現的歐元原幣，僅部分項目有記錄 */
+  eur?: number;
+}
+
+export interface ExpenseCategory {
+  id: string;
+  label: string;
+  /** 該分類涵蓋的項目說明 */
+  note: string;
+  /** 逐筆明細（2 人合計）。分類總額由此加總推算，不另存以免兩者失準。 */
+  items: ExpenseItem[];
+}
+
 export interface Master14DayCell {
   dayNum: number;
   dateStr: string;
