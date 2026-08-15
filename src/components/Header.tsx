@@ -1,8 +1,8 @@
 import React from 'react';
-import { Mountain, Calendar, Compass, ExternalLink, Utensils, Instagram, Wallet } from 'lucide-react';
+import { Mountain, Calendar, Compass, ExternalLink, Utensils, Instagram, Hotel, Wallet } from 'lucide-react';
 import { assetUrl } from '../assetUrl';
 
-export type MainTabType = 'itinerary' | 'spots' | 'links' | 'food' | 'expense';
+export type MainTabType = 'itinerary' | 'spots' | 'links' | 'food' | 'hotel' | 'expense';
 
 interface HeaderProps {
   activeTab: MainTabType;
@@ -106,6 +106,19 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
           </button>
 
           <button
+            id="nav-tab-hotel"
+            onClick={() => setActiveTab('hotel')}
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 cursor-pointer ${
+              activeTab === 'hotel'
+                ? 'bg-amber-800 text-stone-100 font-extrabold shadow-md shadow-amber-950/50 scale-[1.02]'
+                : 'text-amber-200/90 hover:bg-[#5c3523] hover:text-amber-100'
+            }`}
+          >
+            <Hotel className="w-4 h-4 text-amber-300" />
+            <span>5. 飯店住宿列表</span>
+          </button>
+
+          <button
             id="nav-tab-expense"
             onClick={() => setActiveTab('expense')}
             className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 cursor-pointer ${
@@ -115,7 +128,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
             }`}
           >
             <Wallet className="w-4 h-4 text-amber-300" />
-            <span>5. 花費明細</span>
+            <span>6. 花費明細</span>
           </button>
 
           <div className="h-6 w-px bg-amber-800/60 mx-1 self-center hidden sm:block" />

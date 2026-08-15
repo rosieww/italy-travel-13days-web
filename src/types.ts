@@ -66,6 +66,29 @@ export interface PracticalLinkItem {
   importantRule?: string;
 }
 
+export interface HotelStay {
+  id: string;
+  /** 訂房平台上的英文名稱 */
+  name: string;
+  /** 中文名稱，部分飯店沒有 */
+  nameZh?: string;
+  city: string;
+  /** 所屬區域，用於分頁上的地區標籤 */
+  region: string;
+  /** 入住的第一天與最後一天（對應行程 Day 編號），晚數由此推算 */
+  dayFrom: number;
+  dayTo: number;
+  /** 入住與退房日期，格式 M/D */
+  checkIn: string;
+  checkOut: string;
+  /** 房費，2 人合計 */
+  twd: number;
+  /** 該飯店另外收取的城市稅，2 人合計；未單獨列出者為 undefined */
+  cityTaxTwd?: number;
+  googleMapsUrl: string;
+  note?: string;
+}
+
 export interface ExpenseItem {
   /** 項目名稱 */
   label: string;

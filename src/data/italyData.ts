@@ -1,4 +1,4 @@
-import { DayItineraryDetail, SpotInfo, PracticalLinkItem, Master14DayCell, RestaurantItem, RestaurantRating, ExpenseCategory } from '../types';
+import { DayItineraryDetail, SpotInfo, PracticalLinkItem, Master14DayCell, RestaurantItem, RestaurantRating, HotelStay, ExpenseCategory } from '../types';
 
 export const ITALY_12_DAYS: DayItineraryDetail[] = [
   {
@@ -514,7 +514,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=I+Tre+Mercanti+Tiramisu+Venice"
       }
     ],
-    hotelName: "Apollo Guest House (Venice)",
+    hotelName: "Leone Hotel (Venice)",
     googleMapsUrl: "https://maps.google.com/?q=Piazza+San+Marco+Venice"
   },
   {
@@ -640,7 +640,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Acqua+e+Mais+Venice"
       }
     ],
-    hotelName: "Residence De La Gare",
+    hotelName: "Leone Hotel (Venice)",
     googleMapsUrl: "https://maps.google.com/?q=Burano+Venice"
   },
   {
@@ -764,7 +764,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Grom+Gelateria+Florence"
       }
     ],
-    hotelName: "Residence De La Gare (Florence)",
+    hotelName: "Apollo Guest House (Florence)",
     googleMapsUrl: "https://maps.google.com/?q=Uffizi+Gallery+Florence"
   },
   {
@@ -893,7 +893,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Florence"
       }
     ],
-    hotelName: "Residence De La Gare (Florence)",
+    hotelName: "Apollo Guest House (Florence)",
     googleMapsUrl: "https://maps.google.com/?q=Accademia+Gallery+Florence"
   },
   {
@@ -996,7 +996,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hosteria+del+Bricco+Florence"
       }
     ],
-    hotelName: "Residence De La Gare (Florence)",
+    hotelName: "Apollo Guest House (Florence)",
     googleMapsUrl: "https://maps.google.com/?q=Piazzale+Michelangelo+Florence"
   },
   {
@@ -1528,6 +1528,88 @@ export const PRACTICAL_LINKS: PracticalLinkItem[] = [
 ];
 
 /**
+ * 13 日行程實際入住的 5 間飯店，依入住順序排列，合計 12 晚。
+ * 房費為此處的唯一來源，住宿類的花費明細由這份資料產生，不另外複製一份金額。
+ */
+export const HOTELS: HotelStay[] = [
+  {
+    id: "antares",
+    name: "Hotel & Residence Antares",
+    nameZh: "安塔爾住宅酒店",
+    city: "塞爾瓦 Selva di Val Gardena",
+    region: "多洛米蒂",
+    dayFrom: 1,
+    dayTo: 2,
+    checkIn: "6/18",
+    checkOut: "6/20",
+    twd: 15976,
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Residence+Antares+Selva+di+Val+Gardena",
+    note: "多洛米蒂前兩晚據點，鄰近 Ciampinoi 纜車站，方便 Day 1 傍晚換 Gardena Card。"
+  },
+  {
+    id: "menardi",
+    name: "Hotel Menardi",
+    nameZh: "梅娜蒂酒店",
+    city: "科爾蒂納 Cortina d'Ampezzo",
+    region: "多洛米蒂",
+    dayFrom: 3,
+    dayTo: 4,
+    checkIn: "6/20",
+    checkOut: "6/22",
+    twd: 16962,
+    cityTaxTwd: 509,
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Menardi+Cortina+d%27Ampezzo",
+    note: "百年家族經營旅館，附設餐廳，是 Day 4 前進三尖峰 Auronzo 停車場的最佳前哨。"
+  },
+  {
+    id: "leone",
+    name: "Leone Hotel",
+    city: "威尼斯 Venice",
+    region: "威尼斯",
+    dayFrom: 5,
+    dayTo: 7,
+    checkIn: "6/22",
+    checkOut: "6/25",
+    twd: 20818,
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Leone+Hotel+Venice",
+    note: "Day 5 威尼斯還車後入住，連住三晚涵蓋本島核心景點與跳島行程。"
+  },
+  {
+    id: "apollo",
+    name: "Apollo Guest House",
+    city: "佛羅倫斯 Florence",
+    region: "托斯卡尼",
+    dayFrom: 8,
+    dayTo: 10,
+    checkIn: "6/25",
+    checkOut: "6/28",
+    twd: 20601,
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Apollo+Guest+House+Florence",
+    note: "連住三晚，Day 10 前往比薩半日遊後仍回此處，不需換宿。"
+  },
+  {
+    id: "delagare",
+    name: "Residence De La Gare",
+    city: "米蘭 Milan",
+    region: "倫巴底",
+    dayFrom: 11,
+    dayTo: 12,
+    checkIn: "6/28",
+    checkOut: "6/30",
+    twd: 9573,
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Residence+De+La+Gare+Milano",
+    note: "最後兩晚，Day 12 科莫湖一日遊往返與 Day 13 前往機場都靠車站機能。"
+  }
+];
+
+/** 入住晚數＝結束日 − 起始日 + 1。 */
+export const hotelNights = (hotel: HotelStay) => hotel.dayTo - hotel.dayFrom + 1;
+
+/** 花費明細用的房費項目標籤，與飯店分頁顯示的名稱維持一致。 */
+const hotelExpenseLabel = (hotel: HotelStay) =>
+  `${hotel.name}${hotel.nameZh ? ` ${hotel.nameZh}` : ""}（Day ${hotel.dayFrom}–${hotel.dayTo}，${hotelNights(hotel)} 晚）`;
+
+/**
  * 花費分類明細（不含購物）。所有 twd 金額皆為 2 人合計實付，
  * 分類總額、占比與每人平均一律於使用端由明細推算，不另存以免兩者失準。
  */
@@ -1566,14 +1648,15 @@ export const EXPENSE_BREAKDOWN: ExpenseCategory[] = [
     label: "住宿",
     note: "飯店／民宿、城市稅",
     items: [
-      { label: "Hotel & Residence Antares 安塔爾住宅酒店（Day 1–2，2 晚）", twd: 15976 },
-      { label: "Hotel Menardi 梅娜蒂酒店（Day 3–4，2 晚）", twd: 16962 },
-      { label: "Leone Hotel（Day 5–7，3 晚）", twd: 20818 },
-      { label: "Apollo Guest House（Day 8–10，3 晚）", twd: 20601 },
-      { label: "Residence De La Gare（Day 11–12，2 晚）", twd: 9573 },
+      // 房費直接取自 HOTELS，改飯店資料就會同步反映到花費統計
+      ...HOTELS.map((hotel) => ({ label: hotelExpenseLabel(hotel), twd: hotel.twd })),
+      // 這兩筆城市稅無法從帳目判斷屬於哪一間飯店，維持獨立列出
       { label: "城市稅", twd: 904, eur: 24.4 },
       { label: "城市稅", twd: 778, eur: 21.0 },
-      { label: "Hotel Menardi 城市稅", twd: 509 }
+      ...HOTELS.filter((hotel) => hotel.cityTaxTwd !== undefined).map((hotel) => ({
+        label: `${hotel.name} 城市稅`,
+        twd: hotel.cityTaxTwd as number
+      }))
     ]
   },
   {
