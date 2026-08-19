@@ -1423,6 +1423,21 @@ export const SPOTS_INFO: SpotInfo[] = [
       "Bentoteca Milano 預約創意料理",
       "⚠️ 服裝規定：進入米蘭大教堂不能穿短褲、露肩"
     ]
+  },
+  {
+    id: "lake-como",
+    name: "科莫湖",
+    englishName: "Lake Como / Lago di Como",
+    category: "LakeComo",
+    image: "/image/DSCF8118.JPG",
+    description: "阿爾卑斯山腳下的冰蝕湖，Y 字形湖岸散布瓦倫納、貝拉焦與科莫等小鎮，以湖光山色、彩色屋與別墅花園聞名，是米蘭出發最經典的一日遊。",
+    highlights: [
+      "瓦倫納 (Varenna)：湖畔情人步道與彩色小鎮，火車直達的入湖門戶",
+      "貝拉焦 (Bellagio)：位於 Y 字形分岔點的「科莫湖珍珠」，石階小巷與湖景並存",
+      "科莫 (Como)：科莫大教堂與湖濱散步，可搭快船從貝拉焦前往",
+      "午餐：Osteria Quatro Pass 湖畔義式料理"
+    ],
+    practicalTips: "米蘭中央車站搭火車約 1 小時抵達 Varenna-Esino 站，湖區小鎮之間靠渡輪往返。建議購買 Trenord「Treasures of Lake Como」套票，一次整合火車與船票，Day 12 實際花費為 2 人合計 NT$2,074 (€56.0)。從貝拉焦搭快船至科莫屬彈性行程，時間不夠可直接返回瓦倫納搭火車回米蘭。"
   }
 ];
 
@@ -1498,6 +1513,22 @@ export const PRACTICAL_LINKS: PracticalLinkItem[] = [
     url: "https://travelwithmiya.com/dolomites-road-trip/#%E2%9D%99_%E7%B1%B3%E8%98%AD%E6%A9%9F%E5%A0%B4_MXP_%E2%AD%A2_%E5%A4%9A%E6%B4%9B%E7%B1%B3%E8%92%82%E5%A5%A7%E8%92%82%E5%A1%9E%E4%BC%8A%EF%BC%9A%E8%87%AA%E9%A7%95%E7%B4%84_4_%E5%B0%8F%E6%99%82",
     description: "中文自駕攻略，連結直接定位到「米蘭機場 MXP ⭢ 多洛米蒂奧蒂塞伊：自駕約 4 小時」段落，含詳細路線地圖。",
     importantRule: "對應 Day 1 米蘭取車後前往 Selva 的長途拉車，可先預覽路線與休息點。"
+  },
+  {
+    id: "lake-como-pass",
+    title: "義大利國鐵 Trenord：科莫湖套票 (Treasures of Lake Como)",
+    category: "Pass",
+    url: "https://giteintreno.trenord.it/en/trains/lombardia/Dbo9xPuBXUzdEKwjGWDG/treasures-of-lake-como?categoryName=lake-trip&categoryUID=srSbzA0HRjB80j041Nul&permalink=lake-trip",
+    description: "Trenord 官方推出的科莫湖一日遊套票，整合米蘭往返的火車票與湖區渡輪船票，免去分段購票。",
+    importantRule: "對應 Day 12 米蘭 ➔ 瓦倫納 ➔ 貝拉焦 ➔ 科莫的湖區行程，實際花費為 2 人合計 NT$2,074 (€56.0)。"
+  },
+  {
+    id: "rolling-venice",
+    title: "Venezia Unica：Rolling Venice 青年卡與 ACTV 水上巴士套票",
+    category: "Pass",
+    url: "https://www.veneziaunica.it/en/rolling-venice",
+    description: "威尼斯官方票務網站的青年優惠方案，購卡後可用折扣價買 ACTV 水上巴士定期票，另含部分博物館與店家優惠。",
+    importantRule: "有年齡限制（青年卡性質），購買前請於官網確認適用年齡與當期票價。對應 Day 6–7 威尼斯本島與跳島交通，帳目中的 ACTV 3 日票為 2 人合計 NT$2,424 (€66.0)。"
   }
 ];
 
