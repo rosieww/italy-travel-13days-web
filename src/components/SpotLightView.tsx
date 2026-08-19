@@ -2,33 +2,63 @@ import React, { useState, useMemo } from 'react';
 import { SPOTS_INFO } from '../data/italyData';
 import { Search, Sparkles, ExternalLink, Camera, Video, AlertCircle, MapPin } from 'lucide-react';
 
+/**
+ * 分類的顯示名稱。篩選鈕本身由資料中實際出現的分類推導，
+ * 因此新增景點不需要回來改這個元件；此處查無對應時直接顯示原始分類名。
+ */
+const CATEGORY_LABELS: Record<string, string> = {
+  Dolomites: '🏔️ 多洛米蒂 (Dolomites)',
+  Venice: '🛶 威尼斯 (Venice)',
+  Florence: '🎨 佛羅倫斯 (Florence)',
+  Pisa: '🗼 比薩 (Pisa)',
+  Milan: '🏰 米蘭 (Milan)',
+  LakeComo: '⛵ 科莫湖 (Lake Como)',
+};
+
 export const SpotLightView: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  const categories = [
-    { id: 'All', label: '全部景點' },
-    { id: 'Dolomites', label: '🏔️ 多洛米蒂 (Dolomites)' },
-    { id: 'Venice', label: '🛶 威尼斯 (Venice)' },
-    { id: 'Florence', label: '🎨 佛羅倫斯 (Florence)' },
-    { id: 'Milan', label: '🏰 米蘭 (Milan)' },
-  ];
-
-  const filteredSpots = useMemo(() => {
-    return SPOTS_INFO.filter((spot) => {
-      const matchesCategory = selectedCategory === 'All' || spot.category === selectedCategory;
-      const q = searchQuery.toLowerCase().trim();
-      if (!q) return matchesCategory;
-
-      const matchesQuery =
+  // 關鍵字先過濾一次，分類鈕的數量才會反映目前搜尋結果，而非永遠顯示總數
+  const searchMatched = useMemo(() => {
+    const q = searchQuery.toLowerCase().trim();
+    if (!q) return SPOTS_INFO;
+    return SPOTS_INFO.filter(
+      (spot) =>
         spot.name.toLowerCase().includes(q) ||
         spot.englishName.toLowerCase().includes(q) ||
         spot.description.toLowerCase().includes(q) ||
-        spot.highlights.some((h) => h.toLowerCase().includes(q));
+        spot.highlights.some((h) => h.toLowerCase().includes(q))
+    );
+  }, [searchQuery]);
 
-      return matchesCategory && matchesQuery;
+  // 依資料實際出現的分類建立篩選鈕，順序沿用 CATEGORY_LABELS，未知分類排在最後
+  const categories = useMemo(() => {
+    const order = Object.keys(CATEGORY_LABELS);
+    const present = Array.from(new Set(SPOTS_INFO.map((s) => s.category)));
+    present.sort((a, b) => {
+      const ia = order.indexOf(a);
+      const ib = order.indexOf(b);
+      return (ia === -1 ? order.length : ia) - (ib === -1 ? order.length : ib);
     });
-  }, [selectedCategory, searchQuery]);
+    return [
+      { id: 'All', label: '全部景點' },
+      ...present.map((id) => ({ id, label: CATEGORY_LABELS[id] ?? id })),
+    ];
+  }, []);
+
+  const countFor = (categoryId: string) =>
+    categoryId === 'All'
+      ? searchMatched.length
+      : searchMatched.filter((s) => s.category === categoryId).length;
+
+  const filteredSpots = useMemo(
+    () =>
+      selectedCategory === 'All'
+        ? searchMatched
+        : searchMatched.filter((spot) => spot.category === selectedCategory),
+    [searchMatched, selectedCategory]
+  );
 
   return (
     <div className="space-y-8 animate-fadeIn">
@@ -69,13 +99,21 @@ export const SpotLightView: React.FC = () => {
               key={cat.id}
               id={`spot-cat-${cat.id}`}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+              aria-pressed={selectedCategory === cat.id}
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
                 selectedCategory === cat.id
                   ? 'bg-amber-600 text-white shadow-md shadow-black/30'
                   : 'bg-[#351e14]/70 text-amber-200/80 hover:bg-amber-900/50 hover:text-amber-50'
               }`}
             >
-              {cat.label}
+              <span>{cat.label}</span>
+              <span
+                className={`font-mono tabular-nums text-[10px] ${
+                  selectedCategory === cat.id ? 'text-amber-100/90' : 'text-amber-200/50'
+                }`}
+              >
+                {countFor(cat.id)}
+              </span>
             </button>
           ))}
         </div>
@@ -177,6 +215,23 @@ export const SpotLightView: React.FC = () => {
           </div>
         ))}
       </div>
+
+      {filteredSpots.length === 0 && (
+        <div className="text-center py-16 bg-white rounded-3xl border border-stone-200 p-8">
+          <p className="text-stone-500 font-medium text-sm">
+            找不到符合條件的景點，請嘗試切換其他分類或關鍵字。
+          </p>
+          <button
+            onClick={() => {
+              setSearchQuery('');
+              setSelectedCategory('All');
+            }}
+            className="mt-4 px-4 py-2 bg-amber-800 text-white rounded-xl text-xs font-bold cursor-pointer hover:bg-amber-900 transition-colors"
+          >
+            重置所有搜尋條件
+          </button>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,9 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { PRACTICAL_LINKS } from '../data/italyData';
 import { ExternalLink, ShieldAlert, Check, Copy } from 'lucide-react';
 
+/**
+ * 分類的顯示名稱。篩選鈕本身由資料中實際出現的分類推導，
+ * 因此新增一筆連結不需要回來改這個元件；此處查無對應時直接顯示原始分類名。
+ */
+const CATEGORY_LABELS: Record<string, string> = {
+  Parking: '🅿️ 停車預約',
+  CableCar: '🚡 纜車',
+  Webcam: '📷 即時鏡頭',
+  Pass: '🎟️ 通行證與套票',
+  Museum: '🏛️ 博物館門票',
+  Transport: '🚆 交通',
+  Reference: '📖 參考攻略',
+};
+
 export const PracticalLinksView: React.FC = () => {
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+
+  // 依資料實際出現的分類建立篩選鈕，順序沿用 CATEGORY_LABELS，未知分類排在最後
+  const categories = useMemo(() => {
+    const order = Object.keys(CATEGORY_LABELS);
+    const present = Array.from(new Set(PRACTICAL_LINKS.map((l) => l.category)));
+    present.sort((a, b) => {
+      const ia = order.indexOf(a);
+      const ib = order.indexOf(b);
+      return (ia === -1 ? order.length : ia) - (ib === -1 ? order.length : ib);
+    });
+    return [
+      { id: 'All', label: '全部連結', count: PRACTICAL_LINKS.length },
+      ...present.map((id) => ({
+        id,
+        label: CATEGORY_LABELS[id] ?? id,
+        count: PRACTICAL_LINKS.filter((l) => l.category === id).length,
+      })),
+    ];
+  }, []);
+
+  const filteredLinks = useMemo(
+    () =>
+      selectedCategory === 'All'
+        ? PRACTICAL_LINKS
+        : PRACTICAL_LINKS.filter((l) => l.category === selectedCategory),
+    [selectedCategory]
+  );
 
   const handleCopyLink = (id: string, url: string) => {
     navigator.clipboard.writeText(url);
@@ -26,12 +68,38 @@ export const PracticalLinksView: React.FC = () => {
           <p className="text-amber-200/90 text-xs sm:text-sm max-w-2xl leading-relaxed">
             收錄休斯高原 P2 預約、Selva 換卡窗口、Sassolevante Webcam與熱門預約門票通道。
           </p>
+
+          {/* Category Tabs */}
+          <div className="flex flex-wrap gap-2 pt-3 border-t border-amber-800/40">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                id={`link-cat-${cat.id}`}
+                onClick={() => setSelectedCategory(cat.id)}
+                aria-pressed={selectedCategory === cat.id}
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                  selectedCategory === cat.id
+                    ? 'bg-amber-600 text-white shadow-md shadow-black/30'
+                    : 'bg-[#351e14]/70 text-amber-200/80 hover:bg-amber-900/50 hover:text-amber-50'
+                }`}
+              >
+                <span>{cat.label}</span>
+                <span
+                  className={`font-mono tabular-nums text-[10px] ${
+                    selectedCategory === cat.id ? 'text-amber-100/90' : 'text-amber-200/50'
+                  }`}
+                >
+                  {cat.count}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Links Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {PRACTICAL_LINKS.map((link) => (
+        {filteredLinks.map((link) => (
           <div
             key={link.id}
             id={`link-card-${link.id}`}
@@ -43,8 +111,8 @@ export const PracticalLinksView: React.FC = () => {
                   <span className="w-2 h-2 rounded-full bg-amber-700 shrink-0" />
                   {link.title}
                 </h3>
-                <span className="text-[10px] font-extrabold px-2.5 py-1 rounded-md bg-stone-100 text-stone-600 uppercase tracking-wide shrink-0">
-                  {link.category}
+                <span className="text-[10px] font-extrabold px-2.5 py-1 rounded-md bg-stone-100 text-stone-600 tracking-wide shrink-0">
+                  {CATEGORY_LABELS[link.category] ?? link.category}
                 </span>
               </div>
 
