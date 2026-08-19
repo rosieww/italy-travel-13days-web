@@ -3,6 +3,9 @@ import { MASTER_14_DAYS } from '../data/italyData';
 import { Search, MapPin, Hotel, Plane } from 'lucide-react';
 import { OverviewImage } from './OverviewImage';
 
+/** 總表只顯示到年月；完整日期仍保留在資料中，星期即由它推算而來。 */
+const yearMonth = (dateStr: string) => dateStr.split('/').slice(0, 2).join('/');
+
 export const Master14DayTable: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
 
@@ -75,8 +78,8 @@ export const Master14DayTable: React.FC = () => {
                           <span className="w-2 h-2 rounded-full bg-amber-700 shrink-0" title="多洛米蒂精華段" />
                         )}
                       </div>
-                      <div className="text-xs text-stone-500 font-sans mt-0.5">
-                        {row.dayOfWeek}
+                      <div className="text-xs text-stone-500 font-mono tabular-nums mt-0.5">
+                        {yearMonth(row.dateStr)}
                       </div>
                       {row.flightsOrTrains && (
                         <div className="mt-2 text-[10px] font-bold text-amber-900 bg-amber-100/70 p-1.5 rounded-md border border-amber-200/80">

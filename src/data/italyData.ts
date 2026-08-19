@@ -3,7 +3,7 @@ import { DayItineraryDetail, SpotInfo, PracticalLinkItem, Master14DayCell, Resta
 export const ITALY_12_DAYS: DayItineraryDetail[] = [
   {
     dayNum: 1,
-    dateStr: "",
+    dateStr: "2026/6",
     title: "Day 1｜米蘭 Milan ➔ 多洛米蒂 Dolomites",
     subtitle: "班機抵達、SIXT 取車、卡雷扎湖與 Gardena Card 兌換",
     heroImage: "/image/DSCF4319.webp",
@@ -96,7 +96,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
   },
   {
     dayNum: 2,
-    dateStr: "",
+    dateStr: "2026/6",
     title: "Day 2｜多洛米蒂 Dolomites (休斯高原 & 刀鋒山)",
     subtitle: "P2 停車管制、休斯高原、Seceda 刀鋒山與 Panorama 夕陽",
     heroImage: "/image/DSCF4912.webp",
@@ -159,7 +159,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
   },
   {
     dayNum: 3,
-    dateStr: "",
+    dateStr: "2026/6",
     title: "Day 3｜多洛米蒂 Dolomites (Sassolungo 長石山)",
     subtitle: "Sassolungo 長石山、Passo Sella 隘口與 Cortina 飯店 Check-in 晚餐",
     heroImage: "/image/DSCF5071.webp",
@@ -210,7 +210,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
   },
   {
     dayNum: 4,
-    dateStr: "",
+    dateStr: "2026/6",
     title: "Day 4｜三尖峰 Tre Cime & 魔戒線路",
     subtitle: "Auronzo 停車管制、魔戒懸崖觀景台、三尖峰環山線與 Cortina 晚宴",
     heroImage: "/image/DSCF5853.webp",
@@ -293,7 +293,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
   },
   {
     dayNum: 5,
-    dateStr: "",
+    dateStr: "2026/6",
     title: "Day 5｜布萊埃斯湖 ➔ 威尼斯 Venice",
     subtitle: "布萊埃斯湖晨光、威尼斯還車、Despar Teatro Italia 劇院超市與 TRATTORIA AL POGGIO",
     heroImage: "/image/DSCF6040.webp",
@@ -404,7 +404,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
   },
   {
     dayNum: 6,
-    dateStr: "",
+    dateStr: "2026/6",
     title: "Day 6｜威尼斯 Venice 核心景點與美食探秘",
     subtitle: "聖馬可廣場、Suso 與 Gallonetto 冰淇淋、I Tre Mercanti 提拉米蘇、Da Mamo 與雙夕陽",
     heroImage: "/image/DSCF6490.webp",
@@ -505,7 +505,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
   },
   {
     dayNum: 7,
-    dateStr: "",
+    dateStr: "2026/6",
     title: "Day 7｜威尼斯跳島 (Murano & Burano) & 大運河船遊",
     subtitle: "玻璃島、彩色島、Trattoria Bar Pontini 午餐、Acqua e Mais 炸海鮮與 1 號水上巴士",
     heroImage: "/image/DSCF6700.webp",
@@ -631,7 +631,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
   },
   {
     dayNum: 8,
-    dateStr: "",
+    dateStr: "2026/6",
     title: "Day 8｜威尼斯 ➔ 佛羅倫斯 Florence",
     subtitle: "火車轉移、All’Antico Vinaio 三明治、烏菲茲美術館、Trattoria Zà Zà 大牛排與 GROM",
     heroImage: "/image/DSCF7135.webp",
@@ -755,7 +755,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
   },
   {
     dayNum: 9,
-    dateStr: "",
+    dateStr: "2026/6",
     title: "Day 9｜佛羅倫斯 Florence 藝術與奢華 (⚠️ 服裝規定)",
     subtitle: "中央市場、百花大教堂、Panini Toscani、老橋、La Strega Nocciola、SMN 修道院與學院美術館",
     heroImage: "/image/DSCF7274.webp",
@@ -884,7 +884,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
   },
   {
     dayNum: 10,
-    dateStr: "",
+    dateStr: "2026/6",
     title: "Day 10｜比薩 Pisa ➔ 佛羅倫斯 Florence",
     subtitle: "奇蹟廣場比薩斜塔、Sergio Gozzi 午餐、Hosteria del Bricco 與米開朗基羅廣場夜景",
     heroImage: "/image/DSCF7589.webp",
@@ -987,7 +987,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
   },
   {
     dayNum: 11,
-    dateStr: "",
+    dateStr: "2026/6",
     title: "Day 11｜佛羅倫斯 ➔ 米蘭 Milan (⚠️ 服裝規定)",
     subtitle: "最後的晚餐、Bentoteca Milano 午餐、米蘭大教堂、Chocolat 冰淇淋與 Sorbillo 炸披薩",
     heroImage: "/image/DSCF7837.webp",
@@ -1119,7 +1119,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
   },
   {
     dayNum: 12,
-    dateStr: "",
+    dateStr: "2026/6",
     title: "Day 12｜米蘭 ➔ 科莫湖 Lake Como ➔ 米蘭",
     subtitle: "瓦倫納 Varenna、貝拉焦 Bellagio、Osteria Quatro Pass 午餐、市區採買與麥當勞",
     heroImage: "/image/DSCF8118.webp",
@@ -1202,7 +1202,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
   },
   {
     dayNum: 13,
-    dateStr: "",
+    dateStr: "2026/6",
     title: "Day 13｜米蘭 Milan ✈️ 台灣 Taiwan",
     subtitle: "搭乘長榮航空 BR096 早班機啟程返航台灣",
     heroImage: "/image/DSCF5614.webp",
@@ -1297,7 +1297,6 @@ export const MASTER_14_DAYS: Master14DayCell[] = ITALY_12_DAYS.map((day) => {
   return {
     dayNum: day.dayNum,
     dateStr: day.dateStr || "",
-    dayOfWeek: `Day ${day.dayNum}`,
     cityRegion: day.title.replace(`Day ${day.dayNum}｜`, '').replace(`Day ${day.dayNum}：`, ''),
     morning: morningEv,
     afternoon: afternoonEv,
@@ -1545,8 +1544,6 @@ export const HOTELS: HotelStay[] = [
     region: "多洛米蒂",
     dayFrom: 1,
     dayTo: 2,
-    checkIn: "6/18",
-    checkOut: "6/20",
     twd: 15976,
     googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Residence+Antares+Selva+di+Val+Gardena",
     note: "多洛米蒂前兩晚據點，鄰近 Ciampinoi 纜車站，方便 Day 1 傍晚換 Gardena Card。"
@@ -1559,8 +1556,6 @@ export const HOTELS: HotelStay[] = [
     region: "多洛米蒂",
     dayFrom: 3,
     dayTo: 4,
-    checkIn: "6/20",
-    checkOut: "6/22",
     twd: 16962,
     cityTaxTwd: 509,
     googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Menardi+Cortina+d%27Ampezzo",
@@ -1573,8 +1568,6 @@ export const HOTELS: HotelStay[] = [
     region: "威尼斯",
     dayFrom: 5,
     dayTo: 7,
-    checkIn: "6/22",
-    checkOut: "6/25",
     twd: 20818,
     googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Leone+Hotel+Venice",
     note: "Day 5 威尼斯還車後入住，連住三晚涵蓋本島核心景點與跳島行程。"
@@ -1586,8 +1579,6 @@ export const HOTELS: HotelStay[] = [
     region: "托斯卡尼",
     dayFrom: 8,
     dayTo: 10,
-    checkIn: "6/25",
-    checkOut: "6/28",
     twd: 20601,
     googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Apollo+Guest+House+Florence",
     note: "連住三晚，Day 10 前往比薩半日遊後仍回此處，不需換宿。"
@@ -1599,8 +1590,6 @@ export const HOTELS: HotelStay[] = [
     region: "倫巴底",
     dayFrom: 11,
     dayTo: 12,
-    checkIn: "6/28",
-    checkOut: "6/30",
     twd: 9573,
     googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Residence+De+La+Gare+Milano",
     note: "最後兩晚，Day 12 科莫湖一日遊往返與 Day 13 前往機場都靠車站機能。"

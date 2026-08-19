@@ -1,6 +1,6 @@
 import React from 'react';
 import { HOTELS, hotelNights, EXPENSE_PARTY_SIZE } from '../data/italyData';
-import { Hotel, MapPin, CalendarDays, Moon, Wallet, ExternalLink, Info } from 'lucide-react';
+import { Hotel, MapPin, Moon, Wallet, ExternalLink, Info } from 'lucide-react';
 
 /** 一律四捨五入到整數元，與花費分頁的呈現一致。 */
 const twd = (n: number) => `NT$${Math.round(n).toLocaleString('en-US')}`;
@@ -94,12 +94,6 @@ export const HotelView: React.FC = () => {
                     <span className="inline-flex items-center gap-1.5">
                       <MapPin className="w-3.5 h-3.5 text-amber-700 shrink-0" />
                       <span>{hotel.city}</span>
-                    </span>
-                    <span className="inline-flex items-center gap-1.5">
-                      <CalendarDays className="w-3.5 h-3.5 text-amber-700 shrink-0" />
-                      <span className="font-mono tabular-nums">
-                        {hotel.checkIn} 入住 → {hotel.checkOut} 退房
-                      </span>
                     </span>
                   </div>
 
