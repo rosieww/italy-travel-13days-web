@@ -35,7 +35,8 @@ export interface DayItineraryDetail {
   heroImage: string;
   overview: string;
   timeline: TimeSlotEvent[];
-  keyRules: string[];
+  /** 當日重要規則；部分日期沒有需要特別提醒的事項 */
+  keyRules?: string[];
   restaurantsAndShops: string[];
   restaurantsList?: RestaurantItem[];
   hotelName?: string;

@@ -32,9 +32,9 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         tag: "景觀公路"
       },
       {
-        time: "傍晚 (17:00前)",
+        time: "傍晚",
         title: "Selva – Ciampinoi 換取 Gardena Card 實體卡",
-        detail: "須於 17:00 前抵達服務窗口，出示憑證兌換實體 Pass，並與櫃檯確認次日開始生效。",
+        detail: "纜車服務中心有機器可以直接取票，不需透過人工櫃檯。",
         location: "Ciampinoi 纜車服務中心",
         tag: "票券兌換",
         isKeyMilestone: true,
@@ -50,7 +50,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       {
         time: "晚上",
         title: "晚餐：🍕 Pizzeria Restaurant L Ciamin",
-        detail: "品嚐現烤經典義式窯烤披薩與道地南提洛高山料理，為明日健行補足熱量。",
+        detail: "品嚐現烤經典義式窯烤披薩與道地南提洛高山料理。",
         location: "Pizzeria Restaurant L Ciamin",
         tag: "特色美食",
         restaurantInfo: {
@@ -65,9 +65,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       }
     ],
     keyRules: [
-      "SIXT 取車必須同時出示：台灣本國駕照正本 + 國際駕照 (IDP)。",
-      "Selva – Ciampinoi 換卡櫃檯營業至 17:00，請務必嚴格控管車程時間。",
-      "現場換卡時務必向工作人員確認：Gardena Card 為次日開始生效。"
+      "SIXT 取車必須同時出示：台灣本國駕照正本 + 國際駕照。",
     ],
     restaurantsAndShops: [
       "Supermarket Valgardena Center DESPAR",
@@ -102,12 +100,12 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     title: "Day 2｜多洛米蒂 Dolomites (休斯高原 & 刀鋒山)",
     subtitle: "P2 停車管制、休斯高原、Seceda 刀鋒山與 Panorama 夕陽",
     heroImage: "/image/DSCF4912.webp",
-    overview: "精華健行日！須於 08:30 前抵達並停妥 Compatsch P2 停車場，漫步於休斯高原 (Alpe di Siusi)。下午搭乘纜車登頂震撼的刀鋒山 (Seceda)（纜車 17:30 關閉），並在 Ortisei 小鎮散步。傍晚前往 Panorama Alpe Siusi 看夕陽（纜車 18:00 關閉，來回約 2 小時，需帶頭燈與厚外套）。",
+    overview: "精華健行日！於 08:30 前抵達並停妥 Compatsch P2 停車場 (若有變動請依官方公告為準)，漫步於休斯高原 (Alpe di Siusi)。下午搭乘纜車登頂震撼的刀鋒山 (Seceda)（纜車 17:30 關閉），並在 Ortisei 小鎮散步。傍晚前往 Panorama Alpe Siusi 看夕陽（纜車 18:00 關閉，來回約 2 小時，需帶頭燈與厚外套）。",
     timeline: [
       {
-        time: "上午 (08:30前)",
-        title: "停 P2 停車場",
-        detail: "須於 08:30 前駛入停妥 Compatsch P2 停車場，避開日間道路管制。",
+        time: "上午",
+        title: "Compatsch P2 停車場",
+        detail: "08:30 前駛入停妥 Compatsch P2 停車場。",
         location: "Compatsch P2 停車場",
         tag: "關鍵管制",
         isKeyMilestone: true
@@ -216,12 +214,12 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     title: "Day 4｜三尖峰 Tre Cime & 魔戒線路",
     subtitle: "Auronzo 停車管制、魔戒懸崖觀景台、三尖峰環山線與 Cortina 晚宴",
     heroImage: "/image/DSCF5853.webp",
-    overview: "根據預約的時間，我們是約 06:30 過後通過閘門進入 Auronzo 山屋停車場 (可以晚到，但需要在預約時間起算的12小時內離開)。上午先前往魔戒線路 (Cadini di Misurina Panoramic Viewpoint via Auronzo Hut)（約 2 小時）與 Vista Panoramica Tre Cime Lavaredo。下午展開三尖峰環山線路健行（約 4 小時）。結束後離開停車場，晚上前往 Cortina 享用 La Tavernetta di Cortina 晚餐。",
+    overview: "06:30 過後通過閘門進入 Auronzo 山屋停車場。上午先前往魔戒線路 (Cadini di Misurina Panoramic Viewpoint via Auronzo Hut)（約 2 小時）與 Vista Panoramica Tre Cime Lavaredo。下午展開三尖峰環山線路健行（約 4 小時）。結束後離開停車場，晚上前往 Cortina 享用 La Tavernetta di Cortina 晚餐。",
     timeline: [
       {
         time: "早晨 (06:30)",
         title: "進入 Auronzo 停車場",
-        detail: "根據預約的時間，我們是約 06:30 過後通過閘門進入 Auronzo 山屋停車場 (可以晚到，但需要在預約時間起算的12小時內離開)。",
+        detail: "根據預約的時間，06:30 過後通過閘門進入 Auronzo 山屋停車場，可以超過預約時間進入，但需要在預約時間起算的12小時內離開。",
         location: "Rifugio Auronzo 停車場",
         tag: "關鍵管制",
         isKeyMilestone: true
@@ -244,7 +242,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       {
         time: "下午",
         title: "三尖峰環山線路健行（約 4 小時）",
-        detail: "三尖峰經典大環線 (Trail 101/102/105)：Auronzo ➔ Lavaredo ➔ Locatelli ➔ Langalm。",
+        detail: "三尖峰經典大環線 (Trail 101/102/105)：Auronzo ➔ Lavaredo ➔ Locatelli ➔ Langalm。沿途山屋都設有廁所，記得準備 1 歐元零錢。",
         location: "Tre Cime di Lavaredo",
         tag: "核心大縱走"
       },
@@ -273,7 +271,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       }
     ],
     keyRules: [
-      "根據預約的時間，我們是約 06:30 過後通過閘門進入 Auronzo 山屋停車場 (可以晚到，但需要在預約時間起算的12小時內離開)。",
+      "根據預約時間通過閘門進入 Auronzo 山屋停車場，可以超過預約時間進入，但需要在預約時間起算的12小時內離開。",
       "Cadini Viewpoint 懸崖兩側極深，強風或地面濕滑時請注意安全。"
     ],
     restaurantsAndShops: [
@@ -433,7 +431,6 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
           city: "Venice",
           name: "Da Mamo",
           type: "午餐",
-          note: "超高評價義式餐館，建議提前預約",
           googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Trattoria+Da+Mamo+Venice"
         }
       },
@@ -457,18 +454,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         detail: "於 Baia del re 欣賞第一道夕陽金黃餘暉。",
         location: "Baia del re",
         tag: "第一夕陽點"
-      },
-      {
-        time: "晚上",
-        title: "學院橋 (Ponte dell'Accademia) 硬壤區看夕陽",
-        detail: "於學院橋木橋上俯瞰大運河與安康聖母教堂的經典落日夜景。",
-        location: "Ponte dell'Accademia",
-        tag: "經典夕陽點",
-        isKeyMilestone: true
       }
-    ],
-    keyRules: [
-      "Da Mamo 與 I Tre Mercanti 午後人潮較多，可稍微避開尖峰時段。"
     ],
     restaurantsAndShops: [
       "Da Mamo",
@@ -1026,7 +1012,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       {
         time: "下午",
         title: "午餐：🍽️ Bentoteca Milano（預約）",
-        detail: "米蘭超紅的現代日義融合餐館，享用熟成魚生與自然酒。",
+        detail: "米蘭超紅的現代日義融合餐館。",
         location: "Bentoteca Milano",
         tag: "預約名店",
         isKeyMilestone: true,
@@ -1173,26 +1159,24 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       },
       {
         time: "下午",
+        title: "(視情況) 搭快船至科莫 Como & 科莫大教堂",
+        detail: "時間有餘裕時，可從貝拉焦搭快船前往科莫 (Como)，參觀科莫大教堂並於小鎮散步；否則直接返回瓦倫納搭火車回米蘭。",
+        location: "Como",
+        tag: "彈性加碼"
+      },
+      {
+        time: "下午",
         title: "搭火車返回米蘭 & 市區逛街 (L'Erbolario, KIKO)",
-        detail: "搭火車返回米蘭，採買 L'Erbolario 蕾莉歐保養品、KIKO 彩妝與時尚紀念品。",
+        detail: "搭火車返回米蘭，採買 L'Erbolario 蕾莉歐保養品、KIKO 彩妝與紀念品，KIKO 在米蘭大教堂的分店可以刻字當紀念。",
         location: "米蘭市區購物街",
         tag: "購物採買"
       },
       {
         time: "晚上",
         title: "晚餐：🍽️ 麥當勞 (Milan McDonalds)",
-        detail: "享用輕鬆迅速的義大利麥當勞美饌，收拾整理行李準備明日返台航班。",
+        detail: "享用輕鬆迅速的義大利麥當勞，收拾整理行李準備明日返台航班。",
         location: "Milan McDonalds",
         tag: "速食晚餐",
-        restaurantInfo: {
-          id: "r12-mcdonalds",
-          dayNum: 12,
-          city: "Milan",
-          name: "麥當勞 (Milan McDonalds)",
-          type: "晚餐",
-          note: "米蘭市中心迅速輕鬆美味晚餐",
-          googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=McDonalds+Milan+Centrale"
-        }
       }
     ],
     keyRules: [
@@ -1200,8 +1184,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       "返程火車班次密集，請留意離站時間。"
     ],
     restaurantsAndShops: [
-      "Osteria Quatro Pass",
-      "麥當勞 (Milan McDonalds)"
+      "Osteria Quatro Pass"
     ],
     restaurantsList: [
       {
@@ -1212,15 +1195,6 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         type: "午餐",
         note: "Varenna 溫馨風格湖畔小館",
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Osteria+Quatro+Pass+Varenna"
-      },
-      {
-        id: "r12-mcdonalds",
-        dayNum: 12,
-        city: "Milan",
-        name: "麥當勞 (Milan McDonalds)",
-        type: "晚餐",
-        note: "米蘭輕鬆速食晚餐",
-        googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=McDonalds+Milan+Centrale"
       }
     ],
     hotelName: "Residence De La Gare (Milano)",
@@ -1245,7 +1219,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       {
         time: "上午",
         title: "長榮櫃檯 Check-in 報到 & 海關退稅 (Tax Free)",
-        detail: "於長榮航空櫃檯辦理行李託運與登機證領取，憑購物發票與退稅單至海關櫃檯完成蓋章退稅。",
+        detail: "於長榮航空櫃檯辦理行李託運與登機證領取，憑購物發票與退稅單至海關櫃檯完成退稅。",
         location: "MXP T1 報到與退稅大廳",
         tag: "退稅登機",
         isKeyMilestone: true
@@ -1409,7 +1383,7 @@ export const SPOTS_INFO: SpotInfo[] = [
       "魔戒線路 Cadini di Misurina 懸崖 Viewpoint",
       "約 06:30 過後通過閘門進入 Auronzo 山屋停車場"
     ],
-    practicalTips: "根據預約的時間，我們是約 06:30 過後通過閘門進入 Auronzo 山屋停車場。(可以晚到，但需要在預約時間起算的12小時內離開)"
+    practicalTips: "遵照預約時間通過閘門進入 Auronzo 山屋停車場，可以超過預約時間進入，但需要在預約時間起算的12小時內離開。"
   },
   {
     id: "venice",
@@ -1458,8 +1432,8 @@ export const PRACTICAL_LINKS: PracticalLinkItem[] = [
     title: "休斯高原 P2 停車場預約系統",
     category: "Parking",
     url: "https://www.seiseralm.it/it/info-e-service/mobilita/accesso-all-alpe-di-siusi/prenotazione-parcheggio-alpe-di-siusi.html",
-    description: "休斯高原 Compatsch P2 停車場官方預約通道。須於 08:30 前抵達或提前預約。",
-    importantRule: "Day 2 須於 08:30 前停妥 P2。"
+    description: "休斯高原 Compatsch P2 停車場官方預約通道。",
+    importantRule: "預約情況請依官方公告為準。"
   },
   {
     id: "gardena-card-info",
@@ -1467,7 +1441,7 @@ export const PRACTICAL_LINKS: PracticalLinkItem[] = [
     category: "Pass",
     url: "https://www.gardenacard.com/",
     description: "涵蓋 Val Gardena 區域內纜車通行證。",
-    importantRule: "Day 1 須於 17:00 前至 Selva – Ciampinoi 換實體卡，確認次日生效。"
+    importantRule: "Day 1 至 Selva – Ciampinoi TICKET BOX 換已線上購票的實體卡 (注意：線上購票無法退款，也可現場購買)。"
   },
   {
     id: "auronzo-tre-cime",
@@ -1475,7 +1449,7 @@ export const PRACTICAL_LINKS: PracticalLinkItem[] = [
     category: "Parking",
     url: "https://www.auronzomisurina.it/",
     description: "通往三尖峰與魔戒線路起點 Auronzo 山屋的高山停車場資訊。",
-    importantRule: "Day 4 根據預約的時間，約 06:30 過後通過閘門進入 Auronzo 山屋停車場 (可以晚到，但需要在預約時間起算的12小時內離開)。"
+    importantRule: "Day 4 遵照預約時間通過閘門進入 Auronzo 山屋停車場，可以超過預約時間後進入，但需要在預約時間起算的12小時內離開。"
   },
   {
     id: "valgardena-webcams",
@@ -1708,7 +1682,7 @@ export const EXPENSE_BREAKDOWN: ExpenseCategory[] = [
       { label: "Gelato", twd: 164 },
       { label: "麥當勞", twd: 185, eur: 5.0 },
       { label: "超市", twd: 1072, eur: 28.95 },
-      { label: "omakase", twd: 7730, eur: 212.0 },
+      { label: "Omakase", twd: 7730, eur: 212.0 },
       { label: "星巴克早餐", twd: 314 },
       { label: "午餐", twd: 1963, eur: 53.0 },
       { label: "麥當勞", twd: 635, eur: 17.15 },
