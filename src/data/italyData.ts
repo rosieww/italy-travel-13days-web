@@ -407,8 +407,8 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     dateStr: "",
     title: "Day 6｜威尼斯 Venice 核心景點與美食探秘",
     subtitle: "聖馬可廣場、Suso 與 Gallonetto 冰淇淋、I Tre Mercanti 提拉米蘇、Da Mamo 與雙夕陽",
-    heroImage: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=1200&q=80",
-    overview: "上午探索聖馬可廣場、聖馬可大教堂、總督宮與歎息橋。午餐於 Da Mamo 享用精緻義餐。下午品嚐 Suso 與 Gelateria Gallonetto 極品冰淇淋，以及 I Tre Mercanti 的現做提拉米蘇 (Tiramisù)，並於里阿爾托橋散步。傍晚先後至 Baia del re 與學院橋（硬壤区 Dorsoduro）捕捉威尼斯絕美落日。",
+    heroImage: "/image/DSCF6490.JPG",
+    overview: "上午探索聖馬可廣場、聖馬可大教堂、總督宮與歎息橋。午餐於 Da Mamo 享用精緻義餐。下午品嚐 Suso 與 Gelateria Gallonetto 極品冰淇淋，以及 I Tre Mercanti 的現做提拉米蘇 (Tiramisù)，並於里阿爾托橋散步。傍晚先後至 Baia del re 與學院橋捕捉威尼斯絕美落日。",
     timeline: [
       {
         time: "上午",
@@ -508,7 +508,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     dateStr: "",
     title: "Day 7｜威尼斯跳島 (Murano & Burano) & 大運河船遊",
     subtitle: "玻璃島、彩色島、Trattoria Bar Pontini 午餐、Acqua e Mais 炸海鮮與 1 號水上巴士",
-    heroImage: "https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80",
+    heroImage: "/image/DSCF6700.JPG",
     overview: "上午搭水上巴士展開跳島：Murano 玻璃島欣賞吹玻璃工藝，Burano 彩色島拍攝繽紛彩虹小屋。下午返主島於 Trattoria Bar Pontini 享用海鮮麵午餐，二訪 Gelateria Gallonetto 冰淇淋，散步至沈船書店 (Libreria Acqua Alta) 並品嚐 Acqua e Mais 現炸海鮮。搭乘 1 號水上巴士悠閒巡遊大運河，傍晚於學院橋看夕陽。",
     timeline: [
       {
@@ -634,7 +634,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     dateStr: "",
     title: "Day 8｜威尼斯 ➔ 佛羅倫斯 Florence",
     subtitle: "火車轉移、All’Antico Vinaio 三明治、烏菲茲美術館、Trattoria Zà Zà 大牛排與 GROM",
-    heroImage: "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=1200&q=80",
+    heroImage: "/image/DSCF7135.JPG",
     overview: "上午搭乘高鐵前往佛羅倫斯，飯店寄放行李。午餐排隊品嚐 All’Antico Vinaio 經典巨型帕尼尼。下午參觀烏菲茲美術館 (Uffizi Gallery, 預約)，順遊野豬噴泉、領主廣場、傭兵涼廊與 Giunti Odeon 影城劇院。晚上於預約名店 Trattoria Zà Zà 享用道地托斯卡尼丁骨大牛排，並品嚐 GROM 冰淇淋。",
     timeline: [
       {
@@ -758,7 +758,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     dateStr: "",
     title: "Day 9｜佛羅倫斯 Florence 藝術與奢華 (⚠️ 服裝規定)",
     subtitle: "中央市場、百花大教堂、Panini Toscani、老橋、La Strega Nocciola、SMN 修道院與學院美術館",
-    heroImage: "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=1200&q=80",
+    heroImage: "/image/DSCF7274.JPG",
     overview: "⚠️ 服裝警訊：進入聖母百花大教堂不能穿短褲、露肩！上午造訪中央市場與聖母百花大教堂。午餐品嚐 Panini Toscani 客製化三明治。下午至老橋散步、品嚐 La Strega Nocciola 榛果冰淇淋、逛 SMN 百年修道院香水坊與參觀學院美術館 (看大衛像, 預約)。晚上於中央市場美食廣場享用多樣化晚餐。",
     timeline: [
       {
@@ -887,7 +887,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     dateStr: "",
     title: "Day 10｜比薩 Pisa ➔ 佛羅倫斯 Florence",
     subtitle: "奇蹟廣場比薩斜塔、Sergio Gozzi 午餐、Hosteria del Bricco 與米開朗基羅廣場夜景",
-    heroImage: "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=1200&q=80",
+    heroImage: "/image/DSCF7589.JPG",
     overview: "上午搭乘火車前往比薩半日遊，遊覽奇蹟廣場與比薩斜塔。下午搭乘火車返抵佛羅倫斯（車程約 1 小時），午餐於老字號 Trattoria Sergio Gozzi 享用。午後至共和廣場逛街購物與老橋散步。晚上於 Hosteria del Bricco 享用精緻晚餐，隨後前往米開朗基羅廣場看夕陽與俯瞰全城璀璨夜景。",
     timeline: [
       {
@@ -990,7 +990,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     dateStr: "",
     title: "Day 11｜佛羅倫斯 ➔ 米蘭 Milan (⚠️ 服裝規定)",
     subtitle: "最後的晚餐、Bentoteca Milano 午餐、米蘭大教堂、Chocolat 冰淇淋與 Sorbillo 炸披薩",
-    heroImage: "https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=1200&q=80",
+    heroImage: "/image/DSCF7837.JPG",
     overview: "⚠️ 服裝警訊：進入米蘭大教堂不能穿短褲、露肩！上午搭乘火車前往米蘭 Check-in，參觀達文西名作《最後的晚餐》(預約須提前完成取票)。午餐於預約名店 Bentoteca Milano 享用日義結合創意料理。下午登頂米蘭大教堂並逛埃馬努埃萊二世拱廊。傍晚品嚐 Chocolat Milano 巧克力冰淇淋，晚餐享用 Zia Esterina Sorbillo 包餡炸披薩。",
     timeline: [
       {
@@ -1122,7 +1122,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     dateStr: "",
     title: "Day 12｜米蘭 ➔ 科莫湖 Lake Como ➔ 米蘭",
     subtitle: "瓦倫納 Varenna、貝拉焦 Bellagio、Osteria Quatro Pass 午餐、市區採買與麥當勞",
-    heroImage: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
+    heroImage: "/image/DSCF8118.JPG",
     overview: "上午由米蘭搭乘火車前往科莫湖東岸瓦倫納 (Varenna)，漫步於彩繪湖畔小鎮，搭船前往中心點珍珠貝拉焦 (Bellagio) 散步。下午返回瓦倫納，於 Osteria Quatro Pass 享用美味湖畔午餐。搭火車返回米蘭市區採買（L'Erbolario 蕾莉歐保養品、KIKO 彩妝等）。晚餐享用麥當勞，回到飯店整理行李，準備次日清晨前往機場返台。",
     timeline: [
       {
@@ -1205,7 +1205,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     dateStr: "",
     title: "Day 13｜米蘭 Milan ✈️ 台灣 Taiwan",
     subtitle: "搭乘長榮航空 BR096 早班機啟程返航台灣",
-    heroImage: "https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=1200&q=80",
+    heroImage: "/image/DSCF5614.JPG",
     overview: "清晨自米蘭市區前往馬爾彭薩機場 (MXP)，辦理 Check-in 登機與 Tax Free 海關退稅手續。搭乘長榮航空 BR096 早上的班機返航台灣，為 13 天精彩的義大利全景與多洛米蒂壯遊劃下完美句點！",
     timeline: [
       {
