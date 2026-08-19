@@ -1,18 +1,40 @@
 import React, { useState, useMemo } from 'react';
 import { ITALY_12_DAYS } from '../data/italyData';
 import { Master14DayTable } from './Master14DayTable';
-import { RestaurantStars } from './StarRating';
 import { assetUrl } from '../assetUrl';
-import { MapPin, ShieldAlert, Sparkles, Clock, Utensils, Hotel, Navigation, Mountain, ArrowUpRight, ExternalLink } from 'lucide-react';
+import { MapPin, ShieldAlert, Sparkles, Clock, Utensils, Hotel, Navigation, Mountain, Landmark, ArrowUpRight, ExternalLink } from 'lucide-react';
+
+type SubView = 'master' | '5day' | 'italy';
+
+/** 兩個逐日檢視共用同一份日卡渲染，差異只在日期範圍與抬頭文案。 */
+const DAY_VIEWS = {
+  '5day': {
+    icon: Mountain,
+    badge: '多洛米蒂 5 日精華行程',
+    heading: '多洛米蒂 5 日詳細行程（Day 1 ➔ Day 5）',
+    intro:
+      '精選多洛米蒂 5 天核心絕景：米蘭取車出發、卡雷扎湖、休斯高原、Seceda 刀鋒山、Sassolungo 長石山、三尖峰魔戒步道與布萊埃斯湖，串聯阿爾卑斯山脈精華！',
+    inRange: (dayNum: number) => dayNum <= 5,
+  },
+  italy: {
+    icon: Landmark,
+    badge: '北義城市 8 日行程',
+    heading: '義大利城市逐日行程（Day 6 ➔ Day 13）',
+    intro:
+      '離開山區後的北義精華：威尼斯本島與跳島、佛羅倫斯的藝術與美食、比薩斜塔半日遊、米蘭大教堂與《最後的晚餐》、科莫湖一日遊，直到 BR096 返台。',
+    inRange: (dayNum: number) => dayNum >= 6,
+  },
+} as const;
 
 export const ItineraryView: React.FC = () => {
-  const [subView, setSubView] = useState<'master' | '5day'>('master');
+  const [subView, setSubView] = useState<SubView>('master');
 
-  const dolomitesDays = useMemo(() => {
-    return ITALY_12_DAYS.filter((d) => d.dayNum <= 5);
-  }, []);
+  const dayView = subView === 'master' ? null : DAY_VIEWS[subView];
 
-  const filteredDays = dolomitesDays;
+  const filteredDays = useMemo(
+    () => (dayView ? ITALY_12_DAYS.filter((d) => dayView.inRange(d.dayNum)) : []),
+    [dayView]
+  );
 
   const scrollToDay = (dayNum: number) => {
     const el = document.getElementById(`day-section-${dayNum}`);
@@ -50,35 +72,48 @@ export const ItineraryView: React.FC = () => {
             }`}
           >
             <Clock className="w-4 h-4" />
-            <span>🏔️ 多洛米蒂 5 日精華逐日行程</span>
+            <span>🏔️ 多洛米蒂 Day 1–5 逐日行程</span>
+          </button>
+
+          <button
+            id="subview-italy-btn"
+            onClick={() => setSubView('italy')}
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer flex items-center gap-2 ${
+              subView === 'italy'
+                ? 'bg-amber-800 text-stone-100 shadow-md shadow-amber-950/20'
+                : 'text-stone-600 hover:text-stone-900'
+            }`}
+          >
+            <Landmark className="w-4 h-4" />
+            <span>🏛️ 義大利城市 Day 6–13 逐日行程</span>
           </button>
         </div>
 
       </div>
 
       {/* Main Content Render */}
-      {subView === 'master' ? (
-        <Master14DayTable />
-      ) : (
+      {subView === 'master' && <Master14DayTable />}
+
+      {dayView && (
         <div className="space-y-10">
-          {/* Continuous Flow Header Card for Dolomites 5 Days */}
+          {/* Continuous Flow Header Card for the selected day range */}
           <div className="bg-gradient-to-br from-amber-50/90 via-orange-50/80 to-amber-100/60 text-amber-950 p-6 sm:p-8 rounded-3xl border border-amber-900/15 shadow-xs relative overflow-hidden">
             <div className="relative z-10 space-y-3">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 text-amber-900 text-xs font-bold rounded-full border border-amber-800/20">
-                <Mountain className="w-3.5 h-3.5 text-amber-800" />
-                <span>多洛米蒂 5 日精華行程</span>
+                <dayView.icon className="w-3.5 h-3.5 text-amber-800" />
+                <span>{dayView.badge}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-amber-950 tracking-tight">
-                多洛米蒂 5 日詳細行程（Day 1 ➔ Day 5）
+                {dayView.heading}
               </h2>
               <p className="text-stone-700 text-xs sm:text-sm max-w-3xl leading-relaxed font-medium">
-                精選多洛米蒂 5 天核心絕景：米蘭取車出發、卡雷扎湖、休斯高原、Seceda 刀鋒山、Sassolungo 長石山、三尖峰魔戒步道與布萊埃斯湖，串聯阿爾卑斯山脈精華！
+                {dayView.intro}
               </p>
 
               {/* Day Quick Jump Pill Buttons */}
               <div className="pt-2 border-t border-amber-900/10 flex flex-wrap gap-1.5">
                 <span className="text-xs font-bold text-amber-900 shrink-0 self-center mr-1">快速跳轉：</span>
-                {dolomitesDays.map((d) => (
+                {filteredDays.map((d) => (
                   <button
                     key={d.dayNum}
                     onClick={() => scrollToDay(d.dayNum)}
@@ -180,10 +215,6 @@ export const ItineraryView: React.FC = () => {
                                       {event.restaurantInfo.type}
                                     </span>
                                   </div>
-                                  <RestaurantStars
-                                    name={event.restaurantInfo.name}
-                                    className="mt-1"
-                                  />
                                   {event.restaurantInfo.note && (
                                     <p className="text-[11px] text-amber-800 mt-0.5">
                                       {event.restaurantInfo.note}
@@ -191,16 +222,18 @@ export const ItineraryView: React.FC = () => {
                                   )}
                                 </div>
 
-                                <a
-                                  href={event.restaurantInfo.googleMapsUrl}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 bg-amber-800 hover:bg-amber-900 text-white rounded-lg text-xs font-bold shrink-0 transition-colors"
-                                >
-                                  <MapPin className="w-3.5 h-3.5" />
-                                  <span>Google Maps 導航</span>
-                                  <ExternalLink className="w-3 h-3 ml-0.5" />
-                                </a>
+                                {event.restaurantInfo.googleMapsUrl && (
+                                  <a
+                                    href={event.restaurantInfo.googleMapsUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 bg-amber-800 hover:bg-amber-900 text-white rounded-lg text-xs font-bold shrink-0 transition-colors"
+                                  >
+                                    <MapPin className="w-3.5 h-3.5" />
+                                    <span>Google Maps 導航</span>
+                                    <ExternalLink className="w-3 h-3 ml-0.5" />
+                                  </a>
+                                )}
                               </div>
                             )}
 
@@ -229,24 +262,6 @@ export const ItineraryView: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Important Notices & Rules */}
-                  {day.keyRules && day.keyRules.length > 0 && (
-                    <div className="p-5 rounded-2xl bg-amber-50/80 border border-amber-200/80 space-y-2">
-                      <div className="font-extrabold text-sm text-amber-950 flex items-center gap-2">
-                        <ShieldAlert className="w-4 h-4 text-amber-700" />
-                        <span>關鍵管制與服裝/交通重要注意事項</span>
-                      </div>
-                      <ul className="space-y-1.5 pt-1">
-                        {day.keyRules.map((rule, rIdx) => (
-                          <li key={rIdx} className="text-xs sm:text-sm text-amber-900 flex items-start gap-2 leading-relaxed">
-                            <span className="w-1.5 h-1.5 rounded-full bg-amber-600 mt-1.5 shrink-0" />
-                            <span>{rule}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
                   {/* Footer Info: Restaurants with Google Maps & Hotel */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-stone-100">
                     {day.restaurantsList && day.restaurantsList.length > 0 && (
@@ -268,7 +283,6 @@ export const ItineraryView: React.FC = () => {
                                     {r.type}
                                   </span>
                                 </div>
-                                <RestaurantStars name={r.name} className="mt-1" />
                                 {r.note && (
                                   <p className="text-[10px] text-stone-500 truncate mt-0.5">
                                     {r.note}
@@ -276,16 +290,18 @@ export const ItineraryView: React.FC = () => {
                                 )}
                               </div>
 
-                              <a
-                                href={r.googleMapsUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-1.5 text-amber-800 hover:text-amber-950 hover:bg-amber-100/60 rounded-lg transition-colors shrink-0 flex items-center gap-1 text-[11px] font-extrabold"
-                                title="開啟 Google Maps"
-                              >
-                                <MapPin className="w-3.5 h-3.5" />
-                                <span className="hidden sm:inline">Maps</span>
-                              </a>
+                              {r.googleMapsUrl && (
+                                <a
+                                  href={r.googleMapsUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="p-1.5 text-amber-800 hover:text-amber-950 hover:bg-amber-100/60 rounded-lg transition-colors shrink-0 flex items-center gap-1 text-[11px] font-extrabold"
+                                  title="開啟 Google Maps"
+                                >
+                                  <MapPin className="w-3.5 h-3.5" />
+                                  <span className="hidden sm:inline">Maps</span>
+                                </a>
+                              )}
                             </li>
                           ))}
                         </ul>

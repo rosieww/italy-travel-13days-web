@@ -63,7 +63,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
             }`}
           >
             <Calendar className="w-4 h-4" />
-            <span>1. 行程表 (多洛米蒂 5 日 / 13 日總表)</span>
+            <span>1. 行程表 (13日總表 / 逐日行程)</span>
           </button>
 
           <button

@@ -163,7 +163,7 @@ export const RestaurantGuideView: React.FC = () => {
               </h3>
 
               {/* 推薦指數 — 未評分的補給點（超市、中央市場等）不顯示 */}
-              <RestaurantStars name={res.name} size="md" className="mt-1.5" />
+              <RestaurantStars name={res.name} size="md" className="mt-1.5" caption="個人評分" />
 
               {/* Note / Description */}
               {res.note && (

@@ -16,14 +16,23 @@ export const StarRating: React.FC<{
   note?: string;
   size?: 'sm' | 'md';
   className?: string;
-}> = ({ stars, note, size = 'sm', className = '' }) => {
+  /** 星星前方的說明文字，同時作為輔助技術朗讀的名稱 */
+  caption?: string;
+}> = ({ stars, note, size = 'sm', className = '', caption = '推薦指數' }) => {
   const value = Math.max(0, Math.min(MAX_STARS, stars));
   const starSize = size === 'md' ? 'w-4 h-4' : 'w-3.5 h-3.5';
-  const label = `推薦指數 ${value} 顆星，滿分 ${MAX_STARS} 顆星${note ? `（${note}）` : ''}`;
+  const label = `${caption} ${value} 顆星，滿分 ${MAX_STARS} 顆星${note ? `（${note}）` : ''}`;
 
   return (
     <span className={`inline-flex items-center gap-1.5 flex-wrap ${className}`} title={label}>
       <span className="sr-only">{label}</span>
+
+      <span
+        aria-hidden="true"
+        className={`font-bold text-stone-500 shrink-0 ${size === 'md' ? 'text-[11px]' : 'text-[10px]'}`}
+      >
+        {caption}
+      </span>
 
       <span className="relative inline-flex shrink-0" aria-hidden="true">
         <span className="flex">
@@ -75,8 +84,17 @@ export const RestaurantStars: React.FC<{
   name: string;
   size?: 'sm' | 'md';
   className?: string;
-}> = ({ name, size, className }) => {
+  caption?: string;
+}> = ({ name, size, className, caption }) => {
   const rating = getRestaurantRating(name);
   if (!rating) return null;
-  return <StarRating stars={rating.stars} note={rating.note} size={size} className={className} />;
+  return (
+    <StarRating
+      stars={rating.stars}
+      note={rating.note}
+      size={size}
+      className={className}
+      caption={caption}
+    />
+  );
 };
