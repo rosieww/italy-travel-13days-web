@@ -1433,7 +1433,7 @@ export const SPOTS_INFO: SpotInfo[] = [
     name: "科莫湖",
     englishName: "Lake Como / Lago di Como",
     category: "LakeComo",
-    image: "/image/DSCF8118.JPG",
+    image: "/image/DSCF8118.webp",
     description: "阿爾卑斯山腳下的冰蝕湖，Y 字形湖岸散布瓦倫納、貝拉焦與科莫等小鎮，以湖光山色、彩色屋與別墅花園聞名，是米蘭出發最經典的一日遊。",
     highlights: [
       "瓦倫納 (Varenna)：湖畔情人步道與彩色小鎮，火車直達的入湖門戶",
