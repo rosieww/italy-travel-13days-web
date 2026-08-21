@@ -60,6 +60,22 @@ export const SpotLightView: React.FC = () => {
     [searchMatched, selectedCategory]
   );
 
+  // 依地區分組排列，順序與篩選鈕一致；未列入標籤表的地區排在最後
+  const groupedByRegion = useMemo(() => {
+    const order = Object.keys(CATEGORY_LABELS);
+    const regions = Array.from(new Set(filteredSpots.map((s) => s.category)));
+    regions.sort((a, b) => {
+      const ia = order.indexOf(a);
+      const ib = order.indexOf(b);
+      return (ia === -1 ? order.length : ia) - (ib === -1 ? order.length : ib);
+    });
+    return regions.map((region) => ({
+      region,
+      label: CATEGORY_LABELS[region] ?? region,
+      spots: filteredSpots.filter((s) => s.category === region),
+    }));
+  }, [filteredSpots]);
+
   return (
     <div className="space-y-8 animate-fadeIn">
       {/* Title & Filter Header */}
@@ -119,9 +135,18 @@ export const SpotLightView: React.FC = () => {
         </div>
       </div>
 
-      {/* Spots Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {filteredSpots.map((spot) => (
+      {/* Spots grouped by region */}
+      {groupedByRegion.map((group) => (
+        <section key={group.region} className="space-y-4">
+          <h3 className="flex items-baseline gap-2 text-base sm:text-lg font-black text-stone-900 pb-2 border-b-2 border-amber-800/20">
+            <span>{group.label}</span>
+            <span className="font-mono tabular-nums text-xs font-bold text-stone-400">
+              {group.spots.length} 個景點
+            </span>
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {group.spots.map((spot) => (
           <div
             key={spot.id}
             id={`spot-card-${spot.id}`}
@@ -221,8 +246,10 @@ export const SpotLightView: React.FC = () => {
               </div>
             </div>
           </div>
-        ))}
-      </div>
+            ))}
+          </div>
+        </section>
+      ))}
 
       {filteredSpots.length === 0 && (
         <div className="text-center py-16 bg-white rounded-3xl border border-stone-200 p-8">

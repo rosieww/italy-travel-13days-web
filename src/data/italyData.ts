@@ -1343,34 +1343,6 @@ export const SPOTS_INFO: SpotInfo[] = [
     practicalTips: [" Seceda 纜車 17:30 關閉，請切勿錯過班次。"]
   },
   {
-    id: "val-di-funes",
-    name: "富內斯山谷",
-    englishName: "Val di Funes",
-    category: "Dolomites",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-    description: "富內斯山谷以牧場木屋、明亮綠地與背景一連串多洛米蒂石灰岩山峰著稱，是多洛米蒂最詩意的山谷之一。",
-    highlights: [
-      "經典拍照點：Santa Maddalena 教堂與教堂前的草地",
-      "山谷步道：短距離散步即可看到多洛米蒂連峰與教堂倒影",
-      "適合安排半日或下午行程，若有時間更能悠閒漫遊"
-    ],
-    practicalTips: ["此為備選景點，尚未安排在 13 日主行程中；若行程柔性充裕，可安排上午或下午前往，散步地形平緩且適合全家旅遊。"]
-  },
-  {
-    id: "santa-maddalena",
-    name: "聖馬達萊娜",
-    englishName: "Santa Maddalena",
-    category: "Dolomites",
-    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80",
-    description: "小山村聖馬達萊娜擁有典型多洛米蒂木屋與教堂景致，最廣為拍攝的是教堂前方的草坡與背後的 Odle 群峰。",
-    highlights: [
-      "必拍景點：教堂前方的草坡與 Odle 山峰背景",
-      "小鎮寧靜，適合短暫停留與散步拍照",
-      "可與富內斯山谷一同安排為半日或自由行備選行程"
-    ],
-    practicalTips: ["此為備選景點，尚未安排在 13 日主行程中；建議從 Ortisei 開車約 40 分鐘，或從 Val di Funes 延伸成一段順時針小環線。"]
-  },
-  {
     id: "tre-cime",
     name: "三尖峰 & 魔戒線路",
     englishName: "Tre Cime di Lavaredo & Cadini di Misurina",
@@ -1388,6 +1360,34 @@ export const SPOTS_INFO: SpotInfo[] = [
       "環山步道全程鋪的是白色碎石，晴天時整條路面會把陽光整個反射上來，比一般山徑刺眼許多，帽子與墨鏡建議直接戴著走，不要放在背包裡。",
       "登山杖與登山鞋依個人習慣準備即可。步道多為碎石緩坡，穿一般運動鞋也走得完，但碎石路面偏滑，長程下坡有登山杖會省力不少。"
     ]
+  },
+  {
+    id: "val-di-funes",
+    name: "富內斯山谷 (備選景點)",
+    englishName: "Val di Funes",
+    category: "Dolomites",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    description: "富內斯山谷以牧場木屋、明亮綠地與背景一連串多洛米蒂石灰岩山峰著稱，是多洛米蒂最詩意的山谷之一。",
+    highlights: [
+      "經典拍照點：Santa Maddalena 教堂與教堂前的草地",
+      "山谷步道：短距離散步即可看到多洛米蒂連峰與教堂倒影",
+      "適合安排半日或下午行程，若有時間更能悠閒漫遊"
+    ],
+    practicalTips: ["此為備選景點，尚未安排在 13 日主行程中；若行程柔性充裕，可安排上午或下午前往，散步地形平緩且適合全家旅遊。"]
+  },
+  {
+    id: "santa-maddalena",
+    name: "聖馬達萊娜 (備選景點)",
+    englishName: "Santa Maddalena",
+    category: "Dolomites",
+    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80",
+    description: "小山村聖馬達萊娜擁有典型多洛米蒂木屋與教堂景致，最廣為拍攝的是教堂前方的草坡與背後的 Odle 群峰。",
+    highlights: [
+      "必拍景點：教堂前方的草坡與 Odle 山峰背景",
+      "小鎮寧靜，適合短暫停留與散步拍照",
+      "可與富內斯山谷一同安排為半日或自由行備選行程"
+    ],
+    practicalTips: ["此為備選景點，尚未安排在 13 日主行程中；建議從 Ortisei 開車約 40 分鐘，或從 Val di Funes 延伸成一段順時針小環線。"]
   },
   {
     id: "venice",
