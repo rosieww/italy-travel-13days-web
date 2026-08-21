@@ -97,7 +97,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
   {
     dayNum: 2,
     dateStr: "2026/6",
-    title: "Day 2｜多洛米蒂 Dolomites (休斯高原 & 刀鋒山)",
+    title: "Day 2｜休斯高原 & 刀鋒山",
     subtitle: "P2 停車管制、休斯高原、Seceda 刀鋒山與 Panorama 夕陽",
     heroImage: "/image/DSCF4912.webp",
     overview: "精華健行日！於 08:30 前抵達並停妥 Compatsch P2 停車場 (若有變動請依官方公告為準)，漫步於休斯高原 (Alpe di Siusi)。下午搭乘纜車登頂震撼的刀鋒山 (Seceda)（纜車 17:30 關閉），並在 Ortisei 小鎮散步。傍晚前往 Panorama Alpe Siusi 看夕陽（纜車 18:00 關閉，來回約 2 小時，需帶頭燈與厚外套）。",
@@ -160,7 +160,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
   {
     dayNum: 3,
     dateStr: "2026/6",
-    title: "Day 3｜多洛米蒂 Dolomites (Sassolungo 長石山)",
+    title: "Day 3｜Sassolungo 長石山",
     subtitle: "Sassolungo 長石山、Passo Sella 隘口與 Cortina 飯店 Check-in 晚餐",
     heroImage: "/image/DSCF5071.webp",
     overview: "前往 Sassolungo (長石山) Passo Sella 隘口欣賞巨石奇峰與龐大白雲石峭壁。傍晚開車 90 分鐘前往 Cortina 飯店 Check-in，晚間於飯店附設餐廳點餐享用晚餐。",
@@ -509,7 +509,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     title: "Day 7｜威尼斯跳島 (Murano & Burano) & 大運河船遊",
     subtitle: "玻璃島、彩色島、Trattoria Bar Pontini 午餐、Acqua e Mais 炸海鮮與 1 號水上巴士",
     heroImage: "/image/DSCF6700.webp",
-    overview: "上午搭水上巴士展開跳島：Murano 玻璃島欣賞吹玻璃工藝，Burano 彩色島拍攝繽紛彩虹小屋。下午返主島於 Trattoria Bar Pontini 享用海鮮麵午餐，二訪 Gelateria Gallonetto 冰淇淋，散步至沈船書店 (Libreria Acqua Alta) 並品嚐 Acqua e Mais 現炸海鮮。搭乘 1 號水上巴士悠閒巡遊大運河，傍晚於學院橋看夕陽。",
+    overview: "上午搭水上巴士展開跳島：Murano 玻璃島欣賞吹玻璃工藝，Burano 彩色島拍攝繽紛彩虹小屋。下午返主島於 Trattoria Bar Pontini 享用海鮮麵午餐，二訪 Gelateria Gallonetto 冰淇淋，散步至沈船書店並品嚐 Acqua e Mais 現炸海鮮。搭乘 1 號水上巴士悠閒巡遊大運河，傍晚於學院橋看夕陽。",
     timeline: [
       {
         time: "上午",
@@ -756,10 +756,10 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
   {
     dayNum: 9,
     dateStr: "2026/6",
-    title: "Day 9｜佛羅倫斯 Florence 藝術與奢華 (⚠️ 服裝規定)",
-    subtitle: "中央市場、百花大教堂、Panini Toscani、老橋、La Strega Nocciola、SMN 修道院與學院美術館",
+    title: "Day 9｜佛羅倫斯 Florence 藝術與奢華",
+    subtitle: "中央市場、百花大教堂、Panini Toscani、La Strega Nocciola、SMN 修道院與學院美術館",
     heroImage: "/image/DSCF7274.webp",
-    overview: "⚠️ 服裝警訊：進入聖母百花大教堂不能穿短褲、露肩！上午造訪中央市場與聖母百花大教堂。午餐品嚐 Panini Toscani 客製化三明治。下午至老橋散步、品嚐 La Strega Nocciola 榛果冰淇淋、逛 SMN 百年修道院香水坊與參觀學院美術館 (看大衛像, 預約)。晚上於中央市場美食廣場享用多樣化晚餐。",
+    overview: "⚠️ 服裝警訊：進入聖母百花大教堂不能穿短褲、露肩！上午造訪中央市場與聖母百花大教堂。午餐品嚐 Panini Toscani 客製化三明治。下午品嚐 La Strega Nocciola 榛果冰淇淋、逛 SMN 百年修道院香水坊與參觀學院美術館 (看大衛像, 預約)。晚上於中央市場美食廣場享用多樣化晚餐。",
     timeline: [
       {
         time: "上午",
@@ -771,7 +771,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       {
         time: "上午",
         title: "聖母百花大教堂 (⚠️ 服裝規定)",
-        detail: "仰望布魯內萊斯基宏偉圓頂與哥德式大理石外牆。注意：不能穿短褲、露肩！",
+        detail: "免費參觀建議早點去排隊，仰望布魯內萊斯基宏偉圓頂與哥德式大理石外牆。注意：不能穿短褲、露肩！",
         location: "Duomo di Firenze",
         tag: "地標建築",
         isKeyMilestone: true
@@ -795,10 +795,10 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       },
       {
         time: "下午",
-        title: "老橋 (Ponte Vecchio) / 冰淇淋 🍦 La Strega Nocciola",
-        detail: "漫步阿諾河最老金飾老橋，並品嚐 La Strega Nocciola 的極致榛果冰淇淋。",
-        location: "Ponte Vecchio",
-        tag: "經典老橋",
+        title: "冰淇淋 🍦 La Strega Nocciola",
+        detail: "品嚐 La Strega Nocciola 的極致榛果冰淇淋。",
+        location: "La Strega Nocciola",
+        tag: "榛果冰淇淋",
         restaurantInfo: {
           id: "r9-strega",
           dayNum: 9,
@@ -988,7 +988,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
   {
     dayNum: 11,
     dateStr: "2026/6",
-    title: "Day 11｜佛羅倫斯 ➔ 米蘭 Milan (⚠️ 服裝規定)",
+    title: "Day 11｜佛羅倫斯 ➔ 米蘭 Milan",
     subtitle: "最後的晚餐、Bentoteca Milano 午餐、米蘭大教堂、Chocolat 冰淇淋與 Sorbillo 炸披薩",
     heroImage: "/image/DSCF7837.webp",
     overview: "⚠️ 服裝警訊：進入米蘭大教堂不能穿短褲、露肩！上午搭乘火車前往米蘭 Check-in，參觀達文西名作《最後的晚餐》(預約須提前完成取票)。午餐於預約名店 Bentoteca Milano 享用日義結合創意料理。下午登頂米蘭大教堂並逛埃馬努埃萊二世拱廊。傍晚品嚐 Chocolat Milano 巧克力冰淇淋，晚餐享用 Zia Esterina Sorbillo 包餡炸披薩。",
@@ -1320,7 +1320,7 @@ export const SPOTS_INFO: SpotInfo[] = [
       "ADLER Lodge ALPE：位置視野相當棒，可飽覽多洛米蒂山脈的壯麗景色。",
       "Sporthotel Sonne 交通：抵達 Sporthotel Sonne 之後，可選擇搭乘 Al sole Chairlift 滑雪吊椅直接回到上方的纜車站。"
     ],
-    practicalTips: "【滑雪吊椅間隔提醒】如果你是購買 Super Summer Card 或 Val Gardena Card，雖然時間內可以無限次免費搭乘，但是 Al sole Chairlift 滑雪吊椅不能立刻連續上下搭乘，系統會要求間隔 45 分鐘之後才能再次搭乘！",
+    practicalTips: ["【滑雪吊椅間隔提醒】如果你是購買 Super Summer Card 或 Val Gardena Card，雖然時間內可以無限次免費搭乘，但是 Al sole Chairlift 滑雪吊椅不能立刻連續上下搭乘，系統會要求間隔 45 分鐘之後才能再次搭乘！"],
     mapPoints: [
       {
         label: "巨型木椅 Panchina Gigante",
@@ -1340,7 +1340,7 @@ export const SPOTS_INFO: SpotInfo[] = [
       "纜車 17:30 關閉（請留意末班車）",
       "Ortisei - Val Gardena 小鎮散步"
     ],
-    practicalTips: " Seceda 纜車 17:30 關閉，請切勿錯過班次。"
+    practicalTips: [" Seceda 纜車 17:30 關閉，請切勿錯過班次。"]
   },
   {
     id: "val-di-funes",
@@ -1354,7 +1354,7 @@ export const SPOTS_INFO: SpotInfo[] = [
       "山谷步道：短距離散步即可看到多洛米蒂連峰與教堂倒影",
       "適合安排半日或下午行程，若有時間更能悠閒漫遊"
     ],
-    practicalTips: "此為備選景點，尚未安排在 13 日主行程中；若行程柔性充裕，可安排上午或下午前往，散步地形平緩且適合全家旅遊。"
+    practicalTips: ["此為備選景點，尚未安排在 13 日主行程中；若行程柔性充裕，可安排上午或下午前往，散步地形平緩且適合全家旅遊。"]
   },
   {
     id: "santa-maddalena",
@@ -1368,7 +1368,7 @@ export const SPOTS_INFO: SpotInfo[] = [
       "小鎮寧靜，適合短暫停留與散步拍照",
       "可與富內斯山谷一同安排為半日或自由行備選行程"
     ],
-    practicalTips: "此為備選景點，尚未安排在 13 日主行程中；建議從 Ortisei 開車約 40 分鐘，或從 Val di Funes 延伸成一段順時針小環線。"
+    practicalTips: ["此為備選景點，尚未安排在 13 日主行程中；建議從 Ortisei 開車約 40 分鐘，或從 Val di Funes 延伸成一段順時針小環線。"]
   },
   {
     id: "tre-cime",
@@ -1382,7 +1382,12 @@ export const SPOTS_INFO: SpotInfo[] = [
       "魔戒線路 Cadini di Misurina 懸崖 Viewpoint",
       "約 06:30 過後通過閘門進入 Auronzo 山屋停車場"
     ],
-    practicalTips: "遵照預約時間通過閘門進入 Auronzo 山屋停車場，可以超過預約時間進入，但需要在預約時間起算的12小時內離開。"
+    practicalTips: [
+      "遵照預約時間通過閘門進入 Auronzo 山屋停車場，可以超過預約時間進入，但需要在預約時間起算的 12 小時內離開。",
+      "臉書社團「多洛米蒂 Dolomites 自由行攻略」有較多第一手的停車預約、纜車與路況討論，出發前可加入參考，連結收錄於「預約與實用連結」分頁。",
+      "環山步道全程鋪的是白色碎石，晴天時整條路面會把陽光整個反射上來，比一般山徑刺眼許多，帽子與墨鏡建議直接戴著走，不要放在背包裡。",
+      "登山杖與登山鞋依個人習慣準備即可。步道多為碎石緩坡，穿一般運動鞋也走得完，但碎石路面偏滑，長程下坡有登山杖會省力不少。"
+    ]
   },
   {
     id: "venice",
@@ -1436,13 +1441,18 @@ export const SPOTS_INFO: SpotInfo[] = [
       "科莫 (Como)：科莫大教堂與湖濱散步，可搭快船從貝拉焦前往",
       "午餐：Osteria Quatro Pass 湖畔義式料理"
     ],
-    practicalTips: "米蘭中央車站搭火車約 1 小時抵達 Varenna-Esino 站，湖區小鎮之間靠渡輪往返。建議購買 Trenord「Treasures of Lake Como」套票，一次整合火車與船票，Day 12 實際花費為 2 人合計 NT$2,074 (€56.0)。從貝拉焦搭快船至科莫屬彈性行程，時間不夠可直接返回瓦倫納搭火車回米蘭。"
+    practicalTips: [
+      "米蘭中央車站搭火車約 1 小時抵達 Varenna-Esino 站，湖區小鎮之間全靠渡輪往返，沒有環湖鐵路。",
+      "建議購買 Trenord「Treasures of Lake Como」套票，一次整合火車與船票，免去分段購票；Day 12 實際花費為 2 人合計 NT$2,074 (€56.0)。",
+      "從貝拉焦搭快船至科莫屬彈性行程，時間不夠可直接返回瓦倫納搭火車回米蘭。"
+    ]
   }
 ];
 
 export const PRACTICAL_LINKS: PracticalLinkItem[] = [
   {
     id: "seiser-alm-parking",
+    region: "多洛米蒂",
     title: "休斯高原 P2 停車場預約系統",
     category: "Parking",
     url: "https://www.seiseralm.it/it/info-e-service/mobilita/accesso-all-alpe-di-siusi/prenotazione-parcheggio-alpe-di-siusi.html",
@@ -1451,6 +1461,7 @@ export const PRACTICAL_LINKS: PracticalLinkItem[] = [
   },
   {
     id: "gardena-card-info",
+    region: "多洛米蒂",
     title: "Gardena Card 纜車通行證官方網站",
     category: "Pass",
     url: "https://www.gardenacard.com/",
@@ -1459,14 +1470,16 @@ export const PRACTICAL_LINKS: PracticalLinkItem[] = [
   },
   {
     id: "auronzo-tre-cime",
+    region: "多洛米蒂",
     title: "三尖峰 Auronzo 山屋停車資訊",
     category: "Parking",
     url: "https://www.auronzomisurina.it/",
     description: "通往三尖峰與魔戒線路起點 Auronzo 山屋的高山停車場資訊。",
-    importantRule: "Day 4 遵照預約時間通過閘門進入 Auronzo 山屋停車場，可以超過預約時間後進入，但需要在預約時間起算的12小時內離開。"
+    importantRule: "停車預約通常在入場日的一個月前開放，熱門日期很快額滿，建議先確認開放日期再排行程；實際開放時間偶有調整，請以官方公告為準。"
   },
   {
     id: "valgardena-webcams",
+    region: "多洛米蒂",
     title: "Val Gardena 官方即時影像總覽",
     category: "Webcam",
     url: "https://www.valgardena.it/en/webcams/",
@@ -1475,6 +1488,7 @@ export const PRACTICAL_LINKS: PracticalLinkItem[] = [
   },
   {
     id: "seiser-alm-panomax",
+    region: "多洛米蒂",
     title: "休斯高原 Seiser Alm 全景即時影像",
     category: "Webcam",
     url: "https://seiseralm.panomax.com/?cu=en-GB",
@@ -1483,6 +1497,7 @@ export const PRACTICAL_LINKS: PracticalLinkItem[] = [
   },
   {
     id: "sassolevante-panomax",
+    region: "多洛米蒂",
     title: "Sassolevante 長石山即時影像",
     category: "Webcam",
     url: "https://valgardena.panomax.com/sassolevante",
@@ -1491,6 +1506,7 @@ export const PRACTICAL_LINKS: PracticalLinkItem[] = [
   },
   {
     id: "ref-backpackers-tre-cime",
+    region: "多洛米蒂",
     title: "背包客棧：三尖峰健行紀錄",
     category: "Reference",
     url: "https://www.backpackers.com.tw/forum/showthread.php?t=10536421",
@@ -1499,6 +1515,7 @@ export const PRACTICAL_LINKS: PracticalLinkItem[] = [
   },
   {
     id: "ref-moonhoney-hikes",
+    region: "多洛米蒂",
     title: "Moon & Honey Travel：多洛米蒂 15 條最佳健行路線",
     category: "Reference",
     url: "https://www.moonhoneytravel.com/best-day-hikes-dolomites-italy/",
@@ -1507,6 +1524,7 @@ export const PRACTICAL_LINKS: PracticalLinkItem[] = [
   },
   {
     id: "ref-travelwithmiya-roadtrip",
+    region: "多洛米蒂",
     title: "Travel with Miya：多洛米蒂 11 城鎮自駕路線",
     category: "Reference",
     url: "https://travelwithmiya.com/dolomites-road-trip/#%E2%9D%99_%E7%B1%B3%E8%98%AD%E6%A9%9F%E5%A0%B4_MXP_%E2%AD%A2_%E5%A4%9A%E6%B4%9B%E7%B1%B3%E8%92%82%E5%A5%A7%E8%92%82%E5%A1%9E%E4%BC%8A%EF%BC%9A%E8%87%AA%E9%A7%95%E7%B4%84_4_%E5%B0%8F%E6%99%82",
@@ -1515,6 +1533,7 @@ export const PRACTICAL_LINKS: PracticalLinkItem[] = [
   },
   {
     id: "lake-como-pass",
+    region: "科莫湖",
     title: "義大利國鐵 Trenord：科莫湖套票 (Treasures of Lake Como)",
     category: "Pass",
     url: "https://giteintreno.trenord.it/en/trains/lombardia/Dbo9xPuBXUzdEKwjGWDG/treasures-of-lake-como?categoryName=lake-trip&categoryUID=srSbzA0HRjB80j041Nul&permalink=lake-trip",
@@ -1523,11 +1542,21 @@ export const PRACTICAL_LINKS: PracticalLinkItem[] = [
   },
   {
     id: "rolling-venice",
+    region: "威尼斯",
     title: "Venezia Unica：Rolling Venice 青年卡與 ACTV 水上巴士套票",
     category: "Pass",
     url: "https://www.veneziaunica.it/en/rolling-venice",
     description: "威尼斯官方票務網站的青年優惠方案，購卡後可用折扣價買 ACTV 水上巴士定期票，另含部分博物館與店家優惠。",
     importantRule: "有年齡限制（青年卡性質），購買前請於官網確認適用年齡與當期票價。對應 Day 6–7 威尼斯本島與跳島交通，帳目中的 ACTV 3 日票為 2 人合計 NT$2,424 (€66.0)。"
+  },
+  {
+    id: "fb-dolomites-group",
+    region: "多洛米蒂",
+    title: "臉書社團：多洛米蒂 Dolomites 自由行攻略",
+    category: "Reference",
+    url: "https://www.facebook.com/share/g/1EBcpr4rKT/",
+    description: "多洛米蒂自由行社群，成員會分享自身經驗、纜車營運狀況、步道路況與即時天氣等第一手消息。",
+    importantRule: "需登入 Facebook 並經審核加入社團才能瀏覽。社群消息更新快但非官方，停車與纜車規定仍以官方公告為準。"
   }
 ];
 

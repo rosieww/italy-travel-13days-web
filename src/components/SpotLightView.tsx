@@ -161,13 +161,21 @@ export const SpotLightView: React.FC = () => {
                 </div>
 
                 {/* Practical Tips */}
-                {spot.practicalTips && (
+                {spot.practicalTips && spot.practicalTips.length > 0 && (
                   <div className="p-3.5 rounded-2xl bg-amber-50/80 border border-amber-200/80 text-amber-950 text-xs leading-relaxed">
                     <div className="font-bold mb-1 flex items-center gap-1.5">
                       <AlertCircle className="w-3.5 h-3.5 text-amber-700 shrink-0" />
                       <span>實戰提醒：</span>
                     </div>
-                    {spot.practicalTips}
+                    {spot.practicalTips.length === 1 ? (
+                      <p>{spot.practicalTips[0]}</p>
+                    ) : (
+                      <ul className="list-disc pl-4 space-y-1.5 marker:text-amber-700">
+                        {spot.practicalTips.map((tip, i) => (
+                          <li key={i}>{tip}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 )}
               </div>

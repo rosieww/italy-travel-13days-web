@@ -1,10 +1,43 @@
 import React, { useState } from 'react';
 import { MASTER_14_DAYS } from '../data/italyData';
-import { Search, MapPin, Hotel, Plane } from 'lucide-react';
+import { Master14DayCell } from '../types';
+import { Search, MapPin, Hotel } from 'lucide-react';
 import { OverviewImage } from './OverviewImage';
 
-/** 總表只顯示到年月；完整日期仍保留在資料中，星期即由它推算而來。 */
+/** 總表只顯示到年月；資料中不記錄到日的日期。 */
 const yearMonth = (dateStr: string) => dateStr.split('/').slice(0, 2).join('/');
+
+const isDolomitesCore = (dayNum: number) => dayNum >= 1 && dayNum <= 5;
+
+/**
+ * 表格以 Day 為欄、項目為列。列的定義集中在這裡，
+ * 之後要增減一個項目（例如交通、預算）只需加一筆，不用動表格結構。
+ */
+const ROWS: { key: string; label: string; render: (day: Master14DayCell) => React.ReactNode }[] = [
+  {
+    key: 'city',
+    label: '城市',
+    render: (day) => (
+      <div className="flex items-start gap-1.5 font-bold text-amber-900">
+        <MapPin className="w-3.5 h-3.5 text-amber-700 shrink-0 mt-0.5" />
+        <span>{day.cityRegion}</span>
+      </div>
+    ),
+  },
+  { key: 'morning', label: '🌅 上午', render: (day) => day.morning },
+  { key: 'afternoon', label: '☀️ 下午', render: (day) => day.afternoon },
+  { key: 'evening', label: '🌙 晚間', render: (day) => day.evening },
+  {
+    key: 'hotel',
+    label: '🏨 住宿',
+    render: (day) => (
+      <div className="flex items-start gap-1.5 font-medium text-stone-800">
+        <Hotel className="w-3.5 h-3.5 text-amber-700 shrink-0 mt-0.5" />
+        <span>{day.hotel}</span>
+      </div>
+    ),
+  },
+];
 
 export const Master14DayTable: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -46,98 +79,81 @@ export const Master14DayTable: React.FC = () => {
         )}
       </div>
 
-      {/* Table */}
-      <div className="bg-white rounded-3xl border border-stone-200/90 overflow-hidden shadow-xs">
-        <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse table-fixed min-w-[1080px]">
-            <thead>
-              <tr className="bg-[#4a2c1d] text-amber-100 text-xs uppercase tracking-wider font-bold">
-                <th className="p-4 pl-6 w-[10%] min-w-[100px]">日程</th>
-                <th className="p-4 w-[15%] min-w-[140px]">城市與區域</th>
-                <th className="p-4 w-[21%]">🌅 上午行程</th>
-                <th className="p-4 w-[21%]">☀️ 下午行程</th>
-                <th className="p-4 w-[19%]">🌙 傍晚與晚餐</th>
-                <th className="p-4 pr-6 w-[14%] min-w-[140px]">🏨 住宿飯店</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-stone-100 text-xs sm:text-sm">
-              {filteredMasterDays.map((row) => {
-                const isDolomitesCore = row.dayNum >= 1 && row.dayNum <= 5;
-                return (
-                  <tr
-                    key={row.dayNum}
-                    className={`hover:bg-amber-50/40 transition-colors ${
-                      isDolomitesCore ? 'bg-amber-50/20' : ''
-                    }`}
-                  >
-                    {/* Day */}
-                    <td className="p-4 pl-6 align-top">
-                      <div className="flex items-center gap-1.5 font-black text-stone-900 text-base">
-                        <span>Day {row.dayNum}</span>
-                        {isDolomitesCore && (
-                          <span className="w-2 h-2 rounded-full bg-amber-700 shrink-0" title="多洛米蒂精華段" />
-                        )}
-                      </div>
-                      <div className="text-xs text-stone-500 font-mono tabular-nums mt-0.5">
-                        {yearMonth(row.dateStr)}
-                      </div>
-                      {row.flightsOrTrains && (
-                        <div className="mt-2 text-[10px] font-bold text-amber-900 bg-amber-100/70 p-1.5 rounded-md border border-amber-200/80">
-                          <Plane className="w-3 h-3 inline mr-1 text-amber-800" />
-                          {row.flightsOrTrains}
-                        </div>
-                      )}
-                    </td>
-
-                    {/* City / Region */}
-                    <td className="p-4 align-top font-bold text-stone-800">
-                      <div className="flex items-center gap-1.5 text-amber-900">
-                        <MapPin className="w-3.5 h-3.5 text-amber-700 shrink-0" />
-                        <span>{row.cityRegion}</span>
-                      </div>
-                      {isDolomitesCore && (
-                        <span className="inline-block mt-1 text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-200">
-                          多洛米蒂 5 日精華
-                        </span>
-                      )}
-                    </td>
-
-                    {/* Morning */}
-                    <td className="p-4 align-top text-stone-700 leading-relaxed">
-                      {row.morning}
-                    </td>
-
-                    {/* Afternoon */}
-                    <td className="p-4 align-top text-stone-700 leading-relaxed">
-                      {row.afternoon}
-                    </td>
-
-                    {/* Evening */}
-                    <td className="p-4 align-top text-stone-700 leading-relaxed">
-                      {row.evening}
-                    </td>
-
-                    {/* Hotel */}
-                    <td className="p-4 pr-6 align-top font-medium text-stone-800">
-                      <div className="flex items-center gap-1.5 text-stone-700">
-                        <Hotel className="w-3.5 h-3.5 text-amber-700 shrink-0" />
-                        <span>{row.hotel}</span>
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })}
-              {filteredMasterDays.length === 0 && (
-                <tr>
-                  <td colSpan={6} className="p-10 text-center text-stone-500 text-xs sm:text-sm">
-                    找不到符合「{searchQuery.trim()}」的行程，試試其他城市、飯店或景點名稱。
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
+      {filteredMasterDays.length === 0 ? (
+        <div className="bg-white rounded-3xl border border-stone-200/90 shadow-xs p-10 text-center text-stone-500 text-xs sm:text-sm">
+          找不到符合「{searchQuery.trim()}」的行程，試試其他城市、飯店或景點名稱。
         </div>
-      </div>
+      ) : (
+        <div className="bg-white rounded-3xl border border-stone-200/90 overflow-hidden shadow-xs">
+          {/* Day 為欄，因此橫向捲動；首欄的項目名稱固定不動 */}
+          <div className="overflow-x-auto">
+            <table className="text-left border-collapse">
+              <caption className="sr-only">
+                義大利 13 日行程總表，每一欄為一天，每一列為城市、各時段行程與住宿飯店
+              </caption>
+              <thead>
+                <tr className="bg-[#4a2c1d] text-amber-100">
+                  <th
+                    scope="col"
+                    className="sticky left-0 z-20 bg-[#4a2c1d] p-2 pl-3 sm:p-2.5 sm:pl-4 w-[58px] min-w-[58px] sm:w-[76px] sm:min-w-[76px] text-xs uppercase tracking-wider font-bold align-middle text-center"
+                  >
+                    項目
+                  </th>
+                  {filteredMasterDays.map((day) => (
+                    <th
+                      key={day.dayNum}
+                      scope="col"
+                      className={`p-2 sm:p-2.5 w-[128px] min-w-[128px] sm:w-[176px] sm:min-w-[176px] align-middle font-bold border-l border-amber-900/30 ${
+                        isDolomitesCore(day.dayNum) ? 'bg-[#5c3523]' : ''
+                      }`}
+                    >
+                      <div className="flex justify-center">
+                        <div className="inline-flex flex-col items-start text-left">
+                          <div className="flex items-center justify-center gap-1.5 text-white text-base font-black">
+                            <span>Day {day.dayNum}</span>
+                            {isDolomitesCore(day.dayNum) && (
+                              <span
+                                className="w-2 h-2 rounded-full bg-amber-400 shrink-0"
+                                title="多洛米蒂精華段"
+                              />
+                            )}
+                          </div>
+                          <div className="text-[11px] text-amber-200/80 font-mono tabular-nums mt-0.5">
+                            {yearMonth(day.dateStr)}
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+
+              <tbody className="divide-y divide-stone-200 text-xs sm:text-sm">
+                {ROWS.map((row) => (
+                  <tr key={row.key} className="group">
+                    <th
+                      scope="row"
+                      className="sticky left-0 z-10 bg-white group-hover:bg-amber-50/60 transition-colors p-1.5 pl-2 sm:p-2 sm:pl-3 align-middle text-center text-xs font-bold text-stone-500 border-r border-stone-200 leading-snug whitespace-nowrap"
+                    >
+                      {row.label}
+                    </th>
+                    {filteredMasterDays.map((day) => (
+                      <td
+                        key={day.dayNum}
+                        className={`p-2 sm:p-2.5 align-top text-stone-700 leading-relaxed border-l border-stone-100 transition-colors group-hover:bg-amber-50/40 ${
+                          isDolomitesCore(day.dayNum) ? 'bg-amber-50/30' : ''
+                        }`}
+                      >
+                        {row.render(day)}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

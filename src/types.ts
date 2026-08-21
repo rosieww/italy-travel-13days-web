@@ -51,7 +51,8 @@ export interface SpotInfo {
   image: string;
   description: string;
   highlights: string[];
-  practicalTips?: string;
+  /** 實戰提醒，一則一點；只有一點時直接以段落呈現 */
+  practicalTips?: string[];
   webcamUrl?: string;
   reservationUrl?: string;
   /** 景點內值得單獨定位的地標，例如觀景長椅、纜車站。 */
@@ -61,6 +62,8 @@ export interface SpotInfo {
 export interface PracticalLinkItem {
   id: string;
   title: string;
+  /** 所屬地區，用於連結分頁的分組排列 */
+  region: string;
   category: 'Parking' | 'CableCar' | 'Webcam' | 'Pass' | 'Museum' | 'Transport' | 'Reference';
   url: string;
   description: string;

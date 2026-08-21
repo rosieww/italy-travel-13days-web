@@ -16,6 +16,15 @@ const CATEGORY_LABELS: Record<string, string> = {
   Reference: '📖 參考攻略',
 };
 
+/** 地區的顯示名稱與排列順序，依行程動線由北義山區往城市；未列入者排在最後。 */
+const REGION_LABELS: Record<string, string> = {
+  多洛米蒂: '🏔️ 多洛米蒂',
+  威尼斯: '🛶 威尼斯',
+  佛羅倫斯: '🎨 佛羅倫斯',
+  米蘭: '🏰 米蘭',
+  科莫湖: '⛵ 科莫湖',
+};
+
 export const PracticalLinksView: React.FC = () => {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
@@ -46,6 +55,22 @@ export const PracticalLinksView: React.FC = () => {
         : PRACTICAL_LINKS.filter((l) => l.category === selectedCategory),
     [selectedCategory]
   );
+
+  // 依地區分組排列，順序沿用 REGION_LABELS，未知地區排在最後
+  const groupedByRegion = useMemo(() => {
+    const order = Object.keys(REGION_LABELS);
+    const regions = Array.from(new Set(filteredLinks.map((l) => l.region)));
+    regions.sort((a, b) => {
+      const ia = order.indexOf(a);
+      const ib = order.indexOf(b);
+      return (ia === -1 ? order.length : ia) - (ib === -1 ? order.length : ib);
+    });
+    return regions.map((region) => ({
+      region,
+      label: REGION_LABELS[region] ?? region,
+      links: filteredLinks.filter((l) => l.region === region),
+    }));
+  }, [filteredLinks]);
 
   const handleCopyLink = (id: string, url: string) => {
     navigator.clipboard.writeText(url);
@@ -97,9 +122,18 @@ export const PracticalLinksView: React.FC = () => {
         </div>
       </div>
 
-      {/* Links Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {filteredLinks.map((link) => (
+      {/* Links grouped by region */}
+      {groupedByRegion.map((group) => (
+        <section key={group.region} className="space-y-4">
+          <h3 className="flex items-baseline gap-2 text-base sm:text-lg font-black text-stone-900 pb-2 border-b-2 border-amber-800/20">
+            <span>{group.label}</span>
+            <span className="font-mono tabular-nums text-xs font-bold text-stone-400">
+              {group.links.length} 筆
+            </span>
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {group.links.map((link) => (
           <div
             key={link.id}
             id={`link-card-${link.id}`}
@@ -158,8 +192,10 @@ export const PracticalLinksView: React.FC = () => {
               </a>
             </div>
           </div>
-        ))}
-      </div>
+            ))}
+          </div>
+        </section>
+      ))}
     </div>
   );
 };
