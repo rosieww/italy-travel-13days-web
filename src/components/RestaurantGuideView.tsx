@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { ALL_RESTAURANTS } from '../data/italyData';
+import { RestaurantStars } from './StarRating';
 import { Utensils, MapPin, ExternalLink, Search, AlertCircle, IceCream, Pizza, ShoppingBag, Coffee } from 'lucide-react';
 
 export const RestaurantGuideView: React.FC = () => {
@@ -160,6 +161,9 @@ export const RestaurantGuideView: React.FC = () => {
               <h3 className="text-base font-black text-stone-900 tracking-tight group-hover:text-amber-800 transition-colors flex items-center gap-1.5">
                 <span>{res.name}</span>
               </h3>
+
+              {/* 推薦指數 — 未評分的補給點（超市、中央市場等）不顯示 */}
+              <RestaurantStars name={res.name} size="md" className="mt-1.5" />
 
               {/* Note / Description */}
               {res.note && (

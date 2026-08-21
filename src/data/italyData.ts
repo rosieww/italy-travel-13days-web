@@ -1,4 +1,4 @@
-import { DayItineraryDetail, SpotInfo, PracticalLinkItem, Master14DayCell, RestaurantItem } from '../types';
+import { DayItineraryDetail, SpotInfo, PracticalLinkItem, Master14DayCell, RestaurantItem, RestaurantRating, HotelStay, ExpenseCategory } from '../types';
 
 export const ITALY_12_DAYS: DayItineraryDetail[] = [
   {
@@ -514,7 +514,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=I+Tre+Mercanti+Tiramisu+Venice"
       }
     ],
-    hotelName: "Apollo Guest House (Venice)",
+    hotelName: "Leone Hotel (Venice)",
     googleMapsUrl: "https://maps.google.com/?q=Piazza+San+Marco+Venice"
   },
   {
@@ -640,7 +640,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Acqua+e+Mais+Venice"
       }
     ],
-    hotelName: "Residence De La Gare",
+    hotelName: "Leone Hotel (Venice)",
     googleMapsUrl: "https://maps.google.com/?q=Burano+Venice"
   },
   {
@@ -764,7 +764,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Grom+Gelateria+Florence"
       }
     ],
-    hotelName: "Residence De La Gare (Florence)",
+    hotelName: "Apollo Guest House (Florence)",
     googleMapsUrl: "https://maps.google.com/?q=Uffizi+Gallery+Florence"
   },
   {
@@ -893,7 +893,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Mercato+Centrale+Florence"
       }
     ],
-    hotelName: "Residence De La Gare (Florence)",
+    hotelName: "Apollo Guest House (Florence)",
     googleMapsUrl: "https://maps.google.com/?q=Accademia+Gallery+Florence"
   },
   {
@@ -996,7 +996,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hosteria+del+Bricco+Florence"
       }
     ],
-    hotelName: "Residence De La Gare (Florence)",
+    hotelName: "Apollo Guest House (Florence)",
     googleMapsUrl: "https://maps.google.com/?q=Piazzale+Michelangelo+Florence"
   },
   {
@@ -1272,6 +1272,40 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
   }
 ];
 
+/**
+ * 實際造訪後的推薦指數（滿分 5 顆星），以店名為鍵。
+ * 每間店在時間軸與當日餐廳清單中各出現一次，因此評分集中放在這裡，
+ * 由顯示端查表取用，避免同一個數字散落在多處而失準。
+ * 未列入者（超市、中央市場、麥當勞等補給點）不評分。
+ */
+export const RESTAURANT_RATINGS: Record<string, RestaurantRating> = {
+  "Pizzeria Restaurant L Ciamin": { stars: 3.8 },
+  "Hotel Menardi Restaurant": { stars: 4.2 },
+  "La Tavernetta di Cortina": { stars: 3.8 },
+  "TRATTORIA AL POGGIO": { stars: 4 },
+  "Da Mamo": { stars: 4 },
+  "Suso Gelatoteca": { stars: 4.5 },
+  "Gelateria Gallonetto": { stars: 4.5 },
+  "I Tre Mercanti (Tiramisù)": { stars: 3.5 },
+  "Trattoria Bar Pontini": { stars: 4 },
+  "Acqua e Mais": { stars: 3.9 },
+  "All’Antico Vinaio": { stars: 3, note: "旅伴覺得有 4 星" },
+  "Trattoria Zà Zà": { stars: 4.2 },
+  "GROM": { stars: 4.5 },
+  "Panini Toscani": { stars: 4 },
+  "La Strega Nocciola": { stars: 4.5 },
+  "Trattoria Sergio Gozzi": { stars: 3.9 },
+  "Hosteria del Bricco": { stars: 3.9 },
+  "Bentoteca Milano": { stars: 3.5 },
+  "Chocolat Milano": { stars: 4.5 },
+  "Zia Esterina Sorbillo": { stars: 4 },
+  "Osteria Quatro Pass": { stars: 4.2 }
+};
+
+/** 依店名取得推薦指數；查無評分（例如超市補給點）時回傳 undefined。 */
+export const getRestaurantRating = (name: string): RestaurantRating | undefined =>
+  RESTAURANT_RATINGS[name];
+
 // Aggregate all restaurants with Google Maps links across the 12 days
 export const ALL_RESTAURANTS: RestaurantItem[] = ITALY_12_DAYS.flatMap(
   (day) => day.restaurantsList || []
@@ -1386,7 +1420,7 @@ export const SPOTS_INFO: SpotInfo[] = [
     description: "世界著名的水上都市，擁有聖馬可廣場、歎息橋、貢多拉、里阿爾托橋與跳島彩虹小屋。",
     highlights: [
       "聖馬可廣場、聖馬可大教堂與總督宮",
-      "Da Mamo, Trattoria Bar Pontini, Suso 冰淇淋, I Tre Mercanti 提拉米蘇",
+      "學院橋要看日落時間，個人覺得黃昏去最美",
       "Murano 玻璃島 & Burano 彩色島"
     ]
   },
@@ -1492,3 +1526,231 @@ export const PRACTICAL_LINKS: PracticalLinkItem[] = [
     importantRule: "對應 Day 1 米蘭取車後前往 Selva 的長途拉車，可先預覽路線與休息點。"
   }
 ];
+
+/**
+ * 13 日行程實際入住的 5 間飯店，依入住順序排列，合計 12 晚。
+ * 房費為此處的唯一來源，住宿類的花費明細由這份資料產生，不另外複製一份金額。
+ */
+export const HOTELS: HotelStay[] = [
+  {
+    id: "antares",
+    name: "Hotel & Residence Antares",
+    nameZh: "安塔爾住宅酒店",
+    city: "塞爾瓦 Selva di Val Gardena",
+    region: "多洛米蒂",
+    dayFrom: 1,
+    dayTo: 2,
+    checkIn: "6/18",
+    checkOut: "6/20",
+    twd: 15976,
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Residence+Antares+Selva+di+Val+Gardena",
+    note: "多洛米蒂前兩晚據點，鄰近 Ciampinoi 纜車站，方便 Day 1 傍晚換 Gardena Card。"
+  },
+  {
+    id: "menardi",
+    name: "Hotel Menardi",
+    nameZh: "梅娜蒂酒店",
+    city: "科爾蒂納 Cortina d'Ampezzo",
+    region: "多洛米蒂",
+    dayFrom: 3,
+    dayTo: 4,
+    checkIn: "6/20",
+    checkOut: "6/22",
+    twd: 16962,
+    cityTaxTwd: 509,
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Menardi+Cortina+d%27Ampezzo",
+    note: "百年家族經營旅館，附設餐廳，是 Day 4 前進三尖峰 Auronzo 停車場的最佳前哨。"
+  },
+  {
+    id: "leone",
+    name: "Leone Hotel",
+    city: "威尼斯 Venice",
+    region: "威尼斯",
+    dayFrom: 5,
+    dayTo: 7,
+    checkIn: "6/22",
+    checkOut: "6/25",
+    twd: 20818,
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Leone+Hotel+Venice",
+    note: "Day 5 威尼斯還車後入住，連住三晚涵蓋本島核心景點與跳島行程。"
+  },
+  {
+    id: "apollo",
+    name: "Apollo Guest House",
+    city: "佛羅倫斯 Florence",
+    region: "托斯卡尼",
+    dayFrom: 8,
+    dayTo: 10,
+    checkIn: "6/25",
+    checkOut: "6/28",
+    twd: 20601,
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Apollo+Guest+House+Florence",
+    note: "連住三晚，Day 10 前往比薩半日遊後仍回此處，不需換宿。"
+  },
+  {
+    id: "delagare",
+    name: "Residence De La Gare",
+    city: "米蘭 Milan",
+    region: "倫巴底",
+    dayFrom: 11,
+    dayTo: 12,
+    checkIn: "6/28",
+    checkOut: "6/30",
+    twd: 9573,
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Residence+De+La+Gare+Milano",
+    note: "最後兩晚，Day 12 科莫湖一日遊往返與 Day 13 前往機場都靠車站機能。"
+  }
+];
+
+/** 入住晚數＝結束日 − 起始日 + 1。 */
+export const hotelNights = (hotel: HotelStay) => hotel.dayTo - hotel.dayFrom + 1;
+
+/** 花費明細用的房費項目標籤，與飯店分頁顯示的名稱維持一致。 */
+const hotelExpenseLabel = (hotel: HotelStay) =>
+  `${hotel.name}${hotel.nameZh ? ` ${hotel.nameZh}` : ""}（Day ${hotel.dayFrom}–${hotel.dayTo}，${hotelNights(hotel)} 晚）`;
+
+/**
+ * 花費分類明細（不含購物）。所有 twd 金額皆為 2 人合計實付，
+ * 分類總額、占比與每人平均一律於使用端由明細推算，不另存以免兩者失準。
+ */
+export const EXPENSE_BREAKDOWN: ExpenseCategory[] = [
+  {
+    id: "transport",
+    label: "交通",
+    note: "機票、租車、火車票、通行卡等",
+    items: [
+      { label: "機票", twd: 120298 },
+      { label: "italo 去佛羅倫斯", twd: 2830 },
+      { label: "italo 去米蘭", twd: 2830 },
+      { label: "租車代訂服務費", twd: 2200 },
+      { label: "多洛米蒂停車費", twd: 1470, eur: 40.0 },
+      { label: "ACTV trasporto pubblico 3 giorni", twd: 2424, eur: 66.0 },
+      { label: "Uber", twd: 561 },
+      { label: "選位費", twd: 2051 },
+      { label: "租車", twd: 19035, eur: 514.05 },
+      { label: "加油", twd: 2227, eur: 60.15 },
+      { label: "加油", twd: 1863, eur: 50.32 },
+      { label: "過路費", twd: 316 },
+      { label: "火車票", twd: 110 },
+      { label: "加油", twd: 1829, eur: 49.0 },
+      { label: "公車", twd: 126, eur: 3.4 },
+      { label: "火車", twd: 689, eur: 18.6 },
+      { label: "火車", twd: 689, eur: 18.6 },
+      { label: "車票", twd: 163, eur: 4.4 },
+      { label: "機場快線", twd: 1111, eur: 30.0 },
+      { label: "科莫湖套票", twd: 2074, eur: 56.0 },
+      { label: "車票", twd: 160 },
+      { label: "車票", twd: 163, eur: 4.4 }
+    ]
+  },
+  {
+    id: "lodging",
+    label: "住宿",
+    note: "飯店／民宿、城市稅",
+    items: [
+      // 房費直接取自 HOTELS，改飯店資料就會同步反映到花費統計
+      ...HOTELS.map((hotel) => ({ label: hotelExpenseLabel(hotel), twd: hotel.twd })),
+      // 這兩筆城市稅無法從帳目判斷屬於哪一間飯店，維持獨立列出
+      { label: "城市稅", twd: 904, eur: 24.4 },
+      { label: "城市稅", twd: 778, eur: 21.0 },
+      ...HOTELS.filter((hotel) => hotel.cityTaxTwd !== undefined).map((hotel) => ({
+        label: `${hotel.name} 城市稅`,
+        twd: hotel.cityTaxTwd as number
+      }))
+    ]
+  },
+  {
+    id: "food",
+    label: "飲食",
+    note: "餐廳、Gelato、星巴克、超市採買等",
+    items: [
+      { label: "休息站午餐", twd: 355, eur: 9.6 },
+      { label: "超市採買", twd: 987 },
+      { label: "Pizza 和義大利麵", twd: 1422 },
+      { label: "蘋果汁和可樂", twd: 328 },
+      { label: "飲料", twd: 47 },
+      { label: "超市採買", twd: 1687 },
+      { label: "晚餐", twd: 1635 },
+      { label: "晚餐", twd: 1851, eur: 50.0 },
+      { label: "超市", twd: 113 },
+      { label: "可樂", twd: 291 },
+      { label: "超市採買", twd: 1210 },
+      { label: "瑪格麗特 pizza 和炸魷魚", twd: 1454 },
+      { label: "星巴克", twd: 404, eur: 10.9 },
+      { label: "Gelato", twd: 159, eur: 4.3 },
+      { label: "SUSO Gelato", twd: 200 },
+      { label: "提拉米蘇", twd: 481, eur: 13.0 },
+      { label: "Da mamoo 晚餐", twd: 1929, eur: 52.1 },
+      { label: "飲料", twd: 218 },
+      { label: "Gelato", twd: 141, eur: 3.8 },
+      { label: "午餐", twd: 1574, eur: 42.5 },
+      { label: "佛卡夏", twd: 407, eur: 11.0 },
+      { label: "GROM", twd: 437, eur: 11.8 },
+      { label: "飲料", twd: 375 },
+      { label: "晚餐", twd: 4462, eur: 120.5 },
+      { label: "柳橙汁和拿鐵", twd: 281, eur: 7.6 },
+      { label: "帕尼尼", twd: 481, eur: 13.0 },
+      { label: "冰淇淋", twd: 167, eur: 4.5 },
+      { label: "冰淇淋", twd: 163 },
+      { label: "芬達", twd: 118, eur: 3.2 },
+      { label: "冰淇淋", twd: 178, eur: 4.8 },
+      { label: "晚餐", twd: 663, eur: 17.9 },
+      { label: "飲料", twd: 278, eur: 7.5 },
+      { label: "開心果提拉米蘇", twd: 217 },
+      { label: "超市", twd: 685, eur: 18.5 },
+      { label: "麥當勞", twd: 741, eur: 20.0 },
+      { label: "難吃早餐", twd: 555, eur: 15.0 },
+      { label: "義大利麵", twd: 1203, eur: 33.0 },
+      { label: "麥當勞飲料", twd: 311, eur: 8.4 },
+      { label: "晚餐", twd: 1648, eur: 44.5 },
+      { label: "Gelato", twd: 167, eur: 4.5 },
+      { label: "早餐", twd: 274, eur: 7.4 },
+      { label: "Gelato", twd: 164 },
+      { label: "麥當勞", twd: 185, eur: 5.0 },
+      { label: "超市", twd: 1072, eur: 28.95 },
+      { label: "omakase", twd: 7730, eur: 212.0 },
+      { label: "星巴克早餐", twd: 314 },
+      { label: "午餐", twd: 1963, eur: 53.0 },
+      { label: "麥當勞", twd: 635, eur: 17.15 },
+      { label: "超市", twd: 2002, eur: 54.07 }
+    ]
+  },
+  {
+    id: "tickets",
+    label: "門票",
+    note: "美術館、大教堂、導覽、划船等",
+    items: [
+      { label: "最後的晚餐", twd: 1115 },
+      { label: "米蘭大教堂", twd: 1920, eur: 52.0 },
+      { label: "學院美術館", twd: 1754, eur: 48.0 },
+      { label: "烏菲茲美術館", twd: 2125, eur: 58.0 },
+      { label: "Gardena Card 3 日票", twd: 9124 },
+      { label: "划船", twd: 2037, eur: 55.0 },
+      { label: "導覽", twd: 222, eur: 6.0 }
+    ]
+  },
+  {
+    id: "misc",
+    label: "其他",
+    note: "eSIM、保險、200 歐元現金",
+    items: [
+      { label: "eSIM", twd: 435 },
+      { label: "eSIM", twd: 970 },
+      { label: "保險", twd: 2360 },
+      { label: "保險", twd: 2360 },
+      { label: "200 歐元現金", twd: 7412 }
+    ]
+  }
+];
+
+/** 同行人數，用於推算平均每人花費。 */
+export const EXPENSE_PARTY_SIZE = 2;
+
+/** 分類總額＝該分類所有明細之和（2 人合計）。 */
+export const expenseCategoryTotal = (category: ExpenseCategory) =>
+  category.items.reduce((sum, item) => sum + item.twd, 0);
+
+export const EXPENSE_TOTAL = EXPENSE_BREAKDOWN.reduce(
+  (sum, category) => sum + expenseCategoryTotal(category),
+  0
+);

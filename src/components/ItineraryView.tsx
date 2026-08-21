@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { ITALY_12_DAYS } from '../data/italyData';
 import { Master14DayTable } from './Master14DayTable';
+import { RestaurantStars } from './StarRating';
 import { assetUrl } from '../assetUrl';
 import { MapPin, ShieldAlert, Sparkles, Clock, Utensils, Hotel, Navigation, Mountain, ArrowUpRight, ExternalLink } from 'lucide-react';
 
@@ -179,6 +180,10 @@ export const ItineraryView: React.FC = () => {
                                       {event.restaurantInfo.type}
                                     </span>
                                   </div>
+                                  <RestaurantStars
+                                    name={event.restaurantInfo.name}
+                                    className="mt-1"
+                                  />
                                   {event.restaurantInfo.note && (
                                     <p className="text-[11px] text-amber-800 mt-0.5">
                                       {event.restaurantInfo.note}
@@ -263,6 +268,7 @@ export const ItineraryView: React.FC = () => {
                                     {r.type}
                                   </span>
                                 </div>
+                                <RestaurantStars name={r.name} className="mt-1" />
                                 {r.note && (
                                   <p className="text-[10px] text-stone-500 truncate mt-0.5">
                                     {r.note}
