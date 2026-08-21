@@ -41,6 +41,7 @@ const ROWS: { key: string; label: string; render: (day: Master14DayCell) => Reac
 
 export const Master14DayTable: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [hoveredDay, setHoveredDay] = useState<number | null>(null);
 
   const filteredMasterDays = MASTER_14_DAYS.filter((d) => {
     const q = searchQuery.toLowerCase().trim();
@@ -95,7 +96,7 @@ export const Master14DayTable: React.FC = () => {
                 <tr className="bg-[#4a2c1d] text-amber-100">
                   <th
                     scope="col"
-                    className="sticky left-0 z-20 bg-[#4a2c1d] p-2 pl-3 sm:p-2.5 sm:pl-4 w-[58px] min-w-[58px] sm:w-[76px] sm:min-w-[76px] text-xs uppercase tracking-wider font-bold align-middle text-center"
+                    className="sticky left-0 z-20 bg-[#4a2c1d] p-2 pl-3 sm:p-2.5 sm:pl-4 w-[58px] min-w-[58px] sm:w-[76px] sm:min-w-[76px] text-[11px] sm:text-xs uppercase tracking-wider font-bold align-middle text-center text-amber-100"
                   >
                     項目
                   </th>
@@ -103,23 +104,21 @@ export const Master14DayTable: React.FC = () => {
                     <th
                       key={day.dayNum}
                       scope="col"
-                      className={`p-2 sm:p-2.5 w-[128px] min-w-[128px] sm:w-[176px] sm:min-w-[176px] align-middle font-bold border-l border-amber-900/30 ${
-                        isDolomitesCore(day.dayNum) ? 'bg-[#5c3523]' : ''
+                      onMouseEnter={() => setHoveredDay(day.dayNum)}
+                      onMouseLeave={() => setHoveredDay(null)}
+                      className={`p-1.5 sm:p-2 w-[128px] min-w-[128px] sm:w-[176px] sm:min-w-[176px] align-middle font-bold border-l border-amber-900/30 transition-all duration-200 ${
+                        hoveredDay === day.dayNum ? 'bg-[#5c3523]' : 'bg-[#4a2c1d]'
                       }`}
                     >
                       <div className="flex justify-center">
-                        <div className="inline-flex flex-col items-start text-left">
-                          <div className="flex items-center justify-center gap-1.5 text-white text-base font-black">
-                            <span>Day {day.dayNum}</span>
-                            {isDolomitesCore(day.dayNum) && (
-                              <span
-                                className="w-2 h-2 rounded-full bg-amber-400 shrink-0"
-                                title="多洛米蒂精華段"
-                              />
-                            )}
-                          </div>
-                          <div className="text-[11px] text-amber-200/80 font-mono tabular-nums mt-0.5">
-                            {yearMonth(day.dateStr)}
+                        <div className="inline-flex min-w-0 w-full justify-center">
+                          <div className="flex flex-col items-start min-w-0 text-left leading-none">
+                            <div className="text-white text-sm sm:text-base font-black tracking-tight">
+                              Day {day.dayNum}
+                            </div>
+                            <div className="text-[10px] sm:text-[11px] text-amber-200/80 font-mono tabular-nums mt-1 leading-none">
+                              {yearMonth(day.dateStr)}
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -133,16 +132,19 @@ export const Master14DayTable: React.FC = () => {
                   <tr key={row.key} className="group">
                     <th
                       scope="row"
-                      className="sticky left-0 z-10 bg-white group-hover:bg-amber-50/60 transition-colors p-1.5 pl-2 sm:p-2 sm:pl-3 align-middle text-center text-xs font-bold text-stone-500 border-r border-stone-200 leading-snug whitespace-nowrap"
+                      className="sticky left-0 z-10 bg-amber-50/40 group-hover:bg-amber-100/60 transition-colors p-1.5 pl-2 sm:p-2 sm:pl-3 align-middle text-center text-[11px] sm:text-xs font-bold text-stone-600 border-r border-stone-200 leading-snug whitespace-nowrap"
                     >
                       {row.label}
                     </th>
                     {filteredMasterDays.map((day) => (
                       <td
                         key={day.dayNum}
-                        className={`p-2 sm:p-2.5 align-top text-stone-700 leading-relaxed border-l border-stone-100 transition-colors group-hover:bg-amber-50/40 ${
-                          isDolomitesCore(day.dayNum) ? 'bg-amber-50/30' : ''
+                        onMouseEnter={() => setHoveredDay(day.dayNum)}
+                        onMouseLeave={() => setHoveredDay(null)}
+                        className={`p-2 sm:p-2.5 align-top text-stone-700 leading-relaxed border-l border-stone-100 transition-colors ${
+                          hoveredDay === day.dayNum ? 'bg-amber-50/70 shadow-[inset_0_0_0_1px_rgba(120,53,15,0.08)]' : 'bg-white'
                         }`}
+                        data-day={day.dayNum}
                       >
                         {row.render(day)}
                       </td>

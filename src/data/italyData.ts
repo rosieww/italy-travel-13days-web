@@ -496,7 +496,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         city: "Venice",
         name: "I Tre Mercanti (Tiramisù)",
         type: "甜點/點心",
-        note: "威尼斯第一名的現做提拉米蘇專賣店",
+        note: "威尼斯第一名的現做提拉米蘇專賣店，最推薦原味，開心果口味覺得普通",
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=I+Tre+Mercanti+Tiramisu+Venice"
       }
     ],
@@ -1260,7 +1260,7 @@ export const RESTAURANT_RATINGS: Record<string, RestaurantRating> = {
   "Da Mamo": { stars: 4 },
   "Suso Gelatoteca": { stars: 4.5 },
   "Gelateria Gallonetto": { stars: 4.5 },
-  "I Tre Mercanti (Tiramisù)": { stars: 3.5 },
+  "I Tre Mercanti (Tiramisù)": { stars: 3.8 },
   "Trattoria Bar Pontini": { stars: 4 },
   "Acqua e Mais": { stars: 3.9 },
   "All’Antico Vinaio": { stars: 3, note: "旅伴覺得有 4 星" },
