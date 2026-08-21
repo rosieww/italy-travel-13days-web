@@ -1703,7 +1703,7 @@ export const EXPENSE_BREAKDOWN: ExpenseCategory[] = [
       { label: "Gelato", twd: 159, eur: 4.3 },
       { label: "SUSO Gelato", twd: 200 },
       { label: "提拉米蘇", twd: 481, eur: 13.0 },
-      { label: "Da mamoo 晚餐", twd: 1929, eur: 52.1 },
+      { label: "Da mamo 晚餐", twd: 1929, eur: 52.1 },
       { label: "飲料", twd: 218 },
       { label: "Gelato", twd: 141, eur: 3.8 },
       { label: "午餐", twd: 1574, eur: 42.5 },
