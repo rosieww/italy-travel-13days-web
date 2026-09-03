@@ -82,7 +82,7 @@ export interface HotelStay {
   /** 入住的第一天與最後一天（對應行程 Day 編號），晚數由此推算 */
   dayFrom: number;
   dayTo: number;
-  /** 房費，2 人合計 */
+  /** 住宿費，2 人合計 */
   twd: number;
   /** 該飯店另外收取的城市稅，2 人合計；未單獨列出者為 undefined */
   cityTaxTwd?: number;

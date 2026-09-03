@@ -34,7 +34,7 @@ export const HotelView: React.FC = () => {
             </h2>
             <p className="mt-1 text-amber-200/90 text-xs sm:text-sm max-w-2xl leading-relaxed">
               全程共 {HOTELS.length} 間飯店、{totalNights} 晚，依入住順序排列，
-              含入退房日期、對應行程日與房費。金額皆為 {EXPENSE_PARTY_SIZE} 人合計實付。
+              含入退房日期、對應行程日與住宿費。金額皆為 {EXPENSE_PARTY_SIZE} 人合計實付。
             </p>
           </div>
 
@@ -116,7 +116,7 @@ export const HotelView: React.FC = () => {
                 {/* Cost block */}
                 <div className="shrink-0 lg:w-52 bg-stone-50 rounded-2xl border border-stone-200/80 p-4">
                   <div className="text-[11px] font-bold text-stone-500 uppercase tracking-wider">
-                    房費（{EXPENSE_PARTY_SIZE} 人合計）
+                    住宿費（{EXPENSE_PARTY_SIZE} 人合計）
                   </div>
                   <div className="text-xl font-black text-stone-900 font-mono tabular-nums mt-0.5">
                     {twd(hotel.twd)}
@@ -160,7 +160,7 @@ export const HotelView: React.FC = () => {
         <dl className="space-y-2 text-xs sm:text-sm">
           <div className="flex items-baseline justify-between gap-4 py-1">
             <dt className="text-stone-700">
-              {HOTELS.length} 間飯店房費 · 共 {totalNights} 晚
+              {HOTELS.length} 間飯店住宿費 · 共 {totalNights} 晚
             </dt>
             <dd className="font-mono tabular-nums font-bold text-stone-900">{twd(roomTotal)}</dd>
           </div>
@@ -190,8 +190,8 @@ export const HotelView: React.FC = () => {
         <div className="mt-4 pt-3 border-t border-stone-200 flex items-start gap-2 text-xs text-stone-500">
           <Info className="w-3.5 h-3.5 text-stone-400 shrink-0 mt-0.5" />
           <span>
-            房費為此頁與「花費明細」共用的同一份資料，兩邊不會出現不一致。
-            其中兩筆城市稅（€24.4、€21.0）在帳目上未註明所屬飯店，因此單獨列出、未攤入各間房費。
+            住宿費為此頁與「花費明細」共用的同一份資料，兩邊不會出現不一致。
+            其中兩筆城市稅（€24.4、€21.0）在帳目上未註明所屬飯店，因此單獨列出、未攤入各間住宿費。
           </span>
         </div>
       </div>

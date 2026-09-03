@@ -1562,7 +1562,7 @@ export const PRACTICAL_LINKS: PracticalLinkItem[] = [
 
 /**
  * 13 日行程實際入住的 5 間飯店，依入住順序排列，合計 12 晚。
- * 房費為此處的唯一來源，住宿類的花費明細由這份資料產生，不另外複製一份金額。
+ * 住宿費為此處的唯一來源，住宿類的花費明細由這份資料產生，不另外複製一份金額。
  */
 export const HOTELS: HotelStay[] = [
   {
@@ -1628,7 +1628,7 @@ export const HOTELS: HotelStay[] = [
 /** 入住晚數＝結束日 − 起始日 + 1。 */
 export const hotelNights = (hotel: HotelStay) => hotel.dayTo - hotel.dayFrom + 1;
 
-/** 花費明細用的房費項目標籤，與飯店分頁顯示的名稱維持一致。 */
+/** 花費明細用的住宿費項目標籤，與飯店分頁顯示的名稱維持一致。 */
 const hotelExpenseLabel = (hotel: HotelStay) =>
   `${hotel.name}${hotel.nameZh ? ` ${hotel.nameZh}` : ""}（Day ${hotel.dayFrom}–${hotel.dayTo}，${hotelNights(hotel)} 晚）`;
 
@@ -1671,7 +1671,7 @@ export const EXPENSE_BREAKDOWN: ExpenseCategory[] = [
     label: "住宿",
     note: "飯店／民宿、城市稅",
     items: [
-      // 房費直接取自 HOTELS，改飯店資料就會同步反映到花費統計
+      // 住宿費直接取自 HOTELS，改飯店資料就會同步反映到花費統計
       ...HOTELS.map((hotel) => ({ label: hotelExpenseLabel(hotel), twd: hotel.twd })),
       // 這兩筆城市稅無法從帳目判斷屬於哪一間飯店，維持獨立列出
       { label: "城市稅", twd: 904, eur: 24.4 },
