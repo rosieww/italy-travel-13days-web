@@ -1,6 +1,6 @@
 import React from 'react';
 import { HOTELS, hotelNights, EXPENSE_PARTY_SIZE } from '../data/italyData';
-import { Hotel, MapPin, Moon, Wallet, ExternalLink, Info } from 'lucide-react';
+import { Hotel, MapPin, Moon, Wallet, ExternalLink, Info, Instagram } from 'lucide-react';
 
 /** 一律四捨五入到整數元，與花費分頁的呈現一致。 */
 const twd = (n: number) => `NT$${Math.round(n).toLocaleString('en-US')}`;
@@ -34,8 +34,20 @@ export const HotelView: React.FC = () => {
             </h2>
             <p className="mt-1 text-amber-200/90 text-xs sm:text-sm max-w-2xl leading-relaxed">
               全程共 {HOTELS.length} 間飯店、{totalNights} 晚，依入住順序排列，
-              含入退房日期、對應行程日與住宿費。金額皆為 {EXPENSE_PARTY_SIZE} 人合計實付。
+              含對應行程日、晚數與住宿費。金額皆為 {EXPENSE_PARTY_SIZE} 人合計實付。
             </p>
+
+            {/* 每間飯店的實住開箱另外放在 IG 精選動態，此處只彙整日程與花費 */}
+            <a
+              href="https://www.instagram.com/ro_c_diary"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#351e14]/90 hover:bg-[#5c3523] text-amber-200 hover:text-amber-100 text-xs font-bold border border-amber-500/30 transition-all cursor-pointer"
+            >
+              <Instagram className="w-3.5 h-3.5 text-pink-400 shrink-0" />
+              <span>住宿開箱與心得可參考 IG 精選動態 @ro_c_diary</span>
+              <ExternalLink className="w-3 h-3 text-amber-400/70 shrink-0" />
+            </a>
           </div>
 
           <div className="bg-[#351e14]/90 p-4 rounded-2xl border border-amber-800/50 shrink-0 text-center sm:text-left">
