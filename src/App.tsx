@@ -97,7 +97,7 @@ export default function App() {
               className="hover:text-amber-300 transition-colors cursor-pointer flex items-center gap-1.5"
             >
               <Utensils className="w-3.5 h-3.5 text-amber-400" />
-              <span>美饌地圖</span>
+              <span>美食地圖</span>
             </button>
             <span className="text-amber-900/80">•</span>
             <button

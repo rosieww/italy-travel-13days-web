@@ -102,7 +102,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
             }`}
           >
             <Utensils className="w-4 h-4 text-amber-300" />
-            <span>4. 餐廳與美饌地圖</span>
+            <span>4. 餐廳與美食地圖</span>
           </button>
 
           <button
