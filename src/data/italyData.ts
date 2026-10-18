@@ -773,9 +773,9 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     dayNum: 9,
     dateStr: "2026/6",
     title: "Day 9｜佛羅倫斯 Florence 藝術與奢華",
-    subtitle: "中央市場、百花大教堂、Panini Toscani、La Strega Nocciola、SMN 修道院與學院美術館",
+    subtitle: "中央市場、百花大教堂、Panini Toscani、La Strega Nocciola、SMN 修道院、La Gelatiera 與學院美術館",
     heroImage: "/image/DSCF7274.webp",
-    overview: "⚠️ 服裝警訊：進入聖母百花大教堂不能穿短褲、露肩！上午造訪中央市場與聖母百花大教堂。午餐品嚐 Panini Toscani 客製化三明治。下午品嚐 La Strega Nocciola 榛果冰淇淋、逛 SMN 百年修道院香水坊與參觀學院美術館 (看大衛像, 預約)。晚上於中央市場美食廣場享用多樣化晚餐。",
+    overview: "⚠️ 服裝警訊：進入聖母百花大教堂不能穿短褲、露肩！上午造訪中央市場與聖母百花大教堂。午餐品嚐 Panini Toscani 客製化三明治。下午品嚐 La Strega Nocciola 榛果冰淇淋、逛 SMN 百年修道院香水坊，接著品嚐 La Gelatiera 手工冰淇淋，再參觀學院美術館 (看大衛像, 預約)。晚上於中央市場美食廣場享用多樣化晚餐。",
     timeline: [
       {
         time: "上午",
@@ -834,6 +834,22 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       },
       {
         time: "下午",
+        title: "冰淇淋 🍦 La Gelatiera",
+        detail: "參觀學院美術館前，先品嚐 La Gelatiera 的天然手工 Gelato，特別的茶口味必吃！",
+        location: "La Gelatiera",
+        tag: "手工冰淇淋",
+        restaurantInfo: {
+          id: "r9-gelatiera",
+          dayNum: 9,
+          city: "Florence",
+          name: "La Gelatiera",
+          type: "冰淇淋",
+          note: "天然食材手工製作，茶口味超特別、必吃",
+          googleMapsUrl: "https://maps.app.goo.gl/aCJs8sDAvTY5BW9EA"
+        }
+      },
+      {
+        time: "下午",
         title: "學院美術館（預約）",
         detail: "按預約時間入場親眼目睹米開朗基羅雕刻傑作《大衛像》。",
         location: "Accademia Gallery",
@@ -864,6 +880,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     restaurantsAndShops: [
       "Panini Toscani",
       "La Strega Nocciola (Duomo)",
+      "La Gelatiera",
       "Mercato Centrale 中央市場"
     ],
     restaurantsList: [
@@ -884,6 +901,15 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         type: "冰淇淋",
         note: "大教堂旁分店，高質感榛果風味 Gelato",
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=La+Strega+Nocciola+Gelateria+Artigianale+Firenze+Duomo"
+      },
+      {
+        id: "r9-gelatiera",
+        dayNum: 9,
+        city: "Florence",
+        name: "La Gelatiera",
+        type: "冰淇淋",
+        note: "天然食材手工製作，茶口味超特別、必吃",
+        googleMapsUrl: "https://maps.app.goo.gl/aCJs8sDAvTY5BW9EA"
       },
       {
         id: "r9-mercato",
@@ -1295,6 +1321,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
  * 未列入者（超市、中央市場、麥當勞等補給點）不評分。
  */
 export const RESTAURANT_RATINGS: Record<string, RestaurantRating> = {
+  "La Gelatiera": { stars: 4.5},
   "Pizzeria Restaurant L Ciamin": { stars: 3.8 },
   "Hotel Menardi Restaurant": { stars: 4.2 },
   "La Tavernetta di Cortina": { stars: 3.8 },
