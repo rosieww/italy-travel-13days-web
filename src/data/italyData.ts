@@ -649,9 +649,9 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     dayNum: 8,
     dateStr: "2026/6",
     title: "Day 8｜威尼斯 ➔ 佛羅倫斯 Florence",
-    subtitle: "火車轉移、All’Antico Vinaio 三明治、烏菲茲美術館、Trattoria Zà Zà 大牛排與 GROM",
+    subtitle: "火車轉移、All’Antico Vinaio 三明治、烏菲茲美術館、GROM 冰淇淋與 Trattoria Zà Zà 大牛排",
     heroImage: "/image/DSCF7135.webp",
-    overview: "上午搭乘高鐵前往佛羅倫斯，飯店寄放行李。午餐排隊品嚐 All’Antico Vinaio 經典巨型帕尼尼。下午參觀烏菲茲美術館 (Uffizi Gallery, 預約)，順遊野豬噴泉、領主廣場、傭兵涼廊與 Giunti Odeon 影城劇院。晚上於預約名店 Trattoria Zà Zà 享用道地托斯卡尼丁骨大牛排，並品嚐 GROM 冰淇淋。",
+    overview: "上午搭乘高鐵前往佛羅倫斯，飯店寄放行李。午餐排隊品嚐 All’Antico Vinaio 經典巨型帕尼尼。下午參觀烏菲茲美術館 (Uffizi Gallery, 預約)後品嚐 GROM 冰淇淋，接著順遊野豬噴泉、領主廣場、傭兵涼廊與 Giunti Odeon 影城劇院。晚上於預約名店 Trattoria Zà Zà 享用道地托斯卡尼丁骨大牛排。",
     timeline: [
       {
         time: "上午",
@@ -687,6 +687,22 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       },
       {
         time: "下午",
+        title: "冰淇淋 🍦 GROM",
+        detail: "參觀烏菲茲美術館後，品嚐 GROM 濃郁手工義式冰淇淋。",
+        location: "GROM Gelateria",
+        tag: "經典冰淇淋",
+        restaurantInfo: {
+          id: "r8-grom",
+          dayNum: 8,
+          city: "Florence",
+          name: "GROM",
+          type: "冰淇淋",
+          note: "義大利天然濃郁 Gelato 名店",
+          googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Grom+Gelateria+Florence"
+        }
+      },
+      {
+        time: "下午",
         title: "野豬噴泉、領主廣場、傭兵涼廊 & Giunti Odeon",
         detail: "摸野豬鼻求好運，欣賞領主廣場雕塑與古典影城文創空間 Giunti Odeon。",
         location: "Piazza della Signoria",
@@ -709,22 +725,6 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
           note: "必吃預約名店 1kg 托斯卡尼大牛排",
           googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Trattoria+ZaZa+Florence"
         }
-      },
-      {
-        time: "晚上",
-        title: "冰淇淋 🍦 GROM",
-        detail: "飯後品嚐 GROM 濃郁手工義式冰淇淋。",
-        location: "GROM Gelateria",
-        tag: "經典冰淇淋",
-        restaurantInfo: {
-          id: "r8-grom",
-          dayNum: 8,
-          city: "Florence",
-          name: "GROM",
-          type: "冰淇淋",
-          note: "義大利天然濃郁 Gelato 名店",
-          googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Grom+Gelateria+Florence"
-        }
       }
     ],
     keyRules: [
@@ -733,8 +733,8 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     ],
     restaurantsAndShops: [
       "All’Antico Vinaio",
-      "Trattoria Zà Zà",
-      "GROM"
+      "GROM",
+      "Trattoria Zà Zà"
     ],
     restaurantsList: [
       {
@@ -747,6 +747,15 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=All+Antico+Vinaio+Florence"
       },
       {
+        id: "r8-grom",
+        dayNum: 8,
+        city: "Florence",
+        name: "GROM",
+        type: "冰淇淋",
+        note: "經典濃郁手工 Gelato",
+        googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Grom+Gelateria+Florence"
+      },
+      {
         id: "r8-zaza",
         dayNum: 8,
         city: "Florence",
@@ -755,15 +764,6 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         isReservationRequired: true,
         note: "必吃預約名店托斯卡尼大牛排",
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Trattoria+ZaZa+Florence"
-      },
-      {
-        id: "r8-grom",
-        dayNum: 8,
-        city: "Florence",
-        name: "GROM",
-        type: "冰淇淋",
-        note: "經典濃郁手工 Gelato",
-        googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Grom+Gelateria+Florence"
       }
     ],
     hotelName: "Apollo Guest House (Florence)",
