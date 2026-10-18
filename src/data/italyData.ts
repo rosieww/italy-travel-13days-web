@@ -989,9 +989,9 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     dayNum: 11,
     dateStr: "2026/6",
     title: "Day 11｜佛羅倫斯 ➔ 米蘭 Milan",
-    subtitle: "最後的晚餐、Bentoteca Milano 午餐、米蘭大教堂、Chocolat 冰淇淋與 Sorbillo 炸披薩",
+    subtitle: "最後的晚餐、Bentoteca Milano 午餐、米蘭大教堂、Cioccolatitaliani 冰淇淋與 Sorbillo 炸披薩",
     heroImage: "/image/DSCF7837.webp",
-    overview: "⚠️ 服裝警訊：進入米蘭大教堂不能穿短褲、露肩！上午搭乘火車前往米蘭 Check-in，參觀達文西名作《最後的晚餐》(預約須提前完成取票)。午餐於預約名店 Bentoteca Milano 享用日義結合創意料理。下午登頂米蘭大教堂並逛埃馬努埃萊二世拱廊。傍晚品嚐 Chocolat Milano 巧克力冰淇淋，晚餐享用 Zia Esterina Sorbillo 包餡炸披薩。",
+    overview: "⚠️ 服裝警訊：進入米蘭大教堂不能穿短褲、露肩！上午搭乘火車前往米蘭 Check-in，參觀達文西名作《最後的晚餐》(預約須提前完成取票)。午餐於預約名店 Bentoteca Milano 享用日義結合創意料理。下午登頂米蘭大教堂並逛埃馬努埃萊二世拱廊。傍晚品嚐 Cioccolatitaliani 巧克力冰淇淋，晚餐享用 Zia Esterina Sorbillo 包餡炸披薩。",
     timeline: [
       {
         time: "上午",
@@ -1044,18 +1044,18 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       },
       {
         time: "晚上",
-        title: "點心：🍦 Chocolat Milano",
+        title: "點心：🍦 Cioccolatitaliani",
         detail: "品嚐米蘭最富盛名的濃郁巧克力 Gelato 冰淇淋。",
-        location: "Chocolat Milano",
+        location: "Cioccolatitaliani",
         tag: "頂級巧克力",
         restaurantInfo: {
-          id: "r11-chocolat",
+          id: "r11-cioccolatitaliani",
           dayNum: 11,
           city: "Milan",
-          name: "Chocolat Milano",
+          name: "Cioccolatitaliani",
           type: "甜點/點心",
           note: "米蘭最知名濃郁多款黑巧克力 Gelato",
-          googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Chocolat+Milano"
+          googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Cioccolatitaliani+Milano"
         }
       },
       {
@@ -1081,7 +1081,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     ],
     restaurantsAndShops: [
       "Bentoteca Milano",
-      "Chocolat Milano",
+      "Cioccolatitaliani",
       "Zia Esterina Sorbillo"
     ],
     restaurantsList: [
@@ -1096,13 +1096,13 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Bentoteca+Milano"
       },
       {
-        id: "r11-chocolat",
+        id: "r11-cioccolatitaliani",
         dayNum: 11,
         city: "Milan",
-        name: "Chocolat Milano",
+        name: "Cioccolatitaliani",
         type: "甜點/點心",
         note: "極濃純黑巧克力手工 Gelato",
-        googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Chocolat+Milano"
+        googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Cioccolatitaliani+Milano"
       },
       {
         id: "r11-sorbillo",
@@ -1271,7 +1271,7 @@ export const RESTAURANT_RATINGS: Record<string, RestaurantRating> = {
   "Trattoria Sergio Gozzi": { stars: 3.9 },
   "Hosteria del Bricco": { stars: 3.9 },
   "Bentoteca Milano": { stars: 3.5 },
-  "Chocolat Milano": { stars: 4.5 },
+  "Cioccolatitaliani": { stars: 4.5 },
   "Zia Esterina Sorbillo": { stars: 4 },
   "Osteria Quatro Pass": { stars: 4.2 }
 };
