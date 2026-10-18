@@ -262,52 +262,8 @@ export const ItineraryView: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Footer Info: Restaurants with Google Maps & Hotel */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-stone-100">
-                    {day.restaurantsList && day.restaurantsList.length > 0 && (
-                      <div className="p-4 rounded-2xl bg-stone-50 border border-stone-200/80">
-                        <div className="text-xs font-bold text-stone-500 flex items-center justify-between gap-1.5 mb-2">
-                          <div className="flex items-center gap-1.5">
-                            <Utensils className="w-4 h-4 text-amber-700" />
-                            <span>本日美饌與採買推薦</span>
-                          </div>
-                          <span className="text-[10px] text-stone-400 font-normal">點擊開啟地圖</span>
-                        </div>
-                        <ul className="space-y-2">
-                          {day.restaurantsList.map((r) => (
-                            <li key={r.id} className="text-xs text-stone-800 font-medium flex items-center justify-between gap-2 p-2 bg-white rounded-xl border border-stone-200/70 hover:border-amber-300">
-                              <div className="min-w-0 flex-1">
-                                <div className="font-bold text-stone-900 truncate flex items-center gap-1">
-                                  <span>{r.name}</span>
-                                  <span className="text-[9px] bg-amber-100 text-amber-900 px-1 py-0.2 rounded shrink-0">
-                                    {r.type}
-                                  </span>
-                                </div>
-                                {r.note && (
-                                  <p className="text-[10px] text-stone-500 truncate mt-0.5">
-                                    {r.note}
-                                  </p>
-                                )}
-                              </div>
-
-                              {r.googleMapsUrl && (
-                                <a
-                                  href={r.googleMapsUrl}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="p-1.5 text-amber-800 hover:text-amber-950 hover:bg-amber-100/60 rounded-lg transition-colors shrink-0 flex items-center gap-1 text-[11px] font-extrabold"
-                                  title="開啟 Google Maps"
-                                >
-                                  <MapPin className="w-3.5 h-3.5" />
-                                  <span className="hidden sm:inline">Maps</span>
-                                </a>
-                              )}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
+                  {/* Footer Info: Hotel */}
+                  <div className="pt-4 border-t border-stone-100">
                     {day.hotelName && (
                       <div className="p-4 rounded-2xl bg-stone-50 border border-stone-200/80 flex flex-col justify-between">
                         <div>
