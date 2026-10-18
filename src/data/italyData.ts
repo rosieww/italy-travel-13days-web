@@ -811,18 +811,18 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       },
       {
         time: "下午",
-        title: "冰淇淋 🍦 La Strega Nocciola",
-        detail: "品嚐 La Strega Nocciola 的極致榛果冰淇淋。",
-        location: "La Strega Nocciola",
+        title: "冰淇淋 🍦 La Strega Nocciola (Duomo)",
+        detail: "品嚐大教堂旁 La Strega Nocciola 的極致榛果冰淇淋。",
+        location: "La Strega Nocciola - Firenze Duomo",
         tag: "榛果冰淇淋",
         restaurantInfo: {
           id: "r9-strega",
           dayNum: 9,
           city: "Florence",
-          name: "La Strega Nocciola",
+          name: "La Strega Nocciola (Duomo)",
           type: "冰淇淋",
-          note: "主打濃郁高質感榛果冰淇淋",
-          googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=La+Strega+Nocciola+Florence"
+          note: "大教堂旁分店，濃郁高質感榛果冰淇淋",
+          googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=La+Strega+Nocciola+Gelateria+Artigianale+Firenze+Duomo"
         }
       },
       {
@@ -863,7 +863,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     ],
     restaurantsAndShops: [
       "Panini Toscani",
-      "La Strega Nocciola",
+      "La Strega Nocciola (Duomo)",
       "Mercato Centrale 中央市場"
     ],
     restaurantsList: [
@@ -880,10 +880,10 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         id: "r9-strega",
         dayNum: 9,
         city: "Florence",
-        name: "La Strega Nocciola",
+        name: "La Strega Nocciola (Duomo)",
         type: "冰淇淋",
-        note: "高質感榛果風味 Gelato",
-        googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=La+Strega+Nocciola+Florence"
+        note: "大教堂旁分店，高質感榛果風味 Gelato",
+        googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=La+Strega+Nocciola+Gelateria+Artigianale+Firenze+Duomo"
       },
       {
         id: "r9-mercato",
@@ -902,9 +902,9 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     dayNum: 10,
     dateStr: "2026/6",
     title: "Day 10｜比薩 Pisa ➔ 佛羅倫斯 Florence",
-    subtitle: "奇蹟廣場比薩斜塔、Sergio Gozzi 午餐、Hosteria del Bricco 與米開朗基羅廣場夜景",
+    subtitle: "奇蹟廣場比薩斜塔、Sergio Gozzi 午餐、Hosteria del Bricco、米開朗基羅廣場夜景與老橋 La Strega Nocciola",
     heroImage: "/image/DSCF7589.webp",
-    overview: "上午搭乘火車前往比薩半日遊，遊覽奇蹟廣場與比薩斜塔。下午搭乘火車返抵佛羅倫斯（車程約 1 小時），午餐於老字號 Trattoria Sergio Gozzi 享用。午後至共和廣場逛街購物與老橋散步。晚上於 Hosteria del Bricco 享用精緻晚餐，隨後前往米開朗基羅廣場看夕陽與俯瞰全城璀璨夜景。",
+    overview: "上午搭乘火車前往比薩半日遊，遊覽奇蹟廣場與比薩斜塔。下午搭乘火車返抵佛羅倫斯（車程約 1 小時），午餐於老字號 Trattoria Sergio Gozzi 享用。午後至共和廣場逛街購物與老橋散步。晚上於 Hosteria del Bricco 享用精緻晚餐，隨後前往米開朗基羅廣場看夕陽與俯瞰全城璀璨夜景，最後到老橋旁的 La Strega Nocciola 以手工榛果冰淇淋收尾。",
     timeline: [
       {
         time: "上午",
@@ -968,6 +968,22 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         location: "Piazzale Michelangelo",
         tag: "絕美夜景",
         isKeyMilestone: true
+      },
+      {
+        time: "晚上",
+        title: "冰淇淋 🍦 La Strega Nocciola (Ponte Vecchio)",
+        detail: "看完夜景下山後，到老橋旁的 La Strega Nocciola 分店品嚐手工榛果 Gelato 作結。",
+        location: "La Strega Nocciola - Firenze Ponte Vecchio",
+        tag: "榛果冰淇淋",
+        restaurantInfo: {
+          id: "r10-strega",
+          dayNum: 10,
+          city: "Florence",
+          name: "La Strega Nocciola (Ponte Vecchio)",
+          type: "冰淇淋",
+          note: "老橋旁分店，手工榛果 Gelato",
+          googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=La+Strega+Nocciola+Gelateria+Artigianale+Firenze+Ponte+Vecchio"
+        }
       }
     ],
     keyRules: [
@@ -976,7 +992,8 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     ],
     restaurantsAndShops: [
       "Trattoria Sergio Gozzi",
-      "Hosteria del Bricco"
+      "Hosteria del Bricco",
+      "La Strega Nocciola (Ponte Vecchio)"
     ],
     restaurantsList: [
       {
@@ -996,6 +1013,15 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         type: "晚餐",
         note: "奧特拉諾區氣氛極佳的義式餐酒館",
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hosteria+del+Bricco+Florence"
+      },
+      {
+        id: "r10-strega",
+        dayNum: 10,
+        city: "Florence",
+        name: "La Strega Nocciola (Ponte Vecchio)",
+        type: "冰淇淋",
+        note: "老橋旁分店，濃郁手工榛果 Gelato",
+        googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=La+Strega+Nocciola+Gelateria+Artigianale+Firenze+Ponte+Vecchio"
       }
     ],
     hotelName: "Apollo Guest House (Florence)",
@@ -1283,7 +1309,8 @@ export const RESTAURANT_RATINGS: Record<string, RestaurantRating> = {
   "Trattoria Zà Zà": { stars: 4.2 },
   "GROM": { stars: 4.5 },
   "Panini Toscani": { stars: 4 },
-  "La Strega Nocciola": { stars: 4.5 },
+  "La Strega Nocciola (Duomo)": { stars: 4.5 },
+  "La Strega Nocciola (Ponte Vecchio)": { stars: 4.5 },
   "Trattoria Sergio Gozzi": { stars: 3.9 },
   "Hosteria del Bricco": { stars: 3.9 },
   "Bentoteca Milano": { stars: 3.5 },
