@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { ITALY_12_DAYS } from '../data/italyData';
 import { Master14DayTable } from './Master14DayTable';
 import { assetUrl } from '../assetUrl';
-import { MapPin, ShieldAlert, Sparkles, Clock, Utensils, Hotel, Navigation, Mountain, Landmark, ArrowUpRight, ExternalLink } from 'lucide-react';
+import { MapPin, ShieldAlert, Sparkles, Clock, Utensils, Hotel, Mountain, Landmark } from 'lucide-react';
 
 type SubView = 'master' | '5day' | 'italy';
 
@@ -204,56 +204,28 @@ export const ItineraryView: React.FC = () => {
                               {event.detail}
                             </p>
 
-                            {/* Direct Inline Restaurant Info Card with Google Maps */}
+                            {/* Direct Inline Restaurant Info Card */}
                             {event.restaurantInfo && (
-                              <div className="mt-3 p-3 bg-amber-50/80 rounded-xl border border-amber-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                                <div>
-                                  <div className="text-xs font-bold text-amber-950 flex items-center gap-1.5">
-                                    <Utensils className="w-3.5 h-3.5 text-amber-700" />
-                                    <span>{event.restaurantInfo.name}</span>
-                                    <span className="text-[10px] bg-amber-200 text-amber-900 px-1.5 py-0.5 rounded font-extrabold">
-                                      {event.restaurantInfo.type}
-                                    </span>
-                                  </div>
-                                  {event.restaurantInfo.note && (
-                                    <p className="text-[11px] text-amber-800 mt-0.5">
-                                      {event.restaurantInfo.note}
-                                    </p>
-                                  )}
+                              <div className="mt-3 p-3 bg-amber-50/80 rounded-xl border border-amber-200">
+                                <div className="text-xs font-bold text-amber-950 flex items-center gap-1.5">
+                                  <Utensils className="w-3.5 h-3.5 text-amber-700" />
+                                  <span>{event.restaurantInfo.name}</span>
+                                  <span className="text-[10px] bg-amber-200 text-amber-900 px-1.5 py-0.5 rounded font-extrabold">
+                                    {event.restaurantInfo.type}
+                                  </span>
                                 </div>
-
-                                {event.restaurantInfo.googleMapsUrl && (
-                                  <a
-                                    href={event.restaurantInfo.googleMapsUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 bg-amber-800 hover:bg-amber-900 text-white rounded-lg text-xs font-bold shrink-0 transition-colors"
-                                  >
-                                    <MapPin className="w-3.5 h-3.5" />
-                                    <span>Google Maps 導航</span>
-                                    <ExternalLink className="w-3 h-3 ml-0.5" />
-                                  </a>
+                                {event.restaurantInfo.note && (
+                                  <p className="text-[11px] text-amber-800 mt-0.5">
+                                    {event.restaurantInfo.note}
+                                  </p>
                                 )}
                               </div>
                             )}
 
                             {event.location && !event.restaurantInfo && (
-                              <div className="text-xs font-semibold text-stone-500 flex items-center justify-between flex-wrap gap-2 mt-1">
-                                <div className="flex items-center gap-1">
-                                  <MapPin className="w-3.5 h-3.5 text-amber-700" />
-                                  <span>{event.location}</span>
-                                </div>
-                                {event.googleMapsUrl && (
-                                  <a
-                                    href={event.googleMapsUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-1 text-[11px] font-bold text-amber-800 hover:text-amber-950 underline"
-                                  >
-                                    <ExternalLink className="w-3 h-3" />
-                                    <span>Google Maps 導航</span>
-                                  </a>
-                                )}
+                              <div className="text-xs font-semibold text-stone-500 flex items-center gap-1 mt-1">
+                                <MapPin className="w-3.5 h-3.5 text-amber-700" />
+                                <span>{event.location}</span>
                               </div>
                             )}
                           </div>
@@ -265,29 +237,14 @@ export const ItineraryView: React.FC = () => {
                   {/* Footer Info: Hotel */}
                   <div className="pt-4 border-t border-stone-100">
                     {day.hotelName && (
-                      <div className="p-4 rounded-2xl bg-stone-50 border border-stone-200/80 flex flex-col justify-between">
-                        <div>
-                          <div className="text-xs font-bold text-stone-500 flex items-center gap-1.5 mb-1">
-                            <Hotel className="w-4 h-4 text-amber-800" />
-                            <span>當晚住宿飯店 / 地點</span>
-                          </div>
-                          <p className="text-xs sm:text-sm font-extrabold text-stone-900">
-                            {day.hotelName}
-                          </p>
+                      <div className="p-4 rounded-2xl bg-stone-50 border border-stone-200/80">
+                        <div className="text-xs font-bold text-stone-500 flex items-center gap-1.5 mb-1">
+                          <Hotel className="w-4 h-4 text-amber-800" />
+                          <span>當晚住宿飯店 / 地點</span>
                         </div>
-
-                        {day.googleMapsUrl && (
-                          <a
-                            href={day.googleMapsUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800 hover:text-amber-950 mt-3"
-                          >
-                            <Navigation className="w-3.5 h-3.5" />
-                            <span>開啟 Google Maps 定位</span>
-                            <ArrowUpRight className="w-3 h-3 ml-0.5" />
-                          </a>
-                        )}
+                        <p className="text-xs sm:text-sm font-extrabold text-stone-900">
+                          {day.hotelName}
+                        </p>
                       </div>
                     )}
                   </div>
