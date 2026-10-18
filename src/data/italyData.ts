@@ -406,10 +406,26 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
     dayNum: 6,
     dateStr: "2026/6",
     title: "Day 6｜威尼斯 Venice 核心景點與美食探秘",
-    subtitle: "聖馬可廣場、Suso 與 Gallonetto 冰淇淋、I Tre Mercanti 提拉米蘇、Da Mamo 與雙夕陽",
+    subtitle: "Suso 冰淇淋、聖馬可廣場、Gallonetto 冰淇淋與 I Tre Mercanti 提拉米蘇、Da Mamo 與雙夕陽",
     heroImage: "/image/DSCF6490.webp",
-    overview: "上午探索聖馬可廣場、聖馬可大教堂、總督宮與歎息橋。午餐於 Da Mamo 享用精緻義餐。下午品嚐 Suso 與 Gelateria Gallonetto 極品冰淇淋，以及 I Tre Mercanti 的現做提拉米蘇 (Tiramisù)，並於里阿爾托橋散步。傍晚先後至 Baia del re 與學院橋捕捉威尼斯絕美落日。",
+    overview: "上午首站先品嚐 Suso 冰淇淋，再探索聖馬可廣場、聖馬可大教堂、總督宮與歎息橋。午餐於 Da Mamo 享用精緻義餐。下午品嚐 Gelateria Gallonetto 手工冰淇淋與 I Tre Mercanti 的現做提拉米蘇 (Tiramisù)，並於里阿爾托橋散步。傍晚先後至 Baia del re 與學院橋捕捉威尼斯絕美落日。",
     timeline: [
+      {
+        time: "上午",
+        title: "冰淇淋 🍦 Suso",
+        detail: "上午首站先嚐威尼斯最火紅的 Suso 經典 Gelato，再走進聖馬可廣場。",
+        location: "Gelatoteca Suso",
+        tag: "排隊冰淇淋",
+        restaurantInfo: {
+          id: "r6-suso",
+          dayNum: 6,
+          city: "Venice",
+          name: "Suso Gelatoteca",
+          type: "冰淇淋",
+          note: "威尼斯最火紅排隊 Gelato 冰淇淋",
+          googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Gelatoteca+Suso+Venice"
+        }
+      },
       {
         time: "上午",
         title: "聖馬可廣場、聖馬可大教堂、總督宮、嘆息橋",
@@ -436,8 +452,8 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       },
       {
         time: "下午",
-        title: "冰淇淋 🍦 Suso、Gelateria Gallonetto & 甜點 🍰 I Tre Mercanti",
-        detail: "品嚐 Suso 經典夾心 Gelato、Gallonetto 手工冰淇淋與 I Tre Mercanti 現做濃郁提拉米蘇。",
+        title: "冰淇淋 🍦 Gelateria Gallonetto & 甜點 🍰 I Tre Mercanti",
+        detail: "品嚐 Gallonetto 手工冰淇淋與 I Tre Mercanti 現做濃郁提拉米蘇。",
         location: "威尼斯舊城區",
         tag: "甜點冰淇淋"
       },
@@ -457,21 +473,12 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       }
     ],
     restaurantsAndShops: [
-      "Da Mamo",
       "Suso Gelatoteca",
+      "Da Mamo",
       "Gelateria Gallonetto",
       "I Tre Mercanti (Tiramisù)"
     ],
     restaurantsList: [
-      {
-        id: "r6-mamo",
-        dayNum: 6,
-        city: "Venice",
-        name: "Da Mamo",
-        type: "午餐",
-        note: "威尼斯高人氣精緻義餐",
-        googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Trattoria+Da+Mamo+Venice"
-      },
       {
         id: "r6-suso",
         dayNum: 6,
@@ -480,6 +487,15 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         type: "冰淇淋",
         note: "威尼斯最火紅排隊 Gelato 冰淇淋",
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Gelatoteca+Suso+Venice"
+      },
+      {
+        id: "r6-mamo",
+        dayNum: 6,
+        city: "Venice",
+        name: "Da Mamo",
+        type: "午餐",
+        note: "威尼斯高人氣精緻義餐",
+        googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Trattoria+Da+Mamo+Venice"
       },
       {
         id: "r6-gallonetto",
