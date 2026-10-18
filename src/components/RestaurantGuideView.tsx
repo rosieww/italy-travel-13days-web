@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { ALL_RESTAURANTS } from '../data/italyData';
 import { RestaurantStars } from './StarRating';
-import { Utensils, MapPin, ExternalLink, Search, AlertCircle, IceCream, Pizza, ShoppingBag, Coffee } from 'lucide-react';
+import { Utensils, MapPin, ExternalLink, Search, AlertCircle, IceCream, Pizza, ShoppingBag, Coffee, Instagram } from 'lucide-react';
 
 export const RestaurantGuideView: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -64,6 +64,18 @@ export const RestaurantGuideView: React.FC = () => {
             <p className="mt-1 text-amber-200/90 text-xs sm:text-sm max-w-2xl leading-relaxed">
               完整收錄 13 日行程中所有指定午餐、晚餐、人氣 Gelato 冰淇淋、排隊帕尼尼與超市採買點，點擊直達 Google Maps 查看導航與地圖定位！
             </p>
+
+            {/* 全部店家的實拍與試吃反應整理成一支 IG Reels，此處只列清單與地圖 */}
+            <a
+              href="https://www.instagram.com/reel/DejeRtrM4TT/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#351e14]/90 hover:bg-[#5c3523] text-amber-200 hover:text-amber-100 text-xs font-bold border border-amber-500/30 transition-all cursor-pointer"
+            >
+              <Instagram className="w-3.5 h-3.5 text-pink-400 shrink-0" />
+              <span>餐廳介紹影片看 IG Reels @ro_c_diary</span>
+              <ExternalLink className="w-3 h-3 text-amber-400/70 shrink-0" />
+            </a>
           </div>
 
           <div className="bg-[#351e14]/90 p-4 rounded-2xl border border-amber-800/50 shrink-0 text-center sm:text-left">
