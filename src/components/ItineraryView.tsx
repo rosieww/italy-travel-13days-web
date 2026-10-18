@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { ITALY_12_DAYS } from '../data/italyData';
 import { Master14DayTable } from './Master14DayTable';
 import { assetUrl } from '../assetUrl';
-import { MapPin, ShieldAlert, Sparkles, Clock, Utensils, Hotel, Mountain, Landmark } from 'lucide-react';
+import { MapPin, ShieldAlert, Sparkles, Clock, Hotel, Mountain, Landmark } from 'lucide-react';
 
 type SubView = 'master' | '5day' | 'italy';
 
@@ -203,24 +203,6 @@ export const ItineraryView: React.FC = () => {
                             <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
                               {event.detail}
                             </p>
-
-                            {/* Direct Inline Restaurant Info Card */}
-                            {event.restaurantInfo && (
-                              <div className="mt-3 p-3 bg-amber-50/80 rounded-xl border border-amber-200">
-                                <div className="text-xs font-bold text-amber-950 flex items-center gap-1.5">
-                                  <Utensils className="w-3.5 h-3.5 text-amber-700" />
-                                  <span>{event.restaurantInfo.name}</span>
-                                  <span className="text-[10px] bg-amber-200 text-amber-900 px-1.5 py-0.5 rounded font-extrabold">
-                                    {event.restaurantInfo.type}
-                                  </span>
-                                </div>
-                                {event.restaurantInfo.note && (
-                                  <p className="text-[11px] text-amber-800 mt-0.5">
-                                    {event.restaurantInfo.note}
-                                  </p>
-                                )}
-                              </div>
-                            )}
 
                             {event.location && !event.restaurantInfo && (
                               <div className="text-xs font-semibold text-stone-500 flex items-center gap-1 mt-1">
