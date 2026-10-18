@@ -421,7 +421,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       {
         time: "中午",
         title: "午餐：🍽️ Da Mamo",
-        detail: "威尼斯極具人氣的美味義式小館，享用海鮮燉飯與薄餅披薩。",
+        detail: "威尼斯極具人氣的美味義式小館，享用墨魚麵與薄餅披薩。",
         location: "Trattoria Da Mamo",
         tag: "美味午餐",
         isKeyMilestone: true,
@@ -529,7 +529,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       {
         time: "下午",
         title: "午餐：🍽️ Trattoria Bar Pontini",
-        detail: "威尼斯超高人氣名店，大碗鮮美海鮮義大利麵與墨魚麵。",
+        detail: "威尼斯超高人氣名店，大碗鮮美海鮮義大利麵與墨魚麵，套餐也很划算。",
         location: "Trattoria Bar Pontini",
         tag: "人氣海鮮",
         isKeyMilestone: true,
@@ -647,7 +647,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       {
         time: "下午",
         title: "午餐：🥪 All’Antico Vinaio",
-        detail: "全義大利最火紅的巨型帕尼尼，夾入現切托斯卡尼生火腿與松露起司醬。",
+        detail: "全義大利最火紅的巨型帕尼尼，同一條街好幾間分店，挑排隊少的去就好。",
         location: "All’Antico Vinaio",
         tag: "排隊名店",
         isKeyMilestone: true,
@@ -1173,7 +1173,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
       },
       {
         time: "晚上",
-        title: "晚餐：🍽️ 麥當勞 (Milan McDonalds)",
+        title: "晚餐：🍽️ 麥當勞",
         detail: "享用輕鬆迅速的義大利麥當勞，收拾整理行李準備明日返台航班。",
         location: "Milan McDonalds",
         tag: "速食晚餐",
