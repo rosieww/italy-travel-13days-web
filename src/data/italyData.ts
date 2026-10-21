@@ -422,7 +422,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
           city: "Venice",
           name: "Suso Gelatoteca",
           type: "冰淇淋",
-          note: "威尼斯最火紅排隊 Gelato 冰淇淋",
+          note: "威尼斯最火紅排隊 Gelato 冰淇淋，開心果口味偏鹹，建議搭配清爽水果口味解膩",
           googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Gelatoteca+Suso+Venice"
         }
       },
@@ -485,7 +485,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         city: "Venice",
         name: "Suso Gelatoteca",
         type: "冰淇淋",
-        note: "威尼斯最火紅排隊 Gelato 冰淇淋",
+        note: "威尼斯最火紅排隊 Gelato 冰淇淋，開心果口味偏鹹，建議搭配清爽水果口味解膩",
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Gelatoteca+Suso+Venice"
       },
       {
@@ -503,7 +503,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         city: "Venice",
         name: "Gelateria Gallonetto",
         type: "冰淇淋",
-        note: "濃郁精緻手工 Gelato",
+        note: "濃郁精緻手工 Gelato，連吃兩天很喜歡，推薦水果或優格口味解膩",
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Gelateria+Gallonetto+Venice"
       },
       {
@@ -697,7 +697,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
           city: "Florence",
           name: "GROM",
           type: "冰淇淋",
-          note: "義大利天然濃郁 Gelato 名店",
+          note: "義大利天然濃郁 Gelato 名店，連鎖品質穩定，推薦芒果與開心果口味",
           googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Grom+Gelateria+Florence"
         }
       },
@@ -752,7 +752,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         city: "Florence",
         name: "GROM",
         type: "冰淇淋",
-        note: "經典濃郁手工 Gelato",
+        note: "經典濃郁手工 Gelato，連鎖品質穩定，推薦芒果與開心果口味",
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Grom+Gelateria+Florence"
       },
       {
@@ -762,7 +762,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         name: "Trattoria Zà Zà",
         type: "晚餐",
         isReservationRequired: true,
-        note: "必吃預約名店托斯卡尼大牛排",
+        note: "預約名店，義大利麵好吃，牛排可點可不點 (建議三人以上分食)",
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Trattoria+ZaZa+Florence"
       }
     ],
@@ -821,7 +821,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
           city: "Florence",
           name: "La Strega Nocciola (Duomo)",
           type: "冰淇淋",
-          note: "大教堂旁分店，濃郁高質感榛果冰淇淋",
+          note: "大教堂旁分店，濃郁高質感榛果冰淇淋，連吃兩天，推特色薰衣草口味",
           googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=La+Strega+Nocciola+Gelateria+Artigianale+Firenze+Duomo"
         }
       },
@@ -899,7 +899,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         city: "Florence",
         name: "La Strega Nocciola (Duomo)",
         type: "冰淇淋",
-        note: "大教堂旁分店，高質感榛果風味 Gelato",
+        note: "大教堂旁分店，高質感榛果風味 Gelato，連吃兩天的程度，特色薰衣草口味濃郁必試",
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=La+Strega+Nocciola+Gelateria+Artigianale+Firenze+Duomo"
       },
       {
@@ -1007,7 +1007,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
           city: "Florence",
           name: "La Strega Nocciola (Ponte Vecchio)",
           type: "冰淇淋",
-          note: "老橋旁分店，手工榛果 Gelato",
+          note: "老橋旁分店，手工榛果 Gelato，特色薰衣草口味濃郁必試",
           googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=La+Strega+Nocciola+Gelateria+Artigianale+Firenze+Ponte+Vecchio"
         }
       }
@@ -1046,7 +1046,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         city: "Florence",
         name: "La Strega Nocciola (Ponte Vecchio)",
         type: "冰淇淋",
-        note: "老橋旁分店，濃郁手工榛果 Gelato",
+        note: "老橋旁分店，濃郁手工榛果 Gelato，特色薰衣草口味濃郁必試",
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=La+Strega+Nocciola+Gelateria+Artigianale+Firenze+Ponte+Vecchio"
       }
     ],
@@ -1122,7 +1122,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
           city: "Milan",
           name: "Cioccolatitaliani",
           type: "甜點/點心",
-          note: "米蘭最知名濃郁多款黑巧克力 Gelato",
+          note: "米蘭最知名濃郁多款黑巧克力 Gelato，口味偏苦甜，建議搭配清爽水果口味解膩",
           googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Cioccolatitaliani+Milano"
         }
       },
@@ -1169,7 +1169,7 @@ export const ITALY_12_DAYS: DayItineraryDetail[] = [
         city: "Milan",
         name: "Cioccolatitaliani",
         type: "甜點/點心",
-        note: "極濃純黑巧克力手工 Gelato",
+        note: "極濃純黑巧克力手工 Gelato，口味偏苦甜，建議搭配清爽水果口味解膩",
         googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Cioccolatitaliani+Milano"
       },
       {
