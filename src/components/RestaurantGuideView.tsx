@@ -66,16 +66,29 @@ export const RestaurantGuideView: React.FC = () => {
             </p>
 
             {/* 全部店家的實拍與試吃反應整理成一支 IG Reels，此處只列清單與地圖 */}
-            <a
-              href="https://www.instagram.com/reel/DejeRtrM4TT/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#351e14]/90 hover:bg-[#5c3523] text-amber-200 hover:text-amber-100 text-xs font-bold border border-amber-500/30 transition-all cursor-pointer"
-            >
-              <Instagram className="w-3.5 h-3.5 text-pink-400 shrink-0" />
-              <span>餐廳介紹影片看 IG Reels @ro_c_diary</span>
-              <ExternalLink className="w-3 h-3 text-amber-400/70 shrink-0" />
-            </a>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <a
+                href="https://www.instagram.com/reel/DejeRtrM4TT/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#351e14]/90 hover:bg-[#5c3523] text-amber-200 hover:text-amber-100 text-xs font-bold border border-amber-500/30 transition-all cursor-pointer"
+              >
+                <Instagram className="w-3.5 h-3.5 text-pink-400 shrink-0" />
+                <span>餐廳介紹影片看 IG Reels @ro_c_diary</span>
+                <ExternalLink className="w-3 h-3 text-amber-400/70 shrink-0" />
+              </a>
+
+              <a
+                href="https://www.instagram.com/reel/DewT00RsqQe/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#351e14]/90 hover:bg-[#5c3523] text-amber-200 hover:text-amber-100 text-xs font-bold border border-amber-500/30 transition-all cursor-pointer"
+              >
+                <IceCream className="w-3.5 h-3.5 text-pink-400 shrink-0" />
+                <span>Gelato 介紹影片看 IG Reels @ro_c_diary</span>
+                <ExternalLink className="w-3 h-3 text-amber-400/70 shrink-0" />
+              </a>
+            </div>
           </div>
 
           <div className="bg-[#351e14]/90 p-4 rounded-2xl border border-amber-800/50 shrink-0 text-center sm:text-left">
