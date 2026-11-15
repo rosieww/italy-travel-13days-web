@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { ITALY_12_DAYS } from '../data/italyData';
 import { Master14DayTable } from './Master14DayTable';
+import { TicketValidationNotice } from './TicketValidationNotice';
 import { assetUrl } from '../assetUrl';
 import { MapPin, ShieldAlert, Sparkles, Clock, Hotel, Mountain, Landmark } from 'lucide-react';
 
@@ -125,6 +126,8 @@ export const ItineraryView: React.FC = () => {
               </div>
             </div>
           </div>
+
+          {subView === 'italy' && <TicketValidationNotice />}
 
           {filteredDays.map((day) => (
               <div

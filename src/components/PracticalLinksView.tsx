@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { PRACTICAL_LINKS } from '../data/italyData';
 import { ExternalLink, ShieldAlert, Check, Copy } from 'lucide-react';
+import { TicketValidationNotice } from './TicketValidationNotice';
 
 /**
  * 分類的顯示名稱。篩選鈕本身由資料中實際出現的分類推導，
@@ -123,6 +124,7 @@ export const PracticalLinksView: React.FC = () => {
       </div>
 
       {/* Links grouped by region */}
+      {(selectedCategory === 'All' || selectedCategory === 'Transport') && <TicketValidationNotice />}
       {groupedByRegion.map((group) => (
         <section key={group.region} className="space-y-4">
           <h3 className="flex items-baseline gap-2 text-base sm:text-lg font-black text-stone-900 pb-2 border-b-2 border-amber-800/20">
