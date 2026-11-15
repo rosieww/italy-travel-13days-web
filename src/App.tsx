@@ -6,6 +6,7 @@ import { PracticalLinksView } from './components/PracticalLinksView';
 import { RestaurantGuideView } from './components/RestaurantGuideView';
 import { HotelView } from './components/HotelView';
 import { ExpenseView } from './components/ExpenseView';
+import { TravelJournal } from './components/TravelJournal';
 import { Mountain, Compass, ExternalLink, Calendar, Utensils, Sparkles, Hotel, Wallet } from 'lucide-react';
 
 export default function App() {
@@ -21,11 +22,12 @@ export default function App() {
         />
 
         {/* Main Content Viewport */}
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <main id="travel-content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+          {activeTab === 'itinerary' && <TravelJournal />}
           {/* Usage Notice — shown above every tab */}
-          <div className="mb-8 bg-amber-100/70 border-2 border-amber-500/50 rounded-2xl p-4 sm:p-5 shadow-xs">
+          <div className="sharing-notice mb-8 rounded-xl p-4 sm:p-5">
             <div className="font-black text-amber-900 text-sm sm:text-base mb-1.5">
-              💡 溫馨提醒
+              關於這份旅行筆記
             </div>
             <p className="text-amber-950/90 text-xs sm:text-sm leading-relaxed font-medium">
               本站內容均為個人整理的分享記錄。僅供私人瀏覽，請勿擅自轉載至其他公開平台或作任何商業用途。
@@ -51,7 +53,7 @@ export default function App() {
       </div>
 
       {/* Footer */}
-      <footer className="mt-16 bg-[#4a2c1d] text-amber-200/80 border-t border-amber-800/40 py-10 px-4 sm:px-8">
+      <footer className="journal-footer mt-16 text-amber-200/80 border-t border-amber-800/40 py-10 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <div className="p-2.5 rounded-xl bg-amber-800/30 border border-amber-600/30 text-amber-400">

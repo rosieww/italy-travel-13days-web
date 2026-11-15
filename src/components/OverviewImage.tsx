@@ -3,7 +3,7 @@ import { Sparkles } from 'lucide-react';
 import { assetUrl } from '../assetUrl';
 
 export const OverviewImage: React.FC = () => {
-  const imageSrc = assetUrl('/image/義大利行程概括.webp');
+  const imageSrc = assetUrl('/image/italy-itinerary-overview.png?v=2');
 
   return (
     <div className="bg-[#FAF7F2] border border-amber-900/15 rounded-3xl p-5 sm:p-7 shadow-xs space-y-4 relative overflow-hidden">
@@ -12,16 +12,16 @@ export const OverviewImage: React.FC = () => {
         <div>
           <div className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-900 bg-amber-100/80 px-3 py-1 rounded-full border border-amber-800/20 mb-1.5">
             <Sparkles className="w-3.5 h-3.5 text-amber-800" />
-            <span>義大利行程概括地圖導覽</span>
+            <span>THE ROUTE / 旅程路線</span>
           </div>
           <h3 className="text-lg sm:text-xl font-black text-amber-950 flex items-center gap-2">
-            <span>🗺️ 義大利行程概括地圖</span>
+            <span>義大利行程概括地圖</span>
           </h3>
         </div>
       </div>
 
       <p className="text-stone-500 text-sm sm:text-base">
-        表列全行程每日區域、動線、預約重點與住宿飯店
+        先從地圖認識這趟旅程：山區自駕、城市間的火車，以及沿途想停下來的地方。每日安排與住宿整理在下方總表。
       </p>
 
       {/* Route summary */}

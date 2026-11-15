@@ -44,7 +44,7 @@ export const ItineraryView: React.FC = () => {
   };
 
   return (
-    <div className="space-y-8 animate-fadeIn">
+    <div id="itinerary-sections" className="space-y-8 animate-fadeIn">
       {/* Sub-View Switcher & Top Control Bar */}
       <div className="bg-white p-4 sm:p-6 rounded-3xl shadow-xs border border-stone-200/90 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
         {/* View Switch Segmented Control */}
